@@ -50,6 +50,6 @@ Por último, debemos incrementar la seguridad de nuestra cuenta de Github. Para 
 
 En mi caso utilicé la aplicación Authy tal y como recomienda, y después de seguir los pasos que se indican en la aplicación, la autentificación en dos pasos en mi cuenta de Github quedó correctamente configurada.
 
-![Authy configurada](https://github.com/AngelValera/CC2021-Proyecto/blob/main/Doc/Img/Img_Configuracion_Inicial/autentificacion2pasos.png "Authy configurada")
+![Authy configurada](https://github.com/AngelValera/CC2021-Proyecto/blob/main/Doc/Img/Img_Configuracion_Inicial/authy.png "Authy configurada")
 
 ![Autentificación finalizada.](https://github.com/AngelValera/CC2021-Proyecto/blob/main/Doc/Img/Img_Configuracion_Inicial/ConfiguracionPerfilFinalizada.png "Autentificación finalizada")

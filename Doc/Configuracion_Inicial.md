@@ -12,11 +12,11 @@ Para el desarrollo de este proyecto a lo largo del curso de la asignatura de Clo
 * [Repositorio del proyecto](https://github.com/AngelValera/CC2021-Proyecto) : En este repositorio se irá desarrollando el proyecto completo que será necesario para superar la asignatura.
 * [Repositorio de ejercicios de autoevaluación](https://github.com/AngelValera/CC2021-Ejercicios) : En este repositorio se irán realizando los ejercicios de autoevaluación de cada uno de los temas de la asignatura.
 
-### Creación de par de claves y subida de clave pública a GitHub
+### Creación del par de claves y subida de la clave pública a GitHub
 
 Para evitar tener que introducir las credenciales de nuestra cuenta en Github, debemos crear un par de claves, una pública y otra privada en nuestro equipo y después agregar la clave pública generada a nuestra cuenta de Github. El proceso que se ha seguido para crear estas claves viene descrito en este [enlace](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent).
 
-En la siguiente imagen podemos comprobar que efectivamente tenemos en nuestro equipo tanto el directorio ssh como el par de claves generadas, así como el fichero con los hots permitidos en nuestro equipo.
+En la siguiente imagen podemos comprobar que efectivamente tenemos en nuestro equipo tanto el directorio ssh como el par de claves generadas, así como el fichero con los host permitidos en nuestro equipo.
 
 ![Claves SSH generadas.](https://github.com/AngelValera/CC2021-Proyecto/blob/main/Doc/Img/Img_Configuracion_Inicial/clavesSSH.png "Claves SSH generadas.")
 

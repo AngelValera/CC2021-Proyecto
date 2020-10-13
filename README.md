@@ -13,3 +13,7 @@ Hoy día, el papel que juega la música dentro del mundo del entretenimiento sig
 
 Por tanto, este proyecto tendrá como objetivo principal dar solución al problema anterior. Para ello se desarrollará un sistema informático que permita conocer tanto la información relevante sobre un grupo de música como proporcionar la letra de la canción que se solicite. Para conseguirlo haremos uso de una primera [API](https://lyricsovh.docs.apiary.io/#reference) desde la que obtener la letra de la canción y de otra [API](https://www.theaudiodb.com/api_guide.php) para obtener la información del grupo o el artísta en cuestión. Una vez obtenida la información desde las distintas APIs, ésta será procesada y enviada al usuario.
 
+## Arquitectura
+
+En cuanto a la arquitectura, este proyecto hará uso de la arquitectura basada en microservicios. El motivo es básicamente porque podremos tener desplegados diferentes servicios desplegados de forma independiente. Algunos de estos microservicios podrían ser el servicio de logs, el servicio de configuración remota, otro servicio para obtener los datos del artista, otro para obtener la letra de la canción, otro servicio con el frontend y otro con la base de datos, por ejemplo.
+

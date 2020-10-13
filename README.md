@@ -15,5 +15,5 @@ Por tanto, este proyecto tendrá como objetivo principal dar solución al proble
 
 ## Arquitectura
 
-En cuanto a la arquitectura, este proyecto hará uso de la arquitectura basada en microservicios. El motivo es básicamente porque podremos tener desplegados diferentes servicios desplegados de forma independiente. Algunos de estos microservicios podrían ser el servicio de logs, el servicio de configuración remota, otro servicio para obtener los datos del artista, otro para obtener la letra de la canción, otro servicio con el frontend y otro con la base de datos, por ejemplo.
+En cuanto a la arquitectura, este proyecto hará uso de la arquitectura basada en microservicios. El motivo es básicamente porque podremos tener desplegados diferentes servicios de forma independiente pero trabajando de manera conjunta y haciendo uso de APIs como se indicó en el apartado anterior. Algunos de estos microservicios podrían ser el servicio de logs, el servicio de configuración remota, otro servicio para obtener los datos del artista, otro para obtener la letra de la canción, otro servicio con el frontend y otro con la base de datos, por ejemplo.
 

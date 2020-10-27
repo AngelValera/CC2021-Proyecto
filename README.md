@@ -6,14 +6,22 @@ En este repositorio se va a desarrollar un proyecto para la asignatura de Cloud 
 
 Para poder desarrollar este proyecto de una forma correcta, tanto este repositorio como el entorno de desarrollo local han sido debidamente configurados, tal y como se recoge en este [documento](https://github.com/AngelValera/CC2021-Proyecto/blob/main/Doc/Configuracion_Inicial.md).
 
+# Documentación
 
-## Descripción del problema
+## Índice
 
-Hoy día, el papel que juega la música dentro del mundo del entretenimiento sigue siendo muy importante. La sociedad consume música, ya sea mediante cds, radio, streamming, entre otros medios, durante gran parte de su vida. Por este motivo, no resulta extraño pensar que durante este tiempo a algunas personas le haya ocurrido que mientras escucha alguna de sus canciones favoritas desee saber cual es la letra  de dicha canción o quiera conocer información sobre el grupo o el artista en cuestión. Si bien es cierto que siempre puedes buscarla directamente desde un navegador, resultaría mucho más cómodo no tener que estar navegando entre distintas páginas y poder consultar dicha información desde un buscador exclusivo. 
+* [Configuración inicial del repositorio.](Doc/Configuracion_Inicial.md)
+* [Descripción del problema a resolver.](Doc/Descripcion_Problema.md) 
 
-Por tanto, este proyecto tendrá como objetivo principal dar solución al problema anterior. Para ello se desarrollará un sistema informático que permita conocer tanto la información relevante sobre un grupo de música como proporcionar la letra de la canción que se solicite. Para conseguirlo haremos uso de una primera [API](https://lyricsovh.docs.apiary.io/#reference) desde la que obtener la letra de la canción y de otra [API](https://www.theaudiodb.com/api_guide.php) para obtener la información del grupo o el artísta en cuestión. Una vez obtenida la información desde las distintas APIs, ésta será procesada y enviada al usuario.
 
-## Arquitectura
+## Definición de la Arquitectura
 
-En cuanto a la arquitectura, este proyecto hará uso de la arquitectura basada en microservicios. El motivo es básicamente porque podremos tener desplegados diferentes servicios de forma independiente pero trabajando de manera conjunta y haciendo uso de APIs como se indicó en el apartado anterior. Algunos de estos microservicios podrían ser el servicio de logs, el servicio de configuración remota, otro servicio para obtener los datos del artista, otro para obtener la letra de la canción, otro servicio con el frontend y otro con la base de datos, por ejemplo.
+### Definición de las herramientas
+
+### Definición de las historias de usuario
+
+
+
+
+
 

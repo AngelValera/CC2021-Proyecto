@@ -40,7 +40,8 @@ La definición completa de las herramientas escogidas para este proyecto se encu
 
 ## Definición de las historias de usuario
 
-
+* [[HU] Consultar información de un grupo o artista](https://github.com/AngelValera/LyricsHunter/issues/12)
+* [[HU] Consultar la letra de una canción](https://github.com/AngelValera/LyricsHunter/issues/13)
 
 
 

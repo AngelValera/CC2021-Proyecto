@@ -9,7 +9,7 @@ En primer lugar, se va a realizar una breve descripción de los repositorios que
 Para el desarrollo de este proyecto a lo largo del curso de la asignatura de Cloud Computing I, será necesario utilizar tres repositorios, los cuales quedan descritos y enlazados a continuación:
 
 * [Repositorio fork de la asignatura](https://github.com/AngelValera/CC-20-21) : En este repositorio se irán subiendo los objetivos semanales además de realizar las entregas pertinentes. 
-* [Repositorio del proyecto](hhttps://github.com/AngelValera/LyricsHunter) : En este repositorio se irá desarrollando el proyecto completo que será necesario para superar la asignatura.
+* [Repositorio del proyecto](https://github.com/AngelValera/LyricsHunter) : En este repositorio se irá desarrollando el proyecto completo que será necesario para superar la asignatura.
 * [Repositorio de ejercicios de autoevaluación](https://github.com/AngelValera/CC2021-Ejercicios) : En este repositorio se irán realizando los ejercicios de autoevaluación de cada uno de los temas de la asignatura.
 
 ### Creación del par de claves y subida de la clave pública a GitHub

@@ -1,6 +1,6 @@
 ## Definición de las historias de usuario
 
-En este documento se recogen las historias de usuario que se han definido inicialmente para la realización de este proyecto, así como las principales tareas previas que se deberán realizar para que se den por satisfechas.
+En este documento se recogen las historias de usuario que se han definido inicialmente para la realización de este proyecto, así como las principales tareas previas que se deberán realizar para que se cumplan estas historias de usuario.
 
 El esquema que se sigue es el siguiente:
 * (Milestone)
@@ -28,3 +28,6 @@ El esquema que se sigue es el siguiente:
   * [[HU7] Recibir la información del artista al menos en dos idiomas](https://github.com/AngelValera/LyricsHunter/issues/29)
   * [[HU8] Consultar los artistas mejor valorados](https://github.com/AngelValera/LyricsHunter/issues/30)
   * [[HU9] Consultar las canciones mejor valoradas](https://github.com/AngelValera/LyricsHunter/issues/31)
+
+
+Esta se trata de una definición inicial y está sujeta a futuras modificaciones.

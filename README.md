@@ -34,9 +34,11 @@ La arquitectura se puede ver en el siguiente esquema:
 La comunicación como se puede ver en el esquema anterior se realizará mediante diversas API REST. El principal motivo de usar una API REST se fundamenta en que se encuentra entre una de las tecnologías más utilizadas para la gestión de peticiones a un servidor cuando se diseña un servicio web y su sencillez de uso.
 
 
-### Definición de las herramientas
+## Definición de las herramientas
 
-### Definición de las historias de usuario
+La definición completa de las herramientas escogidas para este proyecto se encuentra en este [documento](Doc/Herramientas.md).
+
+## Definición de las historias de usuario
 
 
 

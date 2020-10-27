@@ -10,6 +10,7 @@ En este repositorio se va a desarrollar un proyecto para la asignatura de Cloud 
 * [Descripción del problema a resolver.](Doc/Descripcion_Problema.md) 
 * [Herramientas seleccionadas](Doc/Herramientas.md)
 * [Historias de usuario](Doc/HistoriasUsuario.md)
+* [Planificación del proyecto](Doc/Planificacion.md)
 
 
 ## Definición de la Arquitectura
@@ -42,10 +43,10 @@ La definición completa de las herramientas escogidas para este proyecto se encu
 
 ## Definición de las historias de usuario
 
-La definición completa de cada una de las historias de usuario se encuentran en el siguiente documento [Historias de usuario](Doc/HistoriasUsuario.md).
+La definición completa de cada una de las historias de usuario se encuentran en este [documento](Doc/HistoriasUsuario.md).
 
 ## Planificación del proyecto
-
+La planificación completa de este proyecto se puede encontrar en este [documento](Doc/Planificacion.md).
 
 ## Clases creadas
 

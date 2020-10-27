@@ -50,10 +50,10 @@ La planificación completa de este proyecto se puede encontrar en este [document
 
 ## Clases creadas
 
-Para este proyecto se han definido inicialmente dos clases.
+Para este proyecto se han definido inicialmente dos clases. 
 
-1. La clase Artista, la cual se encuentra en el fichero [Artista.js]().
-2. La clase Canción, la cual se encuentra en el fichero [Cancion.js]().
+1. La clase Artista, la cual se encuentra en el fichero [Artista.js](src/Artista.js).
+2. La clase Canción, la cual se encuentra en el fichero [Cancion.js](src/Cancion.js).
 
 Cada una de estas clases, será el núcleo de cada uno de sus respectivos microservicios.
 

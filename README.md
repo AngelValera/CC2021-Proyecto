@@ -29,7 +29,7 @@ Otro motivo por el que he decidido escoger este tipo de arquitectura, es porque 
 
 La arquitectura se puede ver en el siguiente esquema:
 
-![Arquitectura](Doc/Img/Img_Arquitectura/arquitectura.png)
+![Arquitectura](Doc/Img/Img_Arquitectura/arquitectura.png "Arquitectura")
 
 La comunicación como se puede ver en el esquema anterior se realizará mediante diversas API REST. El principal motivo de usar una API REST se fundamenta en que se encuentra entre una de las tecnologías más utilizadas para la gestión de peticiones a un servidor cuando se diseña un servicio web y su sencillez de uso.
 

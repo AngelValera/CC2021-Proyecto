@@ -57,4 +57,3 @@ Para este proyecto se han definido inicialmente dos clases.
 
 Cada una de estas clases, será el núcleo de cada uno de sus respectivos microservicios.
 
-

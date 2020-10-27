@@ -1,0 +1,20 @@
+{
+  "name": "LyricsHunter",
+  "version": "0.1.1",
+  "description": "Sistema de búsqueda de información de grupos de música y letras de canciones",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AngelValera/LyricsHunter.git"
+  },
+  "keywords": [],
+  "author": "Ángel Valera Motos",
+  "license": "GNU General Public License v3.0",
+  "bugs": {
+    "url": "https://github.com/AngelValera/LyricsHunter/issues"
+  },
+  "homepage": "https://github.com/AngelValera/LyricsHunter#readme"
+}

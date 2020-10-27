@@ -8,6 +8,8 @@ En este repositorio se va a desarrollar un proyecto para la asignatura de Cloud 
 
 * [Configuración inicial del repositorio.](Doc/Configuracion_Inicial.md)
 * [Descripción del problema a resolver.](Doc/Descripcion_Problema.md) 
+* [Herramientas seleccionadas](Doc/Herramientas.md)
+* [Historias de usuario](Doc/HistoriasUsuario.md)
 
 
 ## Definición de la Arquitectura
@@ -40,9 +42,12 @@ La definición completa de las herramientas escogidas para este proyecto se encu
 
 ## Definición de las historias de usuario
 
-* [[HU] Consultar información de un grupo o artista](https://github.com/AngelValera/LyricsHunter/issues/12)
-* [[HU] Consultar la letra de una canción](https://github.com/AngelValera/LyricsHunter/issues/13)
+La definición completa de cada una de las historias de usuario se encuentran en el siguiente documento [Historias de usuario](Doc/HistoriasUsuario.md).
 
+## Planificación del proyecto
+
+
+## Clases creadas
 
 
 

@@ -19,7 +19,7 @@ En este repositorio está desarrollando un proyecto para la asignatura de Cloud 
 
 ## Definición de la Arquitectura
 
-La definición de la arquitectura del proyecto se encuentra en el siguiente [documento](Doc/Planificacion.md).
+La definición de la arquitectura del proyecto se encuentra en el siguiente [documento](Doc/Arquitectura.md).
 
 
 ## Definición de las herramientas

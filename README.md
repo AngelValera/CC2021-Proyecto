@@ -12,7 +12,7 @@ En este repositorio está desarrollando un proyecto para la asignatura de Cloud 
 
 * [Configuración inicial del repositorio.](Doc/Configuracion_Inicial.md)
 * [Descripción del problema a resolver.](Doc/Descripcion_Problema.md) 
-* **[Definición de la Arquitectura.](Doc/Arquitectura)**
+* **[Definición de la Arquitectura.](Doc/Arquitectura.md)**
 * **[Herramientas seleccionadas.](Doc/Herramientas.md)**
 * **[Historias de usuario.](Doc/HistoriasUsuario.md)**
 * **[Planificación del proyecto.](Doc/Planificacion.md)**

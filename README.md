@@ -11,10 +11,10 @@ En este repositorio está desarrollando un proyecto para la asignatura de Cloud 
 
 * [Configuración inicial del repositorio.](Doc/Configuracion_Inicial.md)
 * [Descripción del problema a resolver.](Doc/Descripcion_Problema.md) 
-* **[Definición de la Arquitectura.](Doc/Arquitectura.md)**
-* **[Herramientas seleccionadas.](Doc/Herramientas.md)**
-* **[Historias de usuario.](Doc/HistoriasUsuario.md)**
-* **[Planificación del proyecto.](Doc/Planificacion.md)**
+* :point_right: **[Definición de la Arquitectura.](Doc/Arquitectura.md)**
+* :point_right: **[Herramientas seleccionadas.](Doc/Herramientas.md)**
+* :point_right: **[Historias de usuario.](Doc/HistoriasUsuario.md)**
+* :point_right: **[Planificación del proyecto.](Doc/Planificacion.md)**
 
 --- 
 ## Definición de la Arquitectura

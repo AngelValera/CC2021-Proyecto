@@ -7,7 +7,7 @@ En cuanto a la planificación del proyecto, lo que se ha hecho a sido definir un
 
 ![RoadMap](Img/Img_Planificacion/RoadMap.PNG "RadMap")
 
-<font size="1"> [PowerPoint Presentation Template by HiSlide.io](https://www.hislide.io)</font> 
+[PowerPoint Presentation Template by HiSlide.io](https://www.hislide.io)
 
 #### Primera versión
 

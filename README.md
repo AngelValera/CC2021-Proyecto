@@ -42,3 +42,6 @@ Para este proyecto se han definido inicialmente dos clases.
 
 Cada una de estas clases, será el núcleo de cada uno de sus respectivos microservicios.
 
+Como prueba de que ambas clases son sintácticamente correctas, se adjunta la siguiente imagen:
+
+![Sintaxis Correcta](Doc/Img/Img_Clases/sintaxisCorrecta.png)

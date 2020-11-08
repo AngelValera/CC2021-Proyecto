@@ -29,3 +29,7 @@ yarn-error.log*
 
 # Editor directories and files
 .vscode
+
+# Evito subir esquema de arquitectura
+arquitectura.drawio
+arquitectura.png

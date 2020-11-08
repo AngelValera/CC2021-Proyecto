@@ -6,7 +6,7 @@ Este tipo de arquitectura nos permite la posibilidad de desarrollar los diversos
 
 Otro motivo por el que he decidido escoger este tipo de arquitectura, es porque si de entre todos los microservicios hubiese en alguno de ellos algún tipo de fallo que nos impidiese ejecutarlo, esto no afectaría al resto de microservicios. Del mismo modo, esto nos permitiría también añadir en un futuro más microservicios pudiendo integrarlos de manera independiente y aumentar así las funcionalidades del sistema.
 
-#### Microservicios
+<!--#### Microservicios
 
 1. El primer microservicio estará destinado a tratar con la información referente a un grupo de música o artista. Este microservicios se encargará de buscar esta información en una base de datos. Si esta información no se encontrase en dicha base de datos, el microservicio realizaría la misma petición a una [API externa](https://www.theaudiodb.com/api_guide.php) y si esta API si tuviese dicha información posteriormente se insertaría en la base de datos de manera que la próxima consulta ya no tendría que hacerla a la API y el micrservicio fuese "aprendiendo" con las consultas de los clientes.
 2. El segundo microservicio se encargará de buscar información de una canción y principalmente de su letra. El proceso será similar al del microservicio anterior, la consulta se realizará a una base de datos y si esta no tuviese dicha información, realizaría la consulta a otra [API externa](https://lyricsovh.docs.apiary.io/#reference) y el resultado lo insertaría en la BBDD de manera que si se volviese a solicitar dicha información ya estaría registrada, de esta manera el microservicio irá "aprendiendo" de manera independiente.
@@ -19,4 +19,4 @@ La arquitectura se puede ver en el siguiente esquema:
 
 ![Arquitectura](Img/Img_Arquitectura/arquitectura.png "Arquitectura")
 
-La comunicación como se puede ver en el esquema anterior se realizará mediante diversas API REST. El principal motivo de usar una API REST se fundamenta en que se encuentra entre una de las tecnologías más utilizadas para la gestión de peticiones a un servidor cuando se diseña un servicio web y su sencillez de uso.
+La comunicación como se puede ver en el esquema anterior se realizará mediante diversas API REST. El principal motivo de usar una API REST se fundamenta en que se encuentra entre una de las tecnologías más utilizadas para la gestión de peticiones a un servidor cuando se diseña un servicio web y su sencillez de uso. -->

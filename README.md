@@ -18,8 +18,20 @@ En este repositorio está desarrollando un proyecto para la asignatura de Cloud 
 * [Planificación del proyecto.](Doc/Planificacion.md)
 * [Primeras clases creadas.](Doc/Clases.md)
 * :point_right: **[Elección del gestor de tareas.](Doc/Eleccion_GestorTareas.md)**
-* :point_right: **[Elección de la biblioteca de asserciones.](Doc/Eleccion_Bib_Aserciones.md)**
+* :point_right: **[Elección de la biblioteca de aserciones.](Doc/Eleccion_Bib_Aserciones.md)**
 * :point_right: **[Elección del marco de pruebas.](Doc/Eleccion_MarcoPruebas.md)**
 
 --- 
+### Elección del gestor de tareas
 
+El gestor de tareas que se ha decidido usar durante el desarrollo de este proyecto es **Grunt**. La justificación se puede ver en este [documento](Doc/Eleccion_GestorTareas.md).
+
+---
+### Elección de la biblioteca de aserciones
+
+La biblioteca de aserciones que se ha decidido usar durante el desarrollo de este proyecto es **Chai**. La justificación se puede ver en este [documento](Doc/Eleccion_Bib_Aserciones.md).
+
+---
+### Elección del marco de pruebas
+
+El marco de pruebas que se ha decidido usar durante el desarrollo de este proyecto es **Mocha**. La justificación se puede ver en este [documento](Doc/Eleccion_MarcoPruebas.md).

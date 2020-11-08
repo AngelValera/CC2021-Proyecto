@@ -47,8 +47,7 @@ class Grupo {
       this.anioFormacion+", "+
       this.anioSeparacion+", "+
       this.estilo+", "+
-      this.genero+", "+
-      this.paginas+", "+
+      this.genero+", "+      
       this.web+", "+
       this.redesSociales+", "+
       this.biografia+", "+

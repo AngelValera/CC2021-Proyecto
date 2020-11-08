@@ -17,9 +17,9 @@ En este repositorio está desarrollando un proyecto para la asignatura de Cloud 
 * [Herramientas seleccionadas.](Doc/Herramientas.md)
 * [Planificación del proyecto.](Doc/Planificacion.md)
 * [Primeras clases creadas.](Doc/Clases.md)
-* :point_right: **[Elección del gestor de tareas.]()**
-* :point_right: **[Elección de la biblioteca de asserciones.]()**
-* :point_right: **[Elección del marco de pruebas.]()**
+* :point_right: **[Elección del gestor de tareas.](Doc/Eleccion_GestorTareas.md)**
+* :point_right: **[Elección de la biblioteca de asserciones.](Doc/Eleccion_Bib_Aserciones.md)**
+* :point_right: **[Elección del marco de pruebas.](Doc/Eleccion_MarcoPruebas.md)**
 
 --- 
 

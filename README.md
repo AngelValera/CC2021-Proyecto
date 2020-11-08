@@ -9,39 +9,17 @@ En este repositorio está desarrollando un proyecto para la asignatura de Cloud 
 --- 
 ## Tabla de contenidos
 
+<!-- * :point_right: **[](Doc/)** -->
+
 * [Configuración inicial del repositorio.](Doc/Configuracion_Inicial.md)
 * [Descripción del problema a resolver.](Doc/Descripcion_Problema.md) 
-* :point_right: **[Definición de la Arquitectura.](Doc/Arquitectura.md)**
-* :point_right: **[Herramientas seleccionadas.](Doc/Herramientas.md)**
-* :point_right: **[Historias de usuario.](Doc/HistoriasUsuario.md)**
-* :point_right: **[Planificación del proyecto.](Doc/Planificacion.md)**
+* [Definición de la Arquitectura.](Doc/Arquitectura.md)
+* [Herramientas seleccionadas.](Doc/Herramientas.md)
+* [Planificación del proyecto.](Doc/Planificacion.md)
+* [Primeras clases creadas.](Doc/Clases.md)
+* :point_right: **[Elección del gestor de tareas.]()**
+* :point_right: **[Elección de la biblioteca de asserciones.]()**
+* :point_right: **[Elección del marco de pruebas.]()**
 
 --- 
-## Definición de la Arquitectura
 
-La definición de la arquitectura del proyecto se encuentra en el siguiente [documento](Doc/Arquitectura.md).
-
-
-## Definición de las herramientas
-
-La definición completa de las herramientas escogidas para este proyecto se encuentra en este [documento](Doc/Herramientas.md).
-
-## Definición de las historias de usuario
-
-La definición completa de cada una de las historias de usuario se encuentran en este [documento](Doc/HistoriasUsuario.md).
-
-## Planificación del proyecto
-La planificación completa de este proyecto se puede encontrar en este [documento](Doc/Planificacion.md).
-
-## Clases creadas
-
-Para este proyecto se han definido inicialmente dos clases. 
-
-1. La clase Artista, la cual se encuentra en el fichero [Artista.js](src/Artista.js).
-2. La clase Canción, la cual se encuentra en el fichero [Cancion.js](src/Cancion.js).
-
-Cada una de estas clases, será el núcleo de cada uno de sus respectivos microservicios.
-
-Como prueba de que ambas clases son sintácticamente correctas, se adjunta la siguiente imagen:
-
-![Sintaxis Correcta](Doc/Img/Img_Clases/sintaxisCorrecta.png)

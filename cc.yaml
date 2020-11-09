@@ -4,7 +4,7 @@ entidad:
   - src/Grupos/Imagen.js
   - src/Grupos/RedSocial.js
   - src/Canciones/Cancion.js
-  - src/Canciones/CancionController.js.js
+  - src/Canciones/CancionController.js
   
 test:
   - src/Grupos/grupos.test.js 

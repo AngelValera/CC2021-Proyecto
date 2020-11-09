@@ -45,5 +45,3 @@ Por el momento solo se ha automatizado la tarea de ejecutar test, para lo que ha
 
 - `npm install`
 - `grunt test`
-
-

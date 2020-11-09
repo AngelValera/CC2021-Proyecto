@@ -1,3 +1,17 @@
 entidad: 
-  - src/Artista.js
-  - src/Cancion.js
+  - src/Grupos/Grupo.js
+  - src/Grupos/GrupoController.js
+  - src/Grupos/Imagen.js
+  - src/Grupos/RedSocial.js
+  - src/Canciones/Cancion.js
+  - src/Canciones/CancionController.js.js
+  
+test:
+  - src/Grupos/grupos.test.js 
+  - src/Canciones/canciones.test.js
+
+lenguaje:
+  - Node.js
+
+fichero_tareas:
+  - gruntfile.js

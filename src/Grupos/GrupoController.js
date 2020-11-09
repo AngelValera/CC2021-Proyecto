@@ -1,13 +1,13 @@
 const Grupo = require("./Grupo.js");
 const Imagen = require("./Imagen.js");
-const redSocial = require("./redSocial.js");
+const redSocial = require("./RedSocial.js");
 
 class GrupoController {
   constructor() {
     this.grupos = {}; // creamos un diccionario vacío
   }
 
-  rellenarGrupos(
+  setGrupo(
     id,
     nombre,
     anioFormacion,
@@ -35,17 +35,14 @@ class GrupoController {
       pais,
       imagenes
     );  
-    this.grupos.push({
-      key: nuevoGrupo.getNombre(),
-      value: nuevoGrupo.to_string(),
-    });
+    this.grupos[nuevoGrupo.getNombre()] = nuevoGrupo.to_string();      
   }
 
   // buscamos el grupo por su nombre
   getGrupo(nombre) {
-    if (this.grupos.has(nombre)) {
+    if (this.grupos.hasOwnProperty(nombre)) {
       let grupoBuscado = this.grupos[nombre];
-      return grupoBuscado.to_string;
+      return grupoBuscado;
     } else {
       throw "El grupo solicitado no existe";
     }

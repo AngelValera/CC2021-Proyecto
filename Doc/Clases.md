@@ -1,11 +1,17 @@
 ## Clases creadas
 
-Para este proyecto se han definido inicialmente dos clases. 
+Para este proyecto se han definido de esta manera:
 
-1. La clase Artista, la cual se encuentra en el fichero [Artista.js](../src/Artista.js).
-2. La clase Canción, la cual se encuentra en el fichero [Cancion.js](../src/Cancion.js).
+* src
+  * Canciones
+    * [Cancion.js](../src/Canciones/Cancion.js)
+    * [CancionController.js](../src/Canciones/CancionController.js)
+  * Grupos
+    * [Grupo.js](../src/Grupos/Grupo.js)
+    * [GrupoController.js](../src/Grupos/GrupoController.js)
+    * [Imagen.js](../src/Grupos/Imagen.js)
+    * [RedSocial.js](../src/Grupos/RedSocial.js)
 
-Cada una de estas clases, será el núcleo de cada uno de sus respectivos microservicios.
 
 Como prueba de que ambas clases son sintácticamente correctas, se adjunta la siguiente imagen:
 

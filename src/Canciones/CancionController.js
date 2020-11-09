@@ -6,19 +6,16 @@ class CancionController {
     this.canciones = {}; // creamos un diccionario vacío
   }
 
-  rellenarCanciones(id, nombre, grupo, letra) {
-    let nuevaCancion = new Grupo(id, nombre, grupo, letra);
-    this.canciones.push({
-      key: nuevaCancion.getNombre(),
-      value: nuevaCancion.to_string(),
-    });
+  setCancion(id, nombre, grupo, letra) {
+    let nuevaCancion = new Cancion(id, nombre, grupo, letra);
+    this.canciones[nuevaCancion.getNombre()] = nuevaCancion.to_string();
   }
 
   // buscamos la cancion por su nombre
   getCancion(nombre) {
-    if (this.canciones.has(nombre)) {
-      let cancionBuscada = this.grupos[nombre];
-      return cancionBuscada.to_string;
+    if (this.canciones.hasOwnProperty(nombre)) {
+      let cancionBuscada = this.canciones[nombre];
+      return cancionBuscada;
     } else {
       throw "La cancion solicitada no existe";
     }

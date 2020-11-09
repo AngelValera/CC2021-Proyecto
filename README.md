@@ -41,7 +41,7 @@ El marco de pruebas que se ha decidido usar durante el desarrollo de este proyec
 
 Para poder ejecutar este proyecto, se ha descrito un fichero [Gruntfile.js](Gruntfile.js).
 
-Por el momento solo se ha automatizado la tarea de ejecutar test, para lo que habría que hacer:
+Por el momento solo se ha automatizado la tarea de ejecutar test, para lo que habría que ejecutar:
 
 - `npm install`
 - `grunt test`

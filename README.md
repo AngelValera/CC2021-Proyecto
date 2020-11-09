@@ -35,3 +35,15 @@ La biblioteca de aserciones que se ha decidido usar durante el desarrollo de est
 ### Elección del marco de pruebas
 
 El marco de pruebas que se ha decidido usar durante el desarrollo de este proyecto es **Mocha**. La justificación se puede ver en este [documento](Doc/Eleccion_MarcoPruebas.md).
+
+---
+### Instrucciones de Uso
+
+Para poder ejecutar este proyecto, se ha descrito un fichero [Gruntfile.js](Gruntfile.js).
+
+Por el momento solo se ha automatizado la tarea de ejecutar test, para lo que habría que hacer:
+
+- `npm install`
+- `grunt test`
+
+

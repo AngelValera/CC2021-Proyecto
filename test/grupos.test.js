@@ -32,7 +32,7 @@ describe("Crear un Grupo", function () {
 describe("Consultar un grupo", function () {
   it("Los grupos deben consultarse correctamente", function () {
     var controlador = new GrupoController();
-    controlador.setGrupo(
+    controlador.addGrupo(
       "1",
       "nombre",
       "anioFormacion",
@@ -46,7 +46,7 @@ describe("Consultar un grupo", function () {
       "pais",
       "imagenes"
     );
-    controlador.setGrupo(
+    controlador.addGrupo(
       "2",
       "nombre2",
       "anioFormacion2",

@@ -7,8 +7,8 @@ entidad:
   - src/Canciones/CancionController.js
   
 test:
-  - src/Grupos/grupos.test.js 
-  - src/Canciones/canciones.test.js
+  - test/grupos.test.js 
+  - test/canciones.test.js
 
 lenguaje:
   - Node.js

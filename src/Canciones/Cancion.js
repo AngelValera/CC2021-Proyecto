@@ -7,12 +7,12 @@ class Cancion {
   constructor(id, nombre, grupo, letra) {
     this.id = id;
     this.nombre = nombre;
-    this.Grupo = grupo;
+    this.grupo = grupo;
     this.letra = letra;
   }
 
   to_string() {
-    return this.id + ", " + this.nombre + ", " + this.Grupo + ", " + this.letra;
+    return this.id + ", " + this.nombre + ", " + this.grupo + ", " + this.letra;
   } 
 
   getId() {

@@ -7,7 +7,7 @@ class GrupoController {
     this.grupos = {}; // creamos un diccionario vacío
   }
 
-  setGrupo(
+  addGrupo(
     id,
     nombre,
     anioFormacion,
@@ -44,7 +44,7 @@ class GrupoController {
       let grupoBuscado = this.grupos[nombre];
       return grupoBuscado;
     } else {
-      throw "El grupo solicitado no existe";
+      throw "El grupo no existe";
     }
   }
 }

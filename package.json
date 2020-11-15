@@ -3,7 +3,7 @@
   "version": "0.1.1",
   "description": "Sistema de búsqueda de información de grupos de música y letras de canciones",
   "main": "index.js",
-  "scripts": {    
+  "scripts": {
     "test": "mocha src/Canciones/canciones.test.js src/Grupos/grupos.test.js"
   },
   "repository": {
@@ -18,10 +18,14 @@
   },
   "homepage": "https://github.com/AngelValera/LyricsHunter#readme",
   "devDependencies": {
+    "grunt": "^1.3.0",
+    "grunt-contrib-jshint": "^3.0.0",
+    "grunt-mocha-test": "^0.13.3",
     "grunt-run": "^0.8.1"
   },
   "dependencies": {
     "chai": "^4.2.0",
+    "grunt-cli": "^1.3.2",
     "mocha": "^8.2.1"
   }
 }

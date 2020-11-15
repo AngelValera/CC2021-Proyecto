@@ -19,14 +19,13 @@ module.exports = function (grunt) {
       },
     },
     jshint: {
-      all: [
-        // Todos los archivos que pasaran a través del jsHint
-        "Gruntfile.js", // Pasaremos también el propio  Gruntfile
+      all: [        
+        "Gruntfile.js", 
         "src/**/*.js",
-        "test/**/*.js", // Y los archivos de test.
+        "test/**/*.js", 
       ],
       options: {
-        jshintrc: ".jshintrc", // Indicamos donde se encuentra el archivo de opciones de jsHint.
+        jshintrc: ".jshintrc", 
       },
     },
   });

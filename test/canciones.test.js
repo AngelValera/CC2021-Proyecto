@@ -19,12 +19,12 @@ describe("Crear una cancion", function () {
 describe("Consultar una cancion", function () {
   it("Las canciones deben consultarse correctamente", function () {
     var controlador = new CancionController();
-    controlador.setCancion("1", "nombre", "grupo", "letra");
-    controlador.setCancion("2", "nombre2", "grupo2", "letra2");
+    controlador.addCancion("1", "nombre2", "grupo", "letra");
+    controlador.addCancion("2", "nombre2", "grupo2", "letra2");
 
     assert.equal(
-      controlador.getCancion("nombre2"),
-      "2, nombre2, grupo2, letra2",
+      controlador.getCancion("nombre2","grupo"),
+      "1, nombre2, grupo, letra",
       "Correcto"
     ); 
     

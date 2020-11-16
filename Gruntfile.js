@@ -15,7 +15,7 @@ module.exports = function (grunt) {
     run: {
       install: {
         cmd: "npm",
-        args: ["install"],
+        args: ["ci"],
       },
     },
     jshint: {

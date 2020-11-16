@@ -25,6 +25,8 @@ Cabe destacar que para usar la tarea **mochaTest**, también se incluyen algunas
 
 En cuanto a la tarea **jshint**, siguiendo con lo que se indica en este [ejemplo](https://www.adictosaltrabajo.com/2013/09/26/grunt-taskrunner-javascript/), he usado un fichero adicional llamado [.jshintrc](../.jshintrc) que sirve para indicar las opciones con las que se debe ejecutar. En este fichero debido a que en un principio recibía muchos warnings, decidí indicarle de esta [manera](https://jshint.com/docs/options/#esversion) que estoy usando la sintaxis de ECMAScript 6.
 
+En cuanto a la tarea **install**, ésta, hace uso internamente del comando `npm ci`, el cual es similar a `npm install`, salvo que, como indica en la [documentación oficial](https://docs.npmjs.com/cli/v6/commands/npm-ci), `npm ci` resulta más adecuado para usar en entornos automatizados como son las plataformas de test o la integración contínua y además, resulta mucho más rápido. Otro de los motivos por los que conviene usarlo en lugar de `npm install` es que si encuentra una carpeta llamada `node_modules`, la elimina antes de instalar las dependencias, lo cual resulta muy útil a la hora de localizar errores.
+
 Finalmente, después de indicarle en el Gruntfile los plugins que vamos a utilizar,indicamos también cómo ejecutar las distintas tereas. Para ello, se ha definido una tarea por defecto que se encarga de ejecutar los test y comprobar la sintáxis y otra tarea que se encarga de descargar e instalar las dependencias.
 
 

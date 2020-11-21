@@ -76,3 +76,4 @@ En cuanto a cómo se ha ido avanzando en las HUs, principalmente se ha trabajado
       * Se creó un primer test para comprobar que los objetos se crean correctamente.
       * Se creó un segundo test para comprobar que tras realizar una consulta por nombre se realiza correctamente. Posteriormente ese test fue modificado, ya que resulta más correcto realizar una búsqueda por nombre y grupo.
 
+Provamos de nuevo!!

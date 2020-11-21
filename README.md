@@ -6,6 +6,8 @@ En este repositorio está desarrollando un proyecto para la asignatura de Cloud 
 
 :warning: **Este proyecto se encuentra actualmente en desarrollo**
 
+![Comprueba README](https://github.com/AngelValera/LyricsHunter/workflows/Comprueba%20README/badge.svg)
+
 --- 
 ## Tabla de contenidos
 

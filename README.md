@@ -58,7 +58,7 @@ En cuanto a los milestones, fueron modificados de manera que ahora reflejan unos
 
 En cuanto a la [arquitectura](Doc/Arquitectura.md), se eliminó todo aquello que no fue inicialmente solicitado.
 
-En cuanto a cómo se ha ido avanzando en las HUs, principalmente se ha trabajado tanto en la [HU1](https://github.com/AngelValera/LyricsHunter/issues/12) como en la  [HU2](https://github.com/AngelValera/LyricsHunter/issues/13), concretamente en las tareas que dependen de cada una de ellas, la manera de enlazar el avance con el código ha sido mendiante cada uno de los commits realizados, los cuales se puede observar en cada una de las siguientes HUs y tareas:
+En cuanto a cómo se ha ido avanzando en las HUs, principalmente se ha trabajado tanto en la [HU1](https://github.com/AngelValera/LyricsHunter/issues/12) como en la  [HU2](https://github.com/AngelValera/LyricsHunter/issues/13), concretamente en las tareas que dependen de cada una de ellas, la manera de enlazar el avance con el código ha sido mediante cada uno de los commits realizados, los cuales se puede observar en cada una de las siguientes HUs y tareas:
 
 * [[HU1] Consultar información de un grupo de música](https://github.com/AngelValera/LyricsHunter/issues/12)
   * [Definir las entidades relacionadas con los Grupos](https://github.com/AngelValera/LyricsHunter/issues/16)
@@ -75,5 +75,3 @@ En cuanto a cómo se ha ido avanzando en las HUs, principalmente se ha trabajado
     * Se creó un [fichero](test/canciones.test.js) para testear las funciones referentes a las canciones. 
       * Se creó un primer test para comprobar que los objetos se crean correctamente.
       * Se creó un segundo test para comprobar que tras realizar una consulta por nombre se realiza correctamente. Posteriormente ese test fue modificado, ya que resulta más correcto realizar una búsqueda por nombre y grupo.
-
-Provamos de nuevo!!

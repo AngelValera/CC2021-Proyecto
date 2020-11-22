@@ -1,0 +1,5 @@
+#.dockerignore especifica qué archivos y directorios del directorio de su proyecto no deben copiarse a su contenedor.
+node_modules
+npm-debug.log
+Dockerfile
+.dockerignore

@@ -3,7 +3,7 @@ Lo primero que debemos hacer es crear una cuenta en Docker hub y conectarla con 
 
 ![Primer paso para conectar Github con Docker hub](Img/Img_DockerHub/Autorizacion.png "Primer paso para conectar Github con Docker hub")
 
-Nos aparerecerá una imagen como la siguiente, y donde tendremos que hacer click en `Authorize docker`:
+Nos aparerecerá una imagen como la siguiente, donde deberemos de hacer click en `Authorize docker`:
 
 ![Segundo paso para conectar Github con Docker hub](Img/Img_DockerHub/Autorizacion2.png "Primer paso para conectar Github con Docker hub")
 
@@ -17,7 +17,7 @@ Hecho esto, no aparecerá una ventana como la de la imagen siguiente. En esta ve
 
 ![Creacion del repositorio en Docker Hub](Img/Img_DockerHub/CreacionRepositorio.png "Creacion del repositorio en Docker Hub")
 
-Como se puede ver, este repositorio ya está conectado con Github, pero debemos indicarle el repositorio de Github desde el que contruir el contenedor, para ello hacemos click en `Connected`:
+Como se puede ver, este repositorio ya está conectado con Github, pero debemos indicarle el repositorio de Github desde el que construir el contenedor, para ello hacemos click en `Connected`:
 
 ![Configuracion del repositorio en Docker Hub](Img/Img_DockerHub/Configuracion.png "Creacion del repositorio en Docker Hub")
 

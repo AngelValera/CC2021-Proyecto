@@ -4,6 +4,7 @@ FROM node:15.2.1-alpine3.10
 LABEL maintainer = "Ángel Valera Motos" 
 LABEL com.lyricshunter.version="0.0.1" 
 LABEL com.lyricshunter.release-date="2020-11-22" 
+LABEL org.opencontainers.image.source https://github.com/angelvalera/lyricshunter
 
 # Definimos una carpeta para los modules de node
 # Definimos otra carpeta para los test 

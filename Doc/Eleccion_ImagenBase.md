@@ -21,8 +21,8 @@ Otro aspecto a tener en cuenta a la hora de elegir una imagen base, sobre todo s
 - **Buster**: Las imágenes con esta etiqueta se basan en la versión 9 de Debian.
 - **Jessie**: Las imágenes con esta etiqueta se basan en la versión 8 de Debian.
 - **Bullseye**: Las imágenes con esta etiqueta utilizan una versión posterior a Buster, aunque hoy día se encuentra en pruebas.
-- **Slim**: Las imágenes con esta etiqueta utilizan una versión minimizada de Debian, esto es, utilizan solamente los paquetes necesarios para una herramienta en particular. esto hace que la imagen generada tenga un menor tamaño.
-- **Alpine**: Las imágenes de Alpine se basan en Alpine Linux Project, que es un sistema operativo que se creó específicamente para su uso dentro de contenedores. La principal ventaja de alpine es que permite crear imágenes con un tamaño muy pequeño, sin embargo, hay que ser consciente que al usarla pueden aparecer ciertos problemas ya que no contiene algunos paquetes que se podrían necesitar y además, utiliza musl libc, en lugar de glibc que es más pesado. Esto puede hacer que haya problemas si su aplicación tiene requisitos específicos de libc. otra diferencia respecto a las imágenes anteriores es que utiliza apk en lugar de apt para instalar paquetes.
+- **Slim**: Las imágenes con esta etiqueta utilizan una versión minimizada de Debian, esto es, utilizan solamente los paquetes necesarios para una herramienta en particular. Esto hace que la imagen generada tenga un menor tamaño.
+- **Alpine**: Las imágenes de Alpine se basan en Alpine Linux Project, que es un sistema operativo que se creó específicamente para su uso dentro de contenedores. La principal ventaja de alpine es que permite crear imágenes con un tamaño muy pequeño, sin embargo, hay que ser consciente que al usarla pueden aparecer ciertos problemas ya que no contiene algunos paquetes que se podrían necesitar y por otro lado, utiliza musl libc, en lugar de glibc que es más pesado. Esto puede hacer que haya problemas si su aplicación tiene requisitos específicos de libc. Otra diferencia respecto a las imágenes anteriores es que utiliza apk en lugar de apt para instalar paquetes.
 
 ### Elección
 
@@ -48,7 +48,7 @@ Estas imágenes se han elegido con una versión de Node específica, ya que en l
 
 Las versiones de node que se han elegido han sido la 15, porque en la página de [Node.js](https://nodejs.org/es/) se indica que es la versión actual. La 14 porque es la versión LTS a día de hoy y se recomienda para la mayoría y finalmente las versiones alpine de Node 10 y Node 12 para comprobar otras versiones un poco más antiguas.
 
-Una vez elegidas las imágenes candidatas, se desarrolló el fichero [Dockerfile](../Dockerfile), cuya construcción se datalla en este [fichero](Creacion_Dockerfile.md).
+Una vez elegidas las imágenes candidatas, se desarrolló el fichero [Dockerfile](../Dockerfile), cuya construcción se datalla en el siguiente [fichero](Creacion_Dockerfile.md).
 
 Este dockerfile se ha ejecutado con cada una de las imágenes base anteriores, para comprobar el tamaño de las nuevas imágenes, podemos usar `docker images` o la herramienta `Container-diff`:
 
@@ -60,11 +60,11 @@ Usando docker images:
 
 ![Tamaños generados](Img/Img_EleccionSistemaBase/tamImages.png "Tamaño de las  imágenes")
 
-Como se puede ver, la versión que más tamaño ha tenido ha sido la versión base de `node:15`, con 1.04 GB, lo que resulta excesivo y por tanto se ha descartado.
+Como se puede ver, la versión que más tamaño ha tenido ha sido la versión base de `node:15`, con 1.04 GB, lo que resulta excesivo y por tanto, se ha descartado.
 
 La que menor tamaño ha generado ha sido la versión de `node:10-alpine3.10`, seguida por la versión `node:12-alpine3.10`, sin embargo al ser versiones un poco antiguas serán descartadas.
 
-en cuanto a las versiones `node:15.2.1-alpine3.10` y la `node:15-alpine`, no hay mucha diferencia, por lo que nos quedaremos con la versión más actual. 
+En cuanto a las versiones `node:15.2.1-alpine3.10` y la `node:15-alpine`, no hay mucha diferencia, por lo que nos quedaremos con la versión más actual. 
 
 Llegados hasta aquí, tendíamos que elegir entre las siguientes versiones:
 
@@ -72,7 +72,7 @@ Llegados hasta aquí, tendíamos que elegir entre las siguientes versiones:
 - **node:15-slim**:
 - **node:15.2.1-alpine3.10**:
 
-En cuanto a los tamaños, la más pequeña es la versión alpine, por lo que posicionaría como mi primera elección, pero antes usaremos la herramienta Skopeo junto a JQ, para ver qué contiene esta imagen que nos pueda interesar.
+En cuanto a los tamaños, la más pequeña es la versión alpine, por lo que se posicionaría como mi primera elección, pero antes usaremos la herramienta Skopeo junto a JQ, para ver qué contiene esta imagen que nos pueda interesar.
 
 * `skopeo inspect --config docker://node:15.2.1-alpine3.10  | jq`
 
@@ -80,11 +80,11 @@ En cuanto a los tamaños, la más pequeña es la versión alpine, por lo que pos
 
 Como se puede ver en la anterior captura, usando como imagen `node:15.2.1-alpine3.10` dispondremos de 3 variables de entorno y un usuario llamado `node` que no tiene privilegios de administrador, lo cual no resulta muy útil a la hora de crear nuestro contenedor.
 
-Por último podemo ver que consta de solamente 4 capas, aunque éstas pasan a ser 9 cuando generamos nuestro contenedor.
+Por último, podemos ver que consta de solamente 4 capas, aunque éstas pasan a ser 9 cuando generamos nuestro contenedor.
 
 Después de comprobar el contenido de `node:15-slim` y `node:14.15.1-buster-slim` salvo por el número de capas que tienen 5 cada una, cuentan con lo mismo que la imagen `node:15.2.1-alpine3.10`.
 
-Por tanto, después de ver y valorar las distintas opciones he decidido usar como imagen base de mi contenedor **node:15.2.1-alpine3.10** que además de las razones anteriores se suma que es la versión de node que estoy utilizando para desarrollar el proyecto.
+Por tanto, después de ver y valorar las distintas opciones he decidido usar como imagen base de mi contenedor **node:15.2.1-alpine3.10** que además de las razones anteriores, se suma que es la versión de node que estoy utilizando para desarrollar el proyecto.
 
 ---
 #### Referencias:

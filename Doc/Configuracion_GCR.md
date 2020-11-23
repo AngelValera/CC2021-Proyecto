@@ -135,10 +135,10 @@ jobs:
           IMAGE_ID=ghcr.io/angelvalera/lyricshunter
           
           # Strip git ref prefix from version
-          VERSION=$(echo "$" | sed -e 's,.*/\(.*\),\1,')
+          VERSION=$(echo "${{ github.ref }}" | sed -e 's,.*/\(.*\),\1,')
           
           # Strip "v" prefix from tag name
-          [[ "$" == "refs/tags/"* ]] && VERSION=$(echo $VERSION | sed -e 's/^v//')
+          [[ "${{ github.ref }}" == "refs/tags/"* ]] && VERSION=$(echo $VERSION | sed -e 's/^v//')
           
           # Use Docker `latest` tag convention
           [ "$VERSION" == "main" ] && VERSION=latest
@@ -150,9 +150,12 @@ jobs:
           
           # Push the image
           docker push $IMAGE_ID:$VERSION
-
 ```
+Hecho esto cuando hagamos algún push en el repositorio, la action actuará y actualizará la imagen:
 
+![Github Action ](Img/Img_GCR/action.png "Nuevo Secret")
+
+![Git hub Action 2](Img/Img_GCR/action2.png "Nuevo Secret")
 ---
 #### Referencias:
 
@@ -167,3 +170,4 @@ jobs:
 
 [Docker Support for the New GitHub Container Registry](https://www.docker.com/blog/docker-support-for-the-new-github-container-registry/)
 
+[Learn GitHub Actions](https://docs.github.com/en/free-pro-team@latest/actions/learn-github-actions)

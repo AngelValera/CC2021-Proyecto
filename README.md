@@ -22,16 +22,11 @@ En este repositorio está desarrollando un proyecto para la asignatura de Cloud 
 * :point_right: **[Elección del gestor de tareas.](Doc/Eleccion_GestorTareas.md)**
 * [Elección de la biblioteca de aserciones.](Doc/Eleccion_Bib_Aserciones.md)
 * [Elección del marco de pruebas.](Doc/Eleccion_MarcoPruebas.md)
-* :point_right: **[Avances del proyecto.](#avance-del-proyecto)**
 * :point_right: **[Elección de la imagen base.](Doc/Eleccion_ImagenBase.md)**  
 * :point_right: **[Creación del fichero Dockerfile.](Doc/Creacion_Dockerfile.md)**
 * :point_right: **[Configuración de Docker Hub.](Doc/Configuracion_DockerHub.md)**
 * :point_right: **[Subida del contenedor del Github Container Registry.](Doc/Configuracion_GCR.md)**
-
---- 
-### Elección del gestor de tareas
-
-El gestor de tareas que se ha decidido usar durante el desarrollo de este proyecto es **Grunt**. La justificación se puede ver en este [documento](Doc/Eleccion_GestorTareas.md).
+* :point_right: **[Avances del proyecto.](#avance-del-proyecto)**
 
 ---
 ### Instrucciones de Uso
@@ -72,4 +67,8 @@ En cuanto a cómo se ha ido avanzando en las HUs, principalmente se ha trabajado
     * Se creó un [fichero](test/canciones.test.js) para testear las funciones referentes a las canciones. 
       * Se creó un primer test para comprobar que los objetos se crean correctamente.
       * Se creó un segundo test para comprobar que tras realizar una consulta por nombre se realiza correctamente. Posteriormente ese test fue modificado, ya que resulta más correcto realizar una búsqueda por nombre y grupo.
+
+Además se han agregado una [Action](.github/workflows/check-readme.yml), que se encarga de controlar la ortografía en el fichero Readme. Puede verse en el badge creado para ello o desde la pestaña [Actions](https://github.com/AngelValera/LyricsHunter/actions)
+
+
 ---

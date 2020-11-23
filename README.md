@@ -68,7 +68,7 @@ En cuanto a cómo se ha ido avanzando en las HUs, principalmente se ha trabajado
       * Se creó un primer test para comprobar que los objetos se crean correctamente.
       * Se creó un segundo test para comprobar que tras realizar una consulta por nombre se realiza correctamente. Posteriormente ese test fue modificado, ya que resulta más correcto realizar una búsqueda por nombre y grupo.
 
-Además se han agregado una [Action](.github/workflows/check-readme.yml), que se encarga de controlar la ortografía en el fichero Readme. Puede verse en el badge creado para ello o desde la pestaña [Actions](https://github.com/AngelValera/LyricsHunter/actions)
+Además se han agregado una [Action](.github/workflows/check-readme.yml), que se encarga de controlar la ortografía en el fichero README. Puede verse en el badge creado para ello o desde la pestaña [Actions](https://github.com/AngelValera/LyricsHunter/actions)
 
 
 ---

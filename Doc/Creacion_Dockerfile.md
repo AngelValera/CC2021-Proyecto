@@ -9,6 +9,7 @@ FROM node:15.2.1-alpine3.10
 LABEL maintainer = "Ángel Valera Motos" 
 LABEL com.lyricshunter.version="0.0.1" 
 LABEL com.lyricshunter.release-date="2020-11-22" 
+LABEL org.opencontainers.image.source https://github.com/angelvalera/lyricshunter
 
 # Definimos una carpeta para los modules de node
 # Definimos otra carpeta para los test 
@@ -42,7 +43,7 @@ A continuación, pasaremos a ver en qué parte del Dockerfile específico se han
 # Imagen base del contenedor
 FROM node:15.2.1-alpine3.10
 ```
-En esta instrucción hemos definido la imagen base  de nuestro contenedor. La justificación se puede consultar en este [fichero](./Eleccion_ImagenBase.md). Como se puede ver se ha escogido una imagen base oficial de node, además de ser una imagen con tamaño mínimo al ser Alpine y además se han usado etiquetas más específicas. por tanto cumplimos con las siguientes buenas prácticas:
+En esta instrucción hemos definido la imagen base  de nuestro contenedor. La justificación se puede consultar en este [fichero](./Eleccion_ImagenBase.md). Como se puede ver se ha escogido una imagen base oficial de node, además de ser una imagen con tamaño mínimo al ser Alpine y además se han usado etiquetas más específicas. Por tanto, cumplimos con las siguientes buenas prácticas:
 
 * **Se ha utilizado una imagen base oficial**
 * **Se han utilizado etiquetas más específicas**
@@ -53,6 +54,7 @@ En esta instrucción hemos definido la imagen base  de nuestro contenedor. La ju
 LABEL maintainer = "Ángel Valera Motos" 
 LABEL com.lyricshunter.version="0.0.1" 
 LABEL com.lyricshunter.release-date="2020-11-22" 
+LABEL org.opencontainers.image.source https://github.com/angelvalera/lyricshunter
 ```
 En estas instrucciones estamos definiendo una serie de etiquetas informativas del contenedor, por tanto, estamos cumpliendo con las siguientes buenas prácticas:
 
@@ -79,7 +81,7 @@ En esta instrucción lo que se ha hecho es crear la carpeta node_modules y test 
 # Indicamos el workdir por defecto
 WORKDIR /app/test
 ```
-En esta instrucción definimos el directorio de trabajo por defecto, ya que si no lo indicamos se asigna otro por defecto. Esto lo hacemos mediante una variable de entorno, por tanto cumplimos con esa buena práctica:
+En esta instrucción definimos el directorio de trabajo, ya que si no lo indicamos se asigna otro por defecto. Esto lo hacemos mediante una variable de entorno, por tanto cumplimos con esa buena práctica:
 
 * **Se han utilizado variables de entorno**:
 

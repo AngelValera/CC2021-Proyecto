@@ -70,5 +70,4 @@ En cuanto a cómo se ha ido avanzando en las HUs, principalmente se ha trabajado
 
 Además se han agregado una [Action](.github/workflows/check-readme.yml), que se encarga de controlar la ortografía en el fichero README. Puede verse en el badge creado para ello o desde la pestaña [Actions](https://github.com/AngelValera/LyricsHunter/actions)
 
-
 ---

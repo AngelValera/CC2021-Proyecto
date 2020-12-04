@@ -30,4 +30,4 @@ COPY --chown=node:node .jshintrc ./
 RUN npm ci grunt-cli && grunt install
 # Ejecutamos la tarea por defecto definida en Gruntfile que
 # consiste en ejecutar los test
-CMD [ "grunt" ]
+CMD [ "grunt", "test" ]

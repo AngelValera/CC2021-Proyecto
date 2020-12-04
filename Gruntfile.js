@@ -32,7 +32,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks("grunt-contrib-jshint");
 
   // Tarea para pasar los test
-  grunt.registerTask("default", ["mochaTest", "jshint"]);
+  grunt.registerTask("test", ["mochaTest", "jshint"]);
   // Tarea para instalar las dependencias
   grunt.registerTask("install", ["run:install"]);
 };

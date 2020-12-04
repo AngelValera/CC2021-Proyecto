@@ -37,7 +37,7 @@ Para ejecutar correctamente este proyecto habría que usar los siguiente comando
 
 - `npm install grunt-cli`  Para instalar el gestor Grunt
 - `grunt install` Para instalar las depedencias del proyecto
-- `grunt` Para ejecutar los test y comprobar la sintaxis
+- `grunt test` Para ejecutar los test y comprobar la sintaxis
 
 ---
 ### Avance del proyecto:

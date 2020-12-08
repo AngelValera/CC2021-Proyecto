@@ -6,7 +6,7 @@ En este repositorio está desarrollando un proyecto para la asignatura de Cloud 
 
 :warning: **Este proyecto se encuentra actualmente en desarrollo**
 
-![Comprueba README](https://github.com/AngelValera/LyricsHunter/workflows/Comprueba%20README/badge.svg)
+![Comprueba README](https://github.com/AngelValera/LyricsHunter/workflows/Comprueba%20README/badge.svg) ![Sintaxis YAML](https://github.com/AngelValera/LyricsHunter/workflows/Sintaxis%20YAML/badge.svg) ![Docker](https://github.com/AngelValera/LyricsHunter/workflows/Docker/badge.svg) ![Auto-Publish-GCR](https://github.com/AngelValera/LyricsHunter/workflows/Auto-Publish-GCR/badge.svg)
 
 --- 
 ## Tabla de contenidos
@@ -34,6 +34,11 @@ Para ejecutar correctamente este proyecto habría que usar los siguiente comando
 ---
 ### Avance del proyecto:
 
+- Se ha modificado el [Dockerfile](Dockerfile) creado en entregas anteriores para minimizarlo un poco más. Se puede ver en el siguiente [commit](https://github.com/AngelValera/LyricsHunter/commit/4084fb416e4513cf799b0c5d23df90fe1c9bd0bb).
+
+- Se han agregado varios Github Actions al repositorio. 
+  - Uno para comprobar que el fichero cc.yaml esté correcto. Se puede encontrar [aquí](.github/workflows/check-yaml.yaml).
+  - Otro para publicar la imagen de docker dentro de Github. Se puede encontrar [aquí](.github/workflows/docker-publish.yml). 
 
 ---
 ### Documentación Adicional

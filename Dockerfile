@@ -1,10 +1,10 @@
 # Imagen base del contenedor
 FROM node:15.2.1-alpine3.10
 # Definimos etiquetas informativas al contenedor
-LABEL maintainer = "Ángel Valera Motos" 
-LABEL com.lyricshunter.version="0.0.1" 
-LABEL com.lyricshunter.release-date="2020-11-22" 
-LABEL org.opencontainers.image.source https://github.com/angelvalera/lyricshunter
+LABEL maintainer = "Ángel Valera Motos" \
+    com.lyricshunter.version="0.0.2" \
+    com.lyricshunter.release-date="2020-11-22" \
+    org.opencontainers.image.source https://github.com/angelvalera/lyricshunter
 
 # Definimos una carpeta para los modules de node
 # Definimos otra carpeta para los test 
@@ -21,9 +21,7 @@ WORKDIR /app/test
 USER node 
 # Copiamos los ficheros necesarios para instalar las dependencias
 # Los copiamos y hacemos propiedad del usuario node
-COPY --chown=node:node package*.json ./ 
-COPY --chown=node:node Gruntfile.js ./ 
-COPY --chown=node:node .jshintrc ./
+COPY --chown=node:node ["package*.json", "Gruntfile.js",".jshintrc", "./"]
 # Grunt necesita estar localmente instalado
 # Ejecutamos la tarea de Grunt para instalar el resto de 
 # dependencias

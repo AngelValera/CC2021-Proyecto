@@ -13,25 +13,17 @@ En este repositorio está desarrollando un proyecto para la asignatura de Cloud 
 
 <!-- * :point_right: **[](Doc/)** -->
 
-* [Configuración inicial del repositorio.](Doc/Configuracion_Inicial.md)
-* [Descripción del problema a resolver.](Doc/Descripcion_Problema.md) 
-* [Definición de la Arquitectura.](Doc/Arquitectura.md)
-* [Herramientas seleccionadas.](Doc/Herramientas.md)
-* [Planificación del proyecto.](Doc/Planificacion.md)
-* [Primeras clases creadas.](Doc/Clases.md)
-* :point_right: **[Elección del gestor de tareas.](Doc/Eleccion_GestorTareas.md)**
-* [Elección de la biblioteca de aserciones.](Doc/Eleccion_Bib_Aserciones.md)
-* [Elección del marco de pruebas.](Doc/Eleccion_MarcoPruebas.md)
-* :point_right: **[Elección de la imagen base.](Doc/Eleccion_ImagenBase.md)**  
-* :point_right: **[Creación del fichero Dockerfile.](Doc/Creacion_Dockerfile.md)**
-* :point_right: **[Configuración de Docker Hub.](Doc/Configuracion_DockerHub.md)**
-* :point_right: **[Subida del contenedor del Github Container Registry.](Doc/Configuracion_GCR.md)**
-* :point_right: **[Avances del proyecto.](#avance-del-proyecto)**
+* [Instrucciones de uso](#instrucciones-de-uso)
+* :point_right: **[Configuración y justificación del uso de Travis.ci](Doc/H4/justificacion_Travis.md)**  
+* :point_right: **[Configuración y justificación de un sistema adicional de CI](Doc/H4/CI_Adicional.md)**
+* :point_right: **[Uso correcto del gestor de tareas](Doc/H4/correcto_Uso_GT.md)**
+* :point_right: **[Uso del contenedor de Docker en alguno de los sistemas de CI](Doc/H4/correcto_Uso_Docker.md)**
+* :point_right: **[Avances del proyecto](#avance-del-proyecto)**
 
 ---
-### Instrucciones de Uso
+### Instrucciones de uso:
 
-Para poder ejecutar este proyecto, se ha descrito un fichero [Gruntfile.js](Gruntfile.js).
+Para facilitar la ejecución de este proyecto, se ha creado un fichero [Gruntfile.js](Gruntfile.js).
 
 Para ejecutar correctamente este proyecto habría que usar los siguiente comandos:
 
@@ -42,32 +34,20 @@ Para ejecutar correctamente este proyecto habría que usar los siguiente comando
 ---
 ### Avance del proyecto:
 
-En cuanto al avance del proyecto, lo primero que se hizo fue, modificar tanto la definición de las distintas HUs, como de los milestones definidos inicialmente, así como la [planificación](Doc/Planificacion.md) del proyecto.
-
-En cuanto a las HUs, estas se han descrito más profundamente así como las distintas tareas que fueron descritas para cada una de ellas. Como ejemplo se puede comprobar [HU1](https://github.com/AngelValera/LyricsHunter/issues/12) o [HU2](https://github.com/AngelValera/LyricsHunter/issues/13).
-
-En cuanto a los milestones, fueron modificados de manera que ahora reflejan unos MVPs más realistas que los inicialmente definidos.
-
-En cuanto a la [arquitectura](Doc/Arquitectura.md), se eliminó todo aquello que no fue inicialmente solicitado.
-
-En cuanto a cómo se ha ido avanzando en las HUs, principalmente se ha trabajado tanto en la [HU1](https://github.com/AngelValera/LyricsHunter/issues/12) como en la  [HU2](https://github.com/AngelValera/LyricsHunter/issues/13), concretamente en las tareas que dependen de cada una de ellas, la manera de enlazar el avance con el código ha sido mediante cada uno de los commits realizados, los cuales se puede observar en cada una de las siguientes HUs y tareas:
-
-* [[HU1] Consultar información de un grupo de música](https://github.com/AngelValera/LyricsHunter/issues/12)
-  * [Definir las entidades relacionadas con los Grupos](https://github.com/AngelValera/LyricsHunter/issues/16)
-    * Se cambió la clase Artista por la clase [Grupo](src/Grupos/Grupo.js).
-    * Se agregó una clase controladora para los [Grupos](src/Grupos/GrupoController.js).  
-    * Se agregaron dos nuevas clases auxiliares, denominadas [Imagen](src/Grupos/Imagen.js) y [RedSocial](src/Grupos/RedSocial.js).
-    * Se creó un [fichero](test/grupos.test.js) para testear las funciones referentes a los grupos. 
-      * Se creó un primer test para comprobar que los objetos se crean correctamente.
-      * Se creó un segundo test para comprobar que tras realizar una consulta por nombre ésta se realiza correctamente.
-* [[HU2] Consultar datos de una canción](https://github.com/AngelValera/LyricsHunter/issues/13)
-  * [Definir las entidades relacionadas con las Canciones](https://github.com/AngelValera/LyricsHunter/issues/19)
-    * Se agregaron métodos a la clase [Cancion](src/Canciones/Cancion.js).
-    * Se agregó una clase controladora para las [Canciones](src/Canciones/CancionController.js).      
-    * Se creó un [fichero](test/canciones.test.js) para testear las funciones referentes a las canciones. 
-      * Se creó un primer test para comprobar que los objetos se crean correctamente.
-      * Se creó un segundo test para comprobar que tras realizar una consulta por nombre se realiza correctamente. Posteriormente ese test fue modificado, ya que resulta más correcto realizar una búsqueda por nombre y grupo.
-
-Además se han agregado una [Action](.github/workflows/check-readme.yml), que se encarga de controlar la ortografía en el fichero README. Puede verse en el badge creado para ello o desde la pestaña [Actions](https://github.com/AngelValera/LyricsHunter/actions)
 
 ---
+### Documentación Adicional
+
+* [Configuración inicial del repositorio.](Doc/H0/Configuracion_Inicial.md)
+* [Descripción del problema a resolver.](Doc//H0/Descripcion_Problema.md) 
+* [Definición de la Arquitectura.](Doc/H1/Arquitectura.md)
+* [Herramientas seleccionadas.](Doc/H1/Herramientas.md)
+* [Planificación del proyecto.](Doc/H1/Planificacion.md)
+* [Primeras clases creadas.](Doc/H1/Clases.md)
+* [Elección del gestor de tareas.](Doc/H2/Eleccion_GestorTareas.md)
+* [Elección de la biblioteca de aserciones.](Doc/H2/Eleccion_Bib_Aserciones.md)
+* [Elección del marco de pruebas.](Doc/H2/Eleccion_MarcoPruebas.md)
+* [Elección de la imagen base.](Doc/H3/Eleccion_ImagenBase.md)
+* [Creación del fichero Dockerfile.](Doc/H3/Creacion_Dockerfile.md)
+* [Configuración de Docker Hub.](Doc/H3/Configuracion_DockerHub.md)
+* [Subida del contenedor del Github Container Registry.](Doc/H3/Configuracion_GCR.md)

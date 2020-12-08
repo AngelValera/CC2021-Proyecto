@@ -2,9 +2,9 @@ name: Docker
 
 on:
   push:
-    # Publish `$default-branch` as Docker `latest` image.
+    # Publish `main` as Docker `latest` image.
     branches:
-      - $default-branch
+      - main
 
     # Publish `v1.2.3` tags as releases.
     tags:
@@ -15,7 +15,7 @@ on:
 
 env:
   # TODO: Change variable to your image's name.
-  IMAGE_NAME: image
+  IMAGE_NAME: lyricshunter
 
 jobs:
   # Run tests.
@@ -47,14 +47,14 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Build image
-        run: docker build -t lyricshunter .
+        run: docker build . --file Dockerfile --tag $IMAGE_NAME
 
       - name: Log into registry
-        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login docker.pkg.github.com -u ${{ github.actor }} --password-stdin
+        run: echo "${{ secrets.MY_GITHUB_TOKEN }}" | docker login docker.pkg.github.com -u ${{ github.actor }} --password-stdin
 
       - name: Push image
         run: |
-          IMAGE_ID=docker.pkg.github.com/${{ github.repository }}/lyricshunter
+          IMAGE_ID=docker.pkg.github.com/${{ github.repository }}/$IMAGE_NAME
           # Change all uppercase to lowercase
           IMAGE_ID=$(echo $IMAGE_ID | tr '[A-Z]' '[a-z]')
           # Strip git ref prefix from version
@@ -62,7 +62,7 @@ jobs:
           # Strip "v" prefix from tag name
           [[ "${{ github.ref }}" == "refs/tags/"* ]] && VERSION=$(echo $VERSION | sed -e 's/^v//')
           # Use Docker `latest` tag convention
-          [ "$VERSION" == "$default-branch" ] && VERSION=latest
+          [ "$VERSION" == "main" ] && VERSION=latest
           echo IMAGE_ID=$IMAGE_ID
           echo VERSION=$VERSION
           docker tag $IMAGE_NAME $IMAGE_ID:$VERSION

@@ -2,14 +2,14 @@
 
 El fichero [Dockerfile](../Dockerfile) que se ha definido para ejecutar los test se puede ver a continuación:
 
-```shell
+```Dockerfile
 # Imagen base del contenedor
 FROM node:15.2.1-alpine3.10
 # Definimos etiquetas informativas al contenedor
-LABEL maintainer = "Ángel Valera Motos" 
-LABEL com.lyricshunter.version="0.0.1" 
-LABEL com.lyricshunter.release-date="2020-11-22" 
-LABEL org.opencontainers.image.source https://github.com/angelvalera/lyricshunter
+LABEL maintainer = "Ángel Valera Motos" \
+    com.lyricshunter.version="0.0.2" \
+    com.lyricshunter.release-date="2020-11-22" \
+    org.opencontainers.image.source https://github.com/angelvalera/lyricshunter
 
 # Definimos una carpeta para los modules de node
 # Definimos otra carpeta para los test 
@@ -26,16 +26,14 @@ WORKDIR /app/test
 USER node 
 # Copiamos los ficheros necesarios para instalar las dependencias
 # Los copiamos y hacemos propiedad del usuario node
-COPY --chown=node:node package*.json ./ 
-COPY --chown=node:node Gruntfile.js ./ 
-COPY --chown=node:node .jshintrc ./
+COPY --chown=node:node ["package*.json", "Gruntfile.js",".jshintrc", "./"]
 # Grunt necesita estar localmente instalado
 # Ejecutamos la tarea de Grunt para instalar el resto de 
 # dependencias
 RUN npm ci grunt-cli && grunt install
 # Ejecutamos la tarea por defecto definida en Gruntfile que
 # consiste en ejecutar los test
-CMD [ "grunt" ]
+CMD [ "grunt", "test" ]
 ```
 A continuación, pasaremos a ver en qué parte del Dockerfile específico se han aplicado las anteriores buenas prácticas.
 
@@ -49,18 +47,19 @@ En esta instrucción hemos definido la imagen base  de nuestro contenedor. La ju
 * **Se han utilizado etiquetas más específicas**
 * **Se ha utilizado una imagen base con un tamaño pequeño**
 
-```shell
+```Dockerfile
 # Definimos etiquetas informativas al contenedor
-LABEL maintainer = "Ángel Valera Motos" 
-LABEL com.lyricshunter.version="0.0.1" 
-LABEL com.lyricshunter.release-date="2020-11-22" 
-LABEL org.opencontainers.image.source https://github.com/angelvalera/lyricshunter
+LABEL maintainer = "Ángel Valera Motos" \
+    com.lyricshunter.version="0.0.2" \
+    com.lyricshunter.release-date="2020-11-22" \
+    org.opencontainers.image.source https://github.com/angelvalera/lyricshunter
 ```
 En estas instrucciones estamos definiendo una serie de etiquetas informativas del contenedor, por tanto, estamos cumpliendo con las siguientes buenas prácticas:
 
 * **Se han añadido etiquetas que ayuden a organizar e identificar las imágenes.**
+* **Se han minimizado el número de etiquetas LABEL**
 
-```shell
+```Dockerfile
 # Definimos una carpeta para los modules de node
 # Definimos otra carpeta para los test 
 # Hacemos todos los ficheros y carpetas del directorio 
@@ -77,7 +76,7 @@ En esta instrucción lo que se ha hecho es crear la carpeta node_modules y test 
 * **Se han unificado las instrucciones RUN**
 * **Se ha utilizado un usuario que no tiene permisos de root**
 
-```shell
+```Dockerfile
 # Indicamos el workdir por defecto
 WORKDIR /app/test
 ```
@@ -85,7 +84,7 @@ En esta instrucción definimos el directorio de trabajo, ya que si no lo indicam
 
 * **Se han utilizado variables de entorno**:
 
-```shell
+```Dockerfile
 # Indicamos que utilice el usuario node sin permisos de usuario
 USER node 
 ```
@@ -94,20 +93,19 @@ En esta instrucción se ha indicado que se utilice el usuario que no tiene permi
 
 * **Se ha utilizado un usuario que no tiene permisos de root**
 
-```shell
+```Dockerfile
 # Copiamos los ficheros necesarios para instalar las dependencias
 # Los copiamos y hacemos propiedad del usuario node
-COPY --chown=node:node package*.json ./ 
-COPY --chown=node:node Gruntfile.js ./ 
-COPY --chown=node:node .jshintrc ./
+COPY --chown=node:node ["package*.json", "Gruntfile.js",".jshintrc", "./"]
 ```
 En estas instrucciones indicamos que copie con permisos del usuario no root, solamente los ficheros necesarios para instalar las depedencias y ejecutar los test. Además se ha creado un fichero adicional llamado [.dockerignore](../.dockerignore) para asegurarnos de que no se copien de ninguna manera al contenedor aquellos ficheros que indiquemos ahí.
 
 * **Se han copiado solo los ficheros necesarios**
 * **Se ha utilizado .dockerignore**
 * **Se ha utilizado un usuario que no tiene permisos de root**
+* **Se han minimizado el número de etiquetas COPY**
 
-```shell
+```Dockerfile
 # Grunt necesita estar localmente instalado
 # Ejecutamos la tarea de Grunt para instalar el resto de 
 # dependencias
@@ -120,10 +118,10 @@ Grunt necesita encontar una instalación en local para poder ejecutar en la sigu
 * **Se ha tenido en cuenta el órden de las instrucciones**
 * **Se ha utilizado npm ci en lugar de npm install**
 
-```shell
+```Dockerfile
 # Ejecutamos la tarea por defecto definida en Gruntfile que
 # consiste en ejecutar los test
-CMD [ "grunt" ]
+CMD [ "grunt", "test" ]
 ```
 Por último, definimos la instrucción del gestor de tareas para que se ejecuten los test, y para ello se ha hecho uso de CMD en lugar de ENTRYPOINT ya que es lo correcto.
 

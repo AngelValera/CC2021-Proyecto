@@ -6,7 +6,7 @@ Dentro de cada milestone, se han definido una serie de Historias de Usuario y de
 
 ### RoadMap
 
-![RoadMap](Img/Img_Planificacion/RoadMap.png "RadMap")
+![RoadMap](../Img/Img_Planificacion/RoadMap.png "RadMap")
 
 [PowerPoint Presentation Template by HiSlide.io](https://www.hislide.io)
 

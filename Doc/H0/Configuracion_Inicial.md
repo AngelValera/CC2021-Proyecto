@@ -18,15 +18,15 @@ Para evitar tener que introducir las credenciales de nuestra cuenta en Github, d
 
 En la siguiente imagen podemos comprobar que efectivamente tenemos en nuestro equipo tanto el directorio ssh como el par de claves generadas, así como el fichero con los host permitidos en nuestro equipo.
 
-![Claves SSH generadas.](Img/Img_Configuracion_Inicial/clavesSSH.png "Claves SSH generadas.")
+![Claves SSH generadas.](../Img/Img_Configuracion_Inicial/clavesSSH.png "Claves SSH generadas.")
 
 La clave pública se encuentra en el fichero id_rsa.pub y debemos tenerla agregada también a nuestro agente ssh.
 
-![Clave SSH pública.](Img/Img_Configuracion_Inicial/clavePublica.png "Clave SSH pública.")
+![Clave SSH pública.](../Img/Img_Configuracion_Inicial/clavePublica.png "Clave SSH pública.")
 
 Finalmente, agregamos también la clave pública a nuestro perfil de Github, tal y como se puede ver en la siguiente imagen. 
 
-![Claves SSH agregada a Github.](Img/Img_Configuracion_Inicial/clavesPublicas_Github.png "Claves SSH agregada a Github.")
+![Claves SSH agregada a Github.](../Img/Img_Configuracion_Inicial/clavesPublicas_Github.png "Claves SSH agregada a Github.")
 
 En este caso, la clave agregada corresponde a la que tiene por nombre "Ubuntu instalado en portatil".
 
@@ -34,22 +34,22 @@ En este caso, la clave agregada corresponde a la que tiene por nombre "Ubuntu in
 
 Para tener correctamente configurada nuestra instalación de Git local, debemos hacer uso del comando `git config --global` e indicarle tanto nuestro nombre como nuestro email por defecto. Otra opción por defecto que se ha configurado ha sido que al hacer uso del comando `git pull` siempre sea con la opción `--rebase`. Finalmente, la configuración quedaría de la siguiente forma:
 
-![Configuración local de git.](Img/Img_Configuracion_Inicial/gitconfig.png "Configuración local de git.")
+![Configuración local de git.](../Img/Img_Configuracion_Inicial/gitconfig.png "Configuración local de git.")
 
 ### Edición del perfil de GitHub 
 
 Por otro lado, había que configurar correctamente nuestro perfil en Github para que aparezca una imagen, el nombre completo, la ciudad y la universidad.
 
-![Perfil de Github.](Img/Img_Configuracion_Inicial/perfil_Github.png "Perfil de Github")
+![Perfil de Github.](../Img/Img_Configuracion_Inicial/perfil_Github.png "Perfil de Github")
 
 ### Incrementar la seguridad de la cuenta de GitHub
 
 Por último, debemos incrementar la seguridad de nuestra cuenta de Github. Para ello habilitaremos un método de autenticación de dos factores. Para esto habría que ir a las opciones de "Account Security" y habilitar la opción de "Two-factor authentication". A partir de aquí debemos escoger el tipo de autentificación en dos pasos que queremos tal y como aparece en la siguiente imagen:
 
-![Autentificación en dos pasos.](Img/Img_Configuracion_Inicial/autentificacion2pasos.png "Autentificación en dos pasos")
+![Autentificación en dos pasos.](../Img/Img_Configuracion_Inicial/autentificacion2pasos.png "Autentificación en dos pasos")
 
 En mi caso utilicé la aplicación Authy tal y como recomienda, y después de seguir los pasos que se indican en la aplicación, la autentificación en dos pasos en mi cuenta de Github quedó correctamente configurada.
 
-![Authy configurada](Img/Img_Configuracion_Inicial/authy.png "Authy configurada")
+![Authy configurada](../Img/Img_Configuracion_Inicial/authy.png "Authy configurada")
 
-![Autentificación finalizada.](Img/Img_Configuracion_Inicial/ConfiguracionPerfilFinalizada.png "Autentificación finalizada")
+![Autentificación finalizada.](../Img/Img_Configuracion_Inicial/ConfiguracionPerfilFinalizada.png "Autentificación finalizada")

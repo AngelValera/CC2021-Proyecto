@@ -58,7 +58,7 @@ Usando Container-diff:
 
 Usando docker images: 
 
-![Tamaños generados](Img/Img_EleccionSistemaBase/tamImages.png "Tamaño de las  imágenes")
+![Tamaños generados](../Img/Img_EleccionSistemaBase/tamImages.png "Tamaño de las  imágenes")
 
 Como se puede ver, la versión que más tamaño ha tenido ha sido la versión base de `node:15`, con 1.04 GB, lo que resulta excesivo y por tanto, se ha descartado.
 
@@ -76,7 +76,7 @@ En cuanto a los tamaños, la más pequeña es la versión alpine, por lo que se 
 
 * `skopeo inspect --config docker://node:15.2.1-alpine3.10  | jq`
 
-![Config de la imagen](Img/Img_EleccionSistemaBase/configNode15.png)
+![Config de la imagen](../Img/Img_EleccionSistemaBase/configNode15.png)
 
 Como se puede ver en la anterior captura, usando como imagen `node:15.2.1-alpine3.10` dispondremos de 3 variables de entorno y un usuario llamado `node` que no tiene privilegios de administrador, lo cual no resulta muy útil a la hora de crear nuestro contenedor.
 

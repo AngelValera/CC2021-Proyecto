@@ -9,6 +9,12 @@ on:
     # Publish `v1.2.3` tags as releases.
     tags:
       - v*
+      
+    # Triggers only with this path
+    paths:
+      - 'Dockerfile'
+      - 'Gruntfile.js'
+      - '.jshintrc'
 
   # Run tests for any PRs.
   pull_request:

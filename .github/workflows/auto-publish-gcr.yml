@@ -13,9 +13,9 @@ on:
       - v*
     # Triggers only with this path
     paths:
-      - Dockerfile
-      - Gruntfile.js
-      - .jshintrc
+      - 'Dockerfile'
+      - 'Gruntfile.js'
+      - '.jshintrc'
 
 # Jobs to do
 jobs:

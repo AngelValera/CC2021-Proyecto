@@ -48,7 +48,7 @@ Estas imágenes se han elegido con una versión de Node específica, ya que en l
 
 Las versiones de node que se han elegido han sido la 15, porque en la página de [Node.js](https://nodejs.org/es/) se indica que es la versión actual. La 14 porque es la versión LTS a día de hoy y se recomienda para la mayoría y finalmente las versiones alpine de Node 10 y Node 12 para comprobar otras versiones un poco más antiguas.
 
-Una vez elegidas las imágenes candidatas, se desarrolló el fichero [Dockerfile](../Dockerfile), cuya construcción se datalla en el siguiente [fichero](Creacion_Dockerfile.md).
+Una vez elegidas las imágenes candidatas, se desarrolló el fichero [Dockerfile](../../Dockerfile), cuya construcción se datalla en el siguiente [fichero](Creacion_Dockerfile.md).
 
 Este dockerfile se ha ejecutado con cada una de las imágenes base anteriores, para comprobar el tamaño de las nuevas imágenes, podemos usar `docker images` o la herramienta `Container-diff`:
 

@@ -1,6 +1,6 @@
 ## Creación del fichero Dockerfile siguiendo buenas prácticas
 
-El fichero [Dockerfile](../Dockerfile) que se ha definido para ejecutar los test se puede ver a continuación:
+El fichero [Dockerfile](../../Dockerfile) que se ha definido para ejecutar los test se puede ver a continuación:
 
 ```Dockerfile
 # Imagen base del contenedor

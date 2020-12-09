@@ -41,6 +41,7 @@ Para ejecutar correctamente este proyecto habría que usar los siguiente comando
 - Se han agregado varios Github Actions al repositorio. 
   - Uno para comprobar que el fichero cc.yaml esté correcto. Se puede encontrar [aquí](.github/workflows/check-yaml.yaml).
   - Otro para publicar la imagen de docker dentro de Github. Se puede encontrar [aquí](.github/workflows/docker-publish.yml). 
+- 
 
 ---
 ### Documentación Adicional

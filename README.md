@@ -2,19 +2,21 @@
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) [![Language](https://img.shields.io/badge/node.js%20-%2343853D.svg?&logo=node.js&logoColor=white)](https://nodejs.org/es/)
 
-En este repositorio está desarrollando un proyecto para la asignatura de Cloud Computing I impartida en el Máster de Ingeniería Informática de la Universidad de Granada durante el curso 2020-2021.
+En este repositorio está desarrollando un proyecto para la asignatura
+de Cloud Computing I impartida en el Máster de Ingeniería Informática
+de la Universidad de Granada durante el curso 2020-2021.
 
 :warning: **Este proyecto se encuentra actualmente en desarrollo**
 
 ![Comprueba README](https://github.com/AngelValera/LyricsHunter/workflows/Comprueba%20README/badge.svg) ![Sintaxis YAML](https://github.com/AngelValera/LyricsHunter/workflows/Sintaxis%20YAML/badge.svg) ![Docker](https://github.com/AngelValera/LyricsHunter/workflows/Docker/badge.svg) ![Auto-Publish-GCR](https://github.com/AngelValera/LyricsHunter/workflows/Auto-Publish-GCR/badge.svg)
 
---- 
+---
 ## Tabla de contenidos
 
 <!-- * :point_right: **[](Doc/)** -->
 
 * [Instrucciones de uso](#instrucciones-de-uso)
-* :point_right: **[Configuración y justificación del uso de Travis.ci](Doc/H4/justificacion_Travis.md)**  
+* :point_right: **[Configuración y justificación del uso de Travis.ci](Doc/H4/justificacion_Travis.md)**
 * :point_right: **[Configuración y justificación de un sistema adicional de CI](Doc/H4/CI_Adicional.md)**
 * :point_right: **[Uso correcto del gestor de tareas](Doc/H4/correcto_Uso_GT.md)**
 * :point_right: **[Uso del contenedor de Docker en alguno de los sistemas de CI](Doc/H4/correcto_Uso_Docker.md)**

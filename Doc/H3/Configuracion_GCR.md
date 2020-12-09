@@ -2,7 +2,7 @@
 
 Para poder subir nuestro contenedor al repositorio de github, llamado Github Container Registry, lo que debemos hacer es lo siguiente:
 
-En primer lugar debemos crearnos un personal access toke, tal y como se indica en este [enlace](https://docs.github.com/es/free-pro-team@latest/github/authenticating-to-github/creating-a-personal-access-token).
+En primer lugar debemos crearnos un personal access token, tal y como se indica en este [enlace](https://docs.github.com/es/free-pro-team@latest/github/authenticating-to-github/creating-a-personal-access-token).
 
 Una vez creado, deberíamos tener algo como lo que se puede ver en la siguiente captura:
 
@@ -108,9 +108,9 @@ on:
       - v*
     # Triggers only with this path
     paths:
-      - Dockerfile
-      - Gruntfile.js
-      - .jshintrc
+      - 'Dockerfile'
+      - 'Gruntfile.js'
+      - '.jshintrc'
 
 # Jobs to do
 jobs:
@@ -159,7 +159,7 @@ jobs:
 ```
 Hecho esto cuando hagamos algún push en el repositorio, la action actuará y actualizará la imagen:
 
-![Github Action ](../Img/Img_GCR/action.png "Nuevo Secret")
+![Github Action](../Img/Img_GCR/action.png "Nuevo Secret")
 
 ![Git hub Action 2](../Img/Img_GCR/action2.png "Nuevo Secret")
 ---

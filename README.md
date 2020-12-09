@@ -34,7 +34,7 @@ Para ejecutar correctamente este proyecto habría que usar los siguiente comando
 ---
 ### Avance del proyecto:
 
-- Se ha modificado el [Dockerfile](Dockerfile) creado en entregas anteriores para minimizarlo un poco más. Se puede ver en el siguiente [commit](https://github.com/AngelValera/LyricsHunter/commit/4084fb416e4513cf799b0c5d23df90fe1c9bd0bb).
+- Se ha modificado el [Dockerfile](Dockerfile) creado en entregas anteriores para minimizarlo un poco más. Se puede ver en este  [commit](https://github.com/AngelValera/LyricsHunter/commit/4084fb416e4513cf799b0c5d23df90fe1c9bd0bb) y en este [commit](https://github.com/AngelValera/LyricsHunter/commit/577413efc72b7ccb1f648652d7f317595634245c).
 
 - Se han agregado varios Github Actions al repositorio. 
   - Uno para comprobar que el fichero cc.yaml esté correcto. Se puede encontrar [aquí](.github/workflows/check-yaml.yaml).

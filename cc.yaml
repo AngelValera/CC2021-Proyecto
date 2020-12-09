@@ -1,18 +1,15 @@
 ---
-entidad: 
+entidad:
   - src/Grupos/Grupo.js
   - src/Grupos/GrupoController.js
   - src/Grupos/Imagen.js
   - src/Grupos/RedSocial.js
   - src/Canciones/Cancion.js
   - src/Canciones/CancionController.js
-  
 test:
-  - test/grupos.test.js 
+  - test/grupos.test.js
   - test/canciones.test.js
-
 lenguaje:
   - Node.js
-
 fichero_tareas:
   - Gruntfile.js

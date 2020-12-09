@@ -10,7 +10,7 @@ Finalmente, como no me decantaba por uno u otro, lo que hice fue realizar una pe
 
 ### Justificación de uso del gestor de tareas
 
-Una vez elegido como gestor de tareas Grunt, y siguiendo con lo indicado en la página oficial de [Grunt](https://gruntjs.com/getting-started), se ha creado el fihero [Gruntfile.js](../Gruntfile.js) que se encargará de guardar las distintas tareas que necesitemos para nuestro proyecto.
+Una vez elegido como gestor de tareas Grunt, y siguiendo con lo indicado en la página oficial de [Grunt](https://gruntjs.com/getting-started), se ha creado el fihero [Gruntfile.js](../../Gruntfile.js) que se encargará de guardar las distintas tareas que necesitemos para nuestro proyecto.
 
 En este fichero, se han definido 3 tareas principales.
 
@@ -23,7 +23,7 @@ Cabe destacar que para usar la tarea **mochaTest**, también se incluyen algunas
 * *quiet: false*: Indicamos que queremos que nos muestre información por la salida estándar.
 * *ui: "bdd"* Indicamos el tipo de configuración de los test que vamos a utilizar.
 
-En cuanto a la tarea **jshint**, siguiendo con lo que se indica en este [ejemplo](https://www.adictosaltrabajo.com/2013/09/26/grunt-taskrunner-javascript/), he usado un fichero adicional llamado [.jshintrc](../.jshintrc) que sirve para indicar las opciones con las que se debe ejecutar. En este fichero debido a que en un principio recibía muchos warnings, decidí indicarle de esta [manera](https://jshint.com/docs/options/#esversion) que estoy usando la sintaxis de ECMAScript 6.
+En cuanto a la tarea **jshint**, siguiendo con lo que se indica en este [ejemplo](https://www.adictosaltrabajo.com/2013/09/26/grunt-taskrunner-javascript/), he usado un fichero adicional llamado [.jshintrc](../../.jshintrc) que sirve para indicar las opciones con las que se debe ejecutar. En este fichero debido a que en un principio recibía muchos warnings, decidí indicarle de esta [manera](https://jshint.com/docs/options/#esversion) que estoy usando la sintaxis de ECMAScript 6.
 
 En cuanto a la tarea **install**, ésta, hace uso internamente del comando `npm ci`, el cual es similar a `npm install`, salvo que, como indica en la [documentación oficial](https://docs.npmjs.com/cli/v6/commands/npm-ci), `npm ci` resulta más adecuado para usar en entornos automatizados como son las plataformas de test o la integración contínua y además, resulta mucho más rápido. Otro de los motivos por los que conviene usarlo en lugar de `npm install` es que si encuentra una carpeta llamada `node_modules`, la elimina antes de instalar las dependencias, lo cual resulta muy útil a la hora de localizar errores.
 

@@ -5,6 +5,7 @@ node_js:
   - "14"
 before_install:
   - npm install -g grunt-cli
-script:
+install:
   - grunt install
+script:
   - grunt test

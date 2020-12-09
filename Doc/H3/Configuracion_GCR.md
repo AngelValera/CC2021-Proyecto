@@ -6,13 +6,13 @@ En primer lugar debemos crearnos un personal access toke, tal y como se indica e
 
 Una vez creado, deberíamos tener algo como lo que se puede ver en la siguiente captura:
 
-![Generación de un nuevo Token](Img/Img_GCR/Token.png "Generación de un nuevo Token")
+![Generación de un nuevo Token](../Img/Img_GCR/Token.png "Generación de un nuevo Token")
 
 El siguiente paso es habilitar desde `new features` la opción de `Improved container support`.
 
-![Activación de Improved container support](Img/Img_GCR/feature1.png "Activación de Improved container support")
+![Activación de Improved container support](../Img/Img_GCR/feature1.png "Activación de Improved container support")
 
-![Activación de Improved container support](Img/Img_GCR/feature.png "Activación de Improved container support")
+![Activación de Improved container support](../Img/Img_GCR/feature.png "Activación de Improved container support")
 
 
 
@@ -38,7 +38,7 @@ En mi caso la secuencia de instrucciones que se han introducido ha sido la sigui
 
 * `$ docker push docker.pkg.github.com/angelvalera/lyricshunter/lyricshunter:latest`
 
-![Docker Images](Img/Img_GCR/Dockerimages.png "Docker Images")
+![Docker Images](../Img/Img_GCR/Dockerimages.png "Docker Images")
 
 Con esto, ya tendríamos la imagen subida a Docker Images y nos aparecería en el repositorio del poyecto. Se puede acceder a esta imagen desde este [enlace](https://github.com/AngelValera/LyricsHunter/packages/513671).
 
@@ -65,30 +65,30 @@ En mi caso la secuencia de comandos introducidos ha sido la siguiente:
 * `$ docker tag 6424650f3ab9 ghcr.io/angelvalera/lyricshunter:latest`
 * `$ docker push ghcr.io/angelvalera/lyricshunter:latest`
 
-![ContainerRegistry](Img/Img_GCR/ContainerRegistry.png "Publicar una imagen en Github Container Registry")
+![ContainerRegistry](../Img/Img_GCR/ContainerRegistry.png "Publicar una imagen en Github Container Registry")
 
 Con esto ya tendríamos la imagen subida, sin embargo estaría como un registro privado. Deberíamos acceder a este registro desde el apartado `Packages` e indicarle que es un registro público:
 
-![ContainerRegistry](Img/Img_GCR/ConfContainer.png "Configurar el registro de Github Container Registry")
+![ContainerRegistry](../Img/Img_GCR/ConfContainer.png "Configurar el registro de Github Container Registry")
 
 Además de indicarle los permisos que necesitamos usar de dicho registro:
 
-![Asignar permisos del registro](Img/Img_GCR/permisos.png "Asignar permisos del registro")
+![Asignar permisos del registro](../Img/Img_GCR/permisos.png "Asignar permisos del registro")
 
 Ahora el registro estaría listo y accesible desde este [enlace](https://github.com/users/AngelValera/packages/container/package/lyricshunter).
 
 
 Por último, podemos ver desde el repositorio ambas imágenes creadas.
 
-![Vista del Repositorio](Img/Img_GCR/Repositorio.png "Vista del Repositorio")
+![Vista del Repositorio](../Img/Img_GCR/Repositorio.png "Vista del Repositorio")
 
-![Vista del Repositorio](Img/Img_GCR/Repositorio2.png "Vista del Repositorio")
+![Vista del Repositorio](../Img/Img_GCR/Repositorio2.png "Vista del Repositorio")
 
 ### Github Action
 
 Vamos a definir una Github Action para actualizar este registro de manera automática con cada push. Para esto, lo primero será crear un nuevo secrets en el repositorio con el Token que generamos anteriormente.
 
-![Nuevo Secret](Img/Img_GCR/secrets.png "Nuevo Secret")
+![Nuevo Secret](../Img/Img_GCR/secrets.png "Nuevo Secret")
 
 Cuando entramos por primera vez en la sección de Actions, aparecen recomendaciones y ejemplos de actions que poodemos usar. Para generar esta action, se tomó como ejemplo la action de [Publish Docker Container](https://github.com/actions/starter-workflows/blob/2d3a2e57d3052cb97d2f78f589d60326bd2bbc50/ci/docker-publish.yml) que proporciona Github.
 
@@ -106,6 +106,11 @@ on:
     # Publish "v1.2.3" tags as releases
     tags:
       - v*
+    # Triggers only with this path
+    paths:
+      - Dockerfile
+      - Gruntfile.js
+      - .jshintrc
 
 # Jobs to do
 jobs:
@@ -150,12 +155,13 @@ jobs:
           
           # Push the image
           docker push $IMAGE_ID:$VERSION
+
 ```
 Hecho esto cuando hagamos algún push en el repositorio, la action actuará y actualizará la imagen:
 
-![Github Action ](Img/Img_GCR/action.png "Nuevo Secret")
+![Github Action ](../Img/Img_GCR/action.png "Nuevo Secret")
 
-![Git hub Action 2](Img/Img_GCR/action2.png "Nuevo Secret")
+![Git hub Action 2](../Img/Img_GCR/action2.png "Nuevo Secret")
 ---
 #### Referencias:
 

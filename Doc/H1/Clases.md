@@ -15,4 +15,4 @@ Para este proyecto se han definido de esta manera:
 
 Como prueba de que ambas clases son sintácticamente correctas, se adjunta la siguiente imagen:
 
-![Sintaxis Correcta](Img/Img_Clases/sintaxisCorrecta.png)
+![Sintaxis Correcta](../Img/Img_Clases/sintaxisCorrecta.png)

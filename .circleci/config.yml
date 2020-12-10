@@ -1,24 +1,12 @@
+version: 2
+jobs:
+ build:
+   machine: true
+   steps:
+     - checkout
+     # Loggin into dockerHub
+     - run: echo "$DOCKERHUB_PASSWORD" | docker login --username $DOCKERHUB_USERNAME --password-stdin         
 
-version: 2.1
+     # run test
+     - run: docker run -t -v  $CIRCLE_WORKING_DIRECTORY:/test $DOCKERHUB_USERNAME/lyricshunter 
 
-workflows:
-  version: 2
-  test:
-    jobs:
-      - test
-
-jobs: 
-  test: 
-    docker: 
-      - image: angelvalera/lyricshunter:latest
-        auth:
-          username: $DOCKERHUB_USERNAME
-          password: $DOCKERHUB_PASSWORD           
-    steps:
-      - checkout
-      - run: cp ./src ~/app
-      - run: cp ./test ~/app/test
-      - run: cd ~/app
-      - run: 
-          name: Testing
-          command: grunt test

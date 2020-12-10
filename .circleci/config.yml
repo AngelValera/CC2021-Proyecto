@@ -16,8 +16,8 @@ jobs:
           password: $DOCKERHUB_PASSWORD           
     steps:
       - checkout
-      - run: cp /src ~/app
-      - run: cp /test ~/app/test
+      - run: cp ./src ~/app
+      - run: cp ./test ~/app/test
       - run: cd ~/app
       - run: 
           name: Testing

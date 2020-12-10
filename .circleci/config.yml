@@ -8,5 +8,5 @@ jobs:
      - run: echo "$DOCKERHUB_PASSWORD" | docker login --username $DOCKERHUB_USERNAME --password-stdin         
 
      # run test
-     - run: docker run -t -v  $CIRCLE_WORKING_DIRECTORY:/test angelvalera/lyricshunter 
+     - run: docker run -t -v  $CIRCLE_WORKING_DIRECTORY:/app/test angelvalera/lyricshunter
 

@@ -11,8 +11,8 @@ jobs:
     docker:
       - image: angelvalera/lyricshunter:latest
       auth:
-          username: $DOCKERHUB_USERNAME  
-          password: $DOCKERHUB_PASSWORD  
+        username: $DOCKERHUB_USERNAME  
+        password: $DOCKERHUB_PASSWORD  
     
       steps:
       - checkout

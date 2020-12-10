@@ -11,8 +11,8 @@ LABEL maintainer = "Ángel Valera Motos" \
 # Hacemos todos los ficheros y carpetas del directorio 
 # /app propiedad del usuario node
 # Instalamos de manera global el task runner Grunt
-RUN mkdir -p /app/node_modules && \
-    mkdir -p /app/test && \
+RUN mkdir -p /app/test && \
+    mkdir -p /app/test/node_modules && \
     chown -R node:node /app && \
     npm install -g grunt-cli 
 # Indicamos el workdir por defecto

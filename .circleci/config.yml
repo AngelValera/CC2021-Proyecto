@@ -7,7 +7,7 @@ jobs:
       # Loggin into dockerHub
       - run: echo "$DOCKERHUB_PASSWORD" | docker login --username $DOCKERHUB_USERNAME --password-stdin         
 
-      -run: pwd
+      - run: pwd
 
       # run test
       - run: docker run -t -v  `pwd`:/app/test angelvalera/lyricshunter

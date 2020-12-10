@@ -18,6 +18,7 @@ jobs:
       - run: pwd
       - run: ls -l
       - run: ls /app
+      - run: ls /app/test -l
       - run: 
           name: Testing
           command: grunt test

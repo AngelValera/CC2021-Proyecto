@@ -1,5 +1,11 @@
 version: 2.1
 
+workflows:
+  version: 2
+  build:
+    jobs:
+      - test
+
 jobs:
   test:
     docker:
@@ -7,5 +13,5 @@ jobs:
     steps:
       - checkout
       - run:
-          name: doing test
+          name: Testing
           command: grunt test

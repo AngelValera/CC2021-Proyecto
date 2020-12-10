@@ -12,14 +12,9 @@ jobs:
       - image: angelvalera/lyricshunter:latest
         auth:
           username: $DOCKERHUB_USERNAME
-          password: $DOCKERHUB_PASSWORD    
-    working_directory: /app/test
+          password: $DOCKERHUB_PASSWORD   
+    working_directory: ~/app/test     
     steps:
-      - checkout
-      - run: pwd
-      - run: ls -l
-      - run: ls /app
-      - run: ls /app/test -l
       - run: 
           name: Testing
           command: grunt test

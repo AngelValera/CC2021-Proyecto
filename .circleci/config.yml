@@ -13,7 +13,7 @@ jobs:
         auth:
           username: $DOCKERHUB_USERNAME
           password: $DOCKERHUB_PASSWORD   
-    working_directory: ~/app/test     
+    working_directory: ~/app     
     steps:
       - run: 
           name: Testing

@@ -2,20 +2,18 @@ version: 2.1
 
 workflows:
   version: 2
-  build:
+  test:
     jobs:
       - test
 
-jobs:
-  test:
-    docker:
+jobs: 
+  test: 
+    docker: 
       - image: angelvalera/lyricshunter:latest
-      auth:
-        username: $DOCKERHUB_USERNAME  
-        password: $DOCKERHUB_PASSWORD  
+        auth:
+          username: $DOCKERHUB_USERNAME
+          password: $DOCKERHUB_PASSWORD    
     steps:
-      - checkout
-      - run: pwd
-      - run:
-        name: Testing
-        command: grunt test
+      - run: 
+          name: Testing
+          command: grunt test

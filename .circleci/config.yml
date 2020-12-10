@@ -1,12 +1,14 @@
 version: 2
 jobs:
- build:
-   machine: true
-   steps:
-     - checkout
-     # Loggin into dockerHub
-     - run: echo "$DOCKERHUB_PASSWORD" | docker login --username $DOCKERHUB_USERNAME --password-stdin         
+  build:
+    machine: true
+    steps:
+      - checkout
+      # Loggin into dockerHub
+      - run: echo "$DOCKERHUB_PASSWORD" | docker login --username $DOCKERHUB_USERNAME --password-stdin         
 
-     # run test
-     - run: docker run -t -v  $CIRCLE_WORKING_DIRECTORY:/app/test angelvalera/lyricshunter
+      -run: pwd
+
+      # run test
+      - run: docker run -t -v  `pwd`:/app/test angelvalera/lyricshunter
 

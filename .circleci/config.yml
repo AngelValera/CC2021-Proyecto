@@ -11,4 +11,3 @@ jobs:
 
       # run test
       - run: docker run -t -v  `pwd`:/app/test angelvalera/lyricshunter
-

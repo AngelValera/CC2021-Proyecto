@@ -9,9 +9,14 @@ workflows:
 jobs:
   test:
     docker:
-      - image: angelvalera/lyricshunter
-    steps:
+      - image: angelvalera/lyricshunter:latest
+      auth:
+          username: $DOCKERHUB_USERNAME  
+          password: $DOCKERHUB_PASSWORD  
+    
+      steps:
       - checkout
+      - run: pwd
       - run:
           name: Testing
           command: grunt test

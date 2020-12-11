@@ -36,11 +36,21 @@ Para ejecutar correctamente este proyecto habría que usar los siguiente comando
 ---
 ### Avance del proyecto:
 
-- Se ha modificado el [Dockerfile](Dockerfile) creado en entregas anteriores para minimizarlo un poco más. Se puede ver en este  [commit](https://github.com/AngelValera/LyricsHunter/commit/4084fb416e4513cf799b0c5d23df90fe1c9bd0bb) y en este [commit](https://github.com/AngelValera/LyricsHunter/commit/577413efc72b7ccb1f648652d7f317595634245c).
+- Se ha modificado el [Dockerfile](Dockerfile) creado en entregas anteriores:
+  - Se ha minimizado un poco más, al eliminar líneas LABEL y COPY repetidas. Se puede ver en este  [commit](https://github.com/AngelValera/LyricsHunter/commit/4084fb416e4513cf799b0c5d23df90fe1c9bd0bb) y en este [commit](https://github.com/AngelValera/LyricsHunter/commit/577413efc72b7ccb1f648652d7f317595634245c). 
+  - Se ha corregido tanto el `WORKDIR` que pasa de ser `/app/test` a `/app` y se agrega el contenido de la carpeta `node_modules` a la variable de entorno `PATH`, ya que tal y como estaba al ejecutar el siguiente comando :
+  ```shell
+      docker run -t -v `pwd`:/app/test angelvalera/lyricshunter
+  ``` 
+    - Si en el directorio en el que nos encontramos no está la carpeta node_modules, esta era eliminada del contenedor y no pasaban los test. Se puede comprobar en los siguientes commits:
+      - [25369c3](https://github.com/AngelValera/LyricsHunter/commit/31d93b5f1c1d6b93e6ff6f038454d8419560d265)
+      - [ea550dc](https://github.com/AngelValera/LyricsHunter/commit/ea550dc3e2f6a080fd9a8e99e6ad5a2941d765bf)
+      - [31d93b5](https://github.com/AngelValera/LyricsHunter/commit/31d93b5f1c1d6b93e6ff6f038454d8419560d265)
+      
 
-- Se han agregado varios Github Actions al repositorio. 
-  - Uno para comprobar que el fichero cc.yaml esté correcto. Se puede encontrar [aquí](.github/workflows/check-yaml.yaml).
-  - Otro para publicar la imagen de docker dentro de Github. Se puede encontrar [aquí](.github/workflows/docker-publish.yml). 
+- Se han agregado varias Github Actions al repositorio. 
+  - Una para comprobar que el fichero cc.yaml esté correcto. Se puede encontrar [aquí](.github/workflows/check-yaml.yaml).
+  - Otra para publicar la imagen de docker dentro de Github. Se puede encontrar [aquí](.github/workflows/docker-publish.yml). 
 - 
 
 ---

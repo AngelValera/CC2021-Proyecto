@@ -12,4 +12,4 @@ jobs:
       - run: docker pull angelvalera/lyricshunter
 
       # run test
-      - run: docker run -t -v  `pwd`:/app/test angelvalera/lyricshunter
+      - run: docker run -t -v `pwd`:/app/test angelvalera/lyricshunter

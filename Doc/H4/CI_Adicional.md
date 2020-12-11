@@ -17,7 +17,7 @@ El principal motivo es que resulta muy fácil de integrar a nuestro repositorio 
 
 CircleCI ejecuta casi un millón de trabajos por día en apoyo de 30.000 organizaciones. Esto se debe a que los trabajos se ejecutan rápidamente en gran parte a que te permite que los trabajos puedan ser optimizados en gran medida.
 
-Otro punto a favor, y que en particular, a mi me ha servido bastante es la de poder conectarte a un contenedor o máquina virtual mediante SSH y poder depurar el flujo de trabajo si este falla (Aunque en mi caso también me ha servido para consumir casi todos los créditos gratuitos).
+Otro punto a favor, y que en particular, a mi me ha servido bastante es la de poder conectarte a un contenedor o máquina virtual mediante SSH y poder depurar el flujo de trabajo si este falla (Aunque en mi caso también me ha servido para consumir casi todos los créditos gratuitos sin querer).
 
 Finalmente, otro motivo por el que he decidido escoger Circle Ci es por la gran cantidad de publicidad que veo de ellos cuando navego, por lo que he decidido porbar de primera mano si de verdad merecen tanta publicidad.
 

@@ -92,7 +92,6 @@ Después de esto, podemos agregar el siguiente badge a nuestro repositorio para 
 [![Build Status](https://travis-ci.com/AngelValera/LyricsHunter.svg?branch=main)](https://travis-ci.com/AngelValera/LyricsHunter)
 
 
-
 ---
 #### Referencias:
 

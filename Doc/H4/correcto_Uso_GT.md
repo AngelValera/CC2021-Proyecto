@@ -85,3 +85,43 @@ ENV PATH=/node_modules/.bin:$PATH
 CMD [ "grunt", "test" ]
 ```
 
+### Github Actions
+
+El gestor de tareas también ha sido utilizado correctamente en la github action que he definido para ejecutar los test usando la versión 15 de Node.
+
+El [fichero](../../.github/workflows/node.js.yml  ) quedaría de la siguiente forma:
+
+```yml
+# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: Node.js CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [[15.x]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: npm install grunt-cli
+    - run: grunt install
+    - run: grunt test
+```
+
+Como se puede ver, es muy similar al fichero de Travis ya que ejecuta las mismas órdenes,  `grunt intall` para instalar las dependencias y `grunt test` para ejecutar los test.
+

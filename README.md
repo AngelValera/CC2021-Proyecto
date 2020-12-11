@@ -20,7 +20,7 @@ de la Universidad de Granada durante el curso 2020-2021.
 * :point_right: **[Configuración y justificación de un sistema adicional de CI](Doc/H4/CI_Adicional.md)**
 * :point_right: **[Uso correcto del gestor de tareas](Doc/H4/correcto_Uso_GT.md)**
 * :point_right: **[Uso del contenedor de Docker en alguno de los sistemas de CI](Doc/H4/correcto_Uso_Docker.md)**
-* :point_right: **[Avances del proyecto](#avance-del-proyecto)**
+* [Avances del proyecto](#avance-del-proyecto)
 
 ---
 ### Instrucciones de uso:

@@ -7,7 +7,7 @@ El fichero [Dockerfile](../../Dockerfile) que se ha definido para ejecutar los t
 FROM node:15.2.1-alpine3.10
 # Definimos etiquetas informativas al contenedor
 LABEL maintainer = "Ángel Valera Motos" \
-    com.lyricshunter.version="0.0.2" \
+    com.lyricshunter.version="0.0.4" \
     com.lyricshunter.release-date="2020-11-22" \
     org.opencontainers.image.source https://github.com/angelvalera/lyricshunter
 
@@ -16,12 +16,12 @@ LABEL maintainer = "Ángel Valera Motos" \
 # Hacemos todos los ficheros y carpetas del directorio 
 # /app propiedad del usuario node
 # Instalamos de manera global el task runner Grunt
-RUN mkdir -p /app/node_modules && \
-    mkdir -p /app/test && \
+RUN mkdir -p /app/test && \    
+    mkdir -p /app/node_modules && \
     chown -R node:node /app && \
     npm install -g grunt-cli 
 # Indicamos el workdir por defecto
-WORKDIR /app/test
+WORKDIR /app
 # Indicamos que utilice el usuario node sin permisos de usuario
 USER node 
 # Copiamos los ficheros necesarios para instalar las dependencias
@@ -31,13 +31,15 @@ COPY --chown=node:node ["package*.json", "Gruntfile.js",".jshintrc", "./"]
 # Ejecutamos la tarea de Grunt para instalar el resto de 
 # dependencias
 RUN npm ci grunt-cli && grunt install
+# Ponemos la carpeta de node_modules en el path para que encuentre las dependencias
+ENV PATH=/node_modules/.bin:$PATH
 # Ejecutamos la tarea por defecto definida en Gruntfile que
 # consiste en ejecutar los test
 CMD [ "grunt", "test" ]
 ```
 A continuación, pasaremos a ver en qué parte del Dockerfile específico se han aplicado las anteriores buenas prácticas.
 
-```shell
+```Dockerfile
 # Imagen base del contenedor
 FROM node:15.2.1-alpine3.10
 ```
@@ -50,7 +52,7 @@ En esta instrucción hemos definido la imagen base  de nuestro contenedor. La ju
 ```Dockerfile
 # Definimos etiquetas informativas al contenedor
 LABEL maintainer = "Ángel Valera Motos" \
-    com.lyricshunter.version="0.0.2" \
+    com.lyricshunter.version="0.0.4" \
     com.lyricshunter.release-date="2020-11-22" \
     org.opencontainers.image.source https://github.com/angelvalera/lyricshunter
 ```
@@ -65,10 +67,10 @@ En estas instrucciones estamos definiendo una serie de etiquetas informativas de
 # Hacemos todos los ficheros y carpetas del directorio 
 # /app propiedad del usuario node
 # Instalamos de manera global el task runner Grunt
-RUN mkdir -p /app/node_modules && \
-    mkdir -p /app/test && \
+RUN mkdir -p /app/test && \    
+    mkdir -p /app/node_modules && \
     chown -R node:node /app && \
-    npm install -g grunt-cli 
+    npm install -g grunt-cli  
 ```
 En esta instrucción lo que se ha hecho es crear la carpeta node_modules y test dentro del directorio `/app` y hacemos propietario de ese directorio al usuario no root node que trae por defecto la imagen seleccionada. Además se ha instalado de forma global el  gestor de tareas que utilizamos en el proyecto, que en este caso es Grunt. Todo eso se ha ejecutado en una sola instrucción RUN y al principio del documento lo que facilita el cacheo. Por tanto, estamos cumpliendo con las siguientes buenas prácticas:
 
@@ -78,9 +80,11 @@ En esta instrucción lo que se ha hecho es crear la carpeta node_modules y test 
 
 ```Dockerfile
 # Indicamos el workdir por defecto
-WORKDIR /app/test
+WORKDIR /app
 ```
-En esta instrucción definimos el directorio de trabajo, ya que si no lo indicamos se asigna otro por defecto. Esto lo hacemos mediante una variable de entorno, por tanto cumplimos con esa buena práctica:
+En esta instrucción definimos el directorio de trabajo, ya que si no lo indicamos se asigna otro por defecto. 
+
+Esto lo hacemos mediante una variable de entorno, por tanto cumplimos con esa buena práctica:
 
 * **Se han utilizado variables de entorno**:
 
@@ -117,6 +121,15 @@ Grunt necesita encontar una instalación en local para poder ejecutar en la sigu
 
 * **Se ha tenido en cuenta el órden de las instrucciones**
 * **Se ha utilizado npm ci en lugar de npm install**
+
+```Dockerfile
+# Ponemos la carpeta de node_modules en el path para que encuentre las dependencias
+ENV PATH=/node_modules/.bin:$PATH
+```
+En esta instrución lo que hacemos es añadir la carpeta `node_modules` a la variable de entorno `PATH`, de manera que una vez instaladas las dependencias, estas sean accesibles desde cualquier directorio.
+
+* **Se han utilizado variables de entorno**:
+
 
 ```Dockerfile
 # Ejecutamos la tarea por defecto definida en Gruntfile que

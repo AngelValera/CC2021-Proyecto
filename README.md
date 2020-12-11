@@ -51,7 +51,7 @@ Para ejecutar correctamente este proyecto habría que usar los siguiente comando
 - Se han agregado varias Github Actions al repositorio. 
   - Una para comprobar que el fichero cc.yaml esté correcto. Se puede encontrar [aquí](.github/workflows/check-yaml.yaml).
   - Otra para publicar la imagen de docker dentro de Github. Se puede encontrar [aquí](.github/workflows/docker-publish.yml). 
-  - Se ha agregado otra con una funcionalidad similar a la de Travis, pero en este caso para ejecutar sólamente la versión 15 de Node, de manera que se compruebe no solo en CircleCI sino aquí también. Se puede encontrar [aquí](.github/workflows/node.js.yml)
+  - Se ha agregado otra con una funcionalidad similar a la de Travis, pero en este caso para ejecutar solamente la versión 15 de Node, de manera que se compruebe no solo en CircleCI sino aquí también. Se puede encontrar [aquí](.github/workflows/node.js.yml)
  
 ---
 ### Documentación Adicional

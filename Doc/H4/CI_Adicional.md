@@ -5,6 +5,7 @@
       - [Elección](#elección)
       - [Configuración](#configuración)
       - [Justificación](#justificación)
+  - [Github Actions](#github-actions)
     - [Referencias:](#referencias)
 
 ### CircleCI
@@ -148,6 +149,59 @@ Finalmente, solo nos quedaría agregar al README de nuestro repositorio el badge
 
 [![CircleCI](https://circleci.com/gh/AngelValera/LyricsHunter.svg?style=svg)](https://circleci.com/gh/AngelValera/LyricsHunter)
 
+
+### Github Actions
+
+Adicionalmente, he decidido añadir una Github Actions, al repositorio para hacer también integración continua. 
+
+La idea es que dado que he consumido casi todos los creditos de CircleCi, para evitar que antes de finalizar este proyecto los acabe todos, tener otro sistema que funcione de manera similar.
+
+Por tanto, esta actions funcionará de manera similar a la de Travis, pero ejecutando una versión distinta, hasta que CircleCi se agote.
+
+El [fichero](../../.github/workflows/node.js.yml) finalmente quedaría de la siguiente manera:
+
+```yml
+# This workflow will do a clean install of node dependencies and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: Node.js CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [[15.x]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: npm install grunt-cli
+    - run: grunt install
+    - run: grunt test
+```
+Como base para ejecutar esta actions, se ha utilizado la que se propone como ejemplo, la cual se puede encontrar en el siguiente [enlace](https://github.com/actions/starter-workflows/blob/a571f2981ab5a22dfd9158f20646c2358db3654c/ci/node.js.yml).
+
+En ella indicamos que se ejecute con cada push y pull_request sobre la rama principal, que utilice una imagen de Ubuntu y que use la versión 15 de node.js. 
+
+La única diferencia es que se utiliza el gestor de tareas para instalar las dependencias y para ejecutar los test, de igual manera que con Travis.
+
+Cuando en Circle Ci, se agoten los créditos, esta actions realizará la función que ahora hace Travis y Travis usará el contenedor tal y como ahora hace CircleCi.
+
+Finalmente agregamos el badge al README.
+
+![Node.js CI](https://github.com/AngelValera/LyricsHunter/workflows/Node.js%20CI/badge.svg)
 
 ---
 #### Referencias:

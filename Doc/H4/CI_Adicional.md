@@ -153,17 +153,31 @@ Finalmente, solo nos quedaría agregar al README de nuestro repositorio el badge
 #### Referencias:
 
 [Overview CircleCI](https://circleci.com/docs/2.0/about-circleci/)
+
 [Getting Started Introduction](https://circleci.com/docs/2.0/getting-started/#section=getting-started)
+
 [Node.js - JavaScript Tutorial](https://circleci.com/docs/2.0/language-javascript/)
+
 [circleci-demo-javascript-react-app - config.yml](https://app.circleci.com/pipelines/github/CircleCI-Public/circleci-demo-javascript-react-app/63/config)
+
 [Adding Status Badges](https://circleci.com/docs/2.0/status-badges/)
+
 [Migrating From Travis CI](https://circleci.com/docs/2.0/migrating-from-travis/#section=getting-started)
+
 [Crear una acción de contenedor de Docker](https://docs.github.com/es/free-pro-team@latest/actions/creating-actions/creating-a-docker-container-action)
+
 [Setting an environment variable in a project](https://circleci.com/docs/2.0/env-vars/#setting-an-environment-variable-in-a-project)
+
 [Running Docker Commands](https://circleci.com/docs/2.0/building-docker-images/)
+
 [Docker and CI/CD tutorial: a deep dive into containers](https://circleci.com/blog/docker-and-cicd-tutorial-a-deep-dive-into-containers/)
+
 [Using CircleCI workflows to replicate Docker Hub automated builds](https://circleci.com/blog/using-circleci-workflows-to-replicate-docker-hub-automated-builds/)
+
 [CircleCI Documentation](https://circleci.com/docs/2.0/#section=welcome)
+
 [CircleCI Orbs](https://circleci.com/developer/orbs)
+
 [Automate your Software Development with Docker and CircleCI](https://www.youtube.com/watch?v=15GYSxzdTLQ)
+
 [Configuring CircleCI](https://circleci.com/docs/2.0/configuration-reference/#available-machine-images)

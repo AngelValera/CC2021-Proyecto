@@ -12,11 +12,12 @@ LABEL maintainer = "Ángel Valera Motos" \
 # /app propiedad del usuario node
 # Instalamos de manera global el task runner Grunt
 RUN mkdir -p /app/test && \
-    mkdir -p /app/test/node_modules && \
+    mkdir -p /app/src && \
+    mkdir -p /app/node_modules && \
     chown -R node:node /app && \
     npm install -g grunt-cli 
 # Indicamos el workdir por defecto
-WORKDIR /app/test
+WORKDIR /app
 # Indicamos que utilice el usuario node sin permisos de usuario
 USER node 
 # Copiamos los ficheros necesarios para instalar las dependencias

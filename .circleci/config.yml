@@ -4,8 +4,14 @@ jobs:
     machine: true
     steps:
       - checkout
-      # Loggin into dockerHub
-      - run: echo "$DOCKERHUB_PASSWORD" | docker login --username $DOCKERHUB_USERNAME --password-stdin         
+      # Loggin into DockerHub
+      - run: 
+          name: Logging into DockerHub
+          command: | 
+            echo "$DOCKERHUB_PASSWORD" | docker login --username $DOCKERHUB_USERNAME --password-stdin         
 
-      # run test
-      - run: docker run -t -v `pwd`:/app/test angelvalera/lyricshunter
+      # Running Tests using Docker
+      - run:
+          name: Running Tests using Docker
+          command: | 
+            docker run -t -v `pwd`:/app/test angelvalera/lyricshunter

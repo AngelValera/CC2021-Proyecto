@@ -2,7 +2,7 @@
 FROM node:15.2.1-alpine3.10
 # Definimos etiquetas informativas al contenedor
 LABEL maintainer = "Ángel Valera Motos" \
-    com.lyricshunter.version="0.0.2" \
+    com.lyricshunter.version="0.0.4" \
     com.lyricshunter.release-date="2020-11-22" \
     org.opencontainers.image.source https://github.com/angelvalera/lyricshunter
 
@@ -11,8 +11,7 @@ LABEL maintainer = "Ángel Valera Motos" \
 # Hacemos todos los ficheros y carpetas del directorio 
 # /app propiedad del usuario node
 # Instalamos de manera global el task runner Grunt
-RUN mkdir -p /app/test && \
-    mkdir -p /app/src && \
+RUN mkdir -p /app/test && \    
     mkdir -p /app/node_modules && \
     chown -R node:node /app && \
     npm install -g grunt-cli 
@@ -27,6 +26,8 @@ COPY --chown=node:node ["package*.json", "Gruntfile.js",".jshintrc", "./"]
 # Ejecutamos la tarea de Grunt para instalar el resto de 
 # dependencias
 RUN npm ci grunt-cli && grunt install
+# Ponemos la carpeta de node_modules en el path para que encuentre las dependencias
+ENV PATH=/node_modules/.bin:$PATH
 # Ejecutamos la tarea por defecto definida en Gruntfile que
 # consiste en ejecutar los test
 CMD [ "grunt", "test" ]

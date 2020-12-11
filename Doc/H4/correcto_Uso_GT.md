@@ -84,7 +84,3 @@ ENV PATH=/node_modules/.bin:$PATH
 # consiste en ejecutar los test
 CMD [ "grunt", "test" ]
 ```
-
-
----
-#### Referencias:

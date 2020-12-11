@@ -1,6 +1,6 @@
 # LyricsHunter
 
-[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) [![Language](https://img.shields.io/badge/node.js%20-%2343853D.svg?&logo=node.js&logoColor=white)](https://nodejs.org/es/) [![Build Status](https://travis-ci.com/AngelValera/LyricsHunter.svg?branch=main)](https://travis-ci.com/AngelValera/LyricsHunter) [![CircleCI](https://circleci.com/gh/AngelValera/LyricsHunter.svg?style=svg)](https://circleci.com/gh/AngelValera/LyricsHunter)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) [![Language](https://img.shields.io/badge/node.js%20-%2343853D.svg?&logo=node.js&logoColor=white)](https://nodejs.org/es/) [![Build Status](https://travis-ci.com/AngelValera/LyricsHunter.svg?branch=main)](https://travis-ci.com/AngelValera/LyricsHunter) [![CircleCI](https://circleci.com/gh/AngelValera/LyricsHunter.svg?style=svg)](https://circleci.com/gh/AngelValera/LyricsHunter) ![Node.js CI](https://github.com/AngelValera/LyricsHunter/workflows/Node.js%20CI/badge.svg)
 
 En este repositorio está desarrollando un proyecto para la asignatura
 de Cloud Computing I impartida en el Máster de Ingeniería Informática
@@ -51,6 +51,7 @@ Para ejecutar correctamente este proyecto habría que usar los siguiente comando
 - Se han agregado varias Github Actions al repositorio. 
   - Una para comprobar que el fichero cc.yaml esté correcto. Se puede encontrar [aquí](.github/workflows/check-yaml.yaml).
   - Otra para publicar la imagen de docker dentro de Github. Se puede encontrar [aquí](.github/workflows/docker-publish.yml). 
+  - Se ha agregado otra con una funcionalidad similar a la de Travis, pero en este caso para ejecutar sólamente la versión 15 de Node, de manera que se compruebe no solo en CircleCi sino aquí también. Se puede encontrar [aquí](.github/workflows/node.js.yml)
  
 ---
 ### Documentación Adicional

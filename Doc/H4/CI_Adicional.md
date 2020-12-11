@@ -201,7 +201,7 @@ Cuando en Circle Ci, se agoten los créditos, esta actions realizará la funció
 
 Finalmente agregamos el badge al README.
 
-![Node.js CI](https://github.com/AngelValera/LyricsHunter/workflows/Node.js%20CI/badge.svg)
+![Node.js_CI](https://github.com/AngelValera/LyricsHunter/workflows/Node.js_CI/badge.svg)
 
 ---
 #### Referencias:

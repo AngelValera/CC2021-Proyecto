@@ -1,11 +1,4 @@
-language: node_js
-node_js:
-  - "10"
-  - "12"
-  - "14"
-before_install:
-  - npm install grunt-cli
-install:
-  - grunt install
+language:
+  - minimal
 script:
-  - grunt test
+docker run -it -v  $TRAVIS_BUILD_DIR:/app/test angelvalera/lyricshunter

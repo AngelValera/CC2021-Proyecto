@@ -1,4 +1,4 @@
 language:
   - minimal
 script:
-docker run -it -v  $TRAVIS_BUILD_DIR:/app/test angelvalera/lyricshunter
+  docker run -it -v  $TRAVIS_BUILD_DIR:/app/test angelvalera/lyricshunter

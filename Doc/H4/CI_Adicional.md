@@ -82,7 +82,7 @@ jobs:
 ```
 La base sobre la que desarrollé esta solución se puede encontrar en el siguiente [enlace](https://circleci.com/docs/2.0/building-docker-images/).
 
-La idea era copiar nuestro repositorio que contiene tanto test como código fuente y pasarselo a la imagen de dockerhub que definimos en el hito anterior. De esta forma, no habría que volver a instalar las depedencias ni el gestor de tareas, ya que irían ya instaladas en dicha imagen.
+La idea era copiar nuestro repositorio que contiene tanto test como código fuente y pasarselo a la imagen de dockerhub que definimos en el hito anterior. De esta forma, no habría que volver a instalar las depedencias ni el gestor de tareas, ya que irían ya instaladas en dicha imagen. A diferencia de la configuración en Travis, en este caso no realizamos pruebas sobre distintas versiones de node, ya que la imagen base de mi contenedor usaba la versión 15 de node (node:15.2.1-alpine3.10) y ésta no fue probada en Travis precisamente para ser probada directamente desde el contenedor.
 
 En la siguiente línea establecemos la versión que queremos utilizar. En mi caso utilizo la versión 2.1 que es a día de hoy la más reciente. Este campo está destinado a ser utilizado para emitir advertencias por deprecación o cambios importantes.
 

@@ -7,7 +7,7 @@ El fichero [Dockerfile](../../Dockerfile) que se ha definido para ejecutar los t
 FROM node:15.2.1-alpine3.10
 # Definimos etiquetas informativas al contenedor
 LABEL maintainer = "Ángel Valera Motos" \
-    com.lyricshunter.version="0.0.4" \
+    com.lyricshunter.version="0.0.5" \
     com.lyricshunter.release-date="2020-11-22" \
     org.opencontainers.image.source https://github.com/angelvalera/lyricshunter
 
@@ -30,7 +30,7 @@ COPY --chown=node:node ["package*.json", "Gruntfile.js",".jshintrc", "./"]
 # Grunt necesita estar localmente instalado
 # Ejecutamos la tarea de Grunt para instalar el resto de 
 # dependencias
-RUN npm ci grunt-cli && grunt install
+RUN npm intall grunt-cli && grunt install
 # Ponemos la carpeta de node_modules en el path para que encuentre las dependencias
 ENV PATH=/node_modules/.bin:$PATH
 # Ejecutamos la tarea por defecto definida en Gruntfile que
@@ -52,7 +52,7 @@ En esta instrucción hemos definido la imagen base  de nuestro contenedor. La ju
 ```Dockerfile
 # Definimos etiquetas informativas al contenedor
 LABEL maintainer = "Ángel Valera Motos" \
-    com.lyricshunter.version="0.0.4" \
+    com.lyricshunter.version="0.0.5" \
     com.lyricshunter.release-date="2020-11-22" \
     org.opencontainers.image.source https://github.com/angelvalera/lyricshunter
 ```
@@ -113,9 +113,9 @@ En estas instrucciones indicamos que copie con permisos del usuario no root, sol
 # Grunt necesita estar localmente instalado
 # Ejecutamos la tarea de Grunt para instalar el resto de 
 # dependencias
-RUN npm ci grunt-cli && grunt install
+RUN npm install grunt-cli && grunt install
 ```
-En esta instrucción, lo que hacemos es instalar de manera local el gestor de tareas, que en mi caso es Grunt. Para instalarlo se ha utilizado `npm ci` que resulta más eficiente que usar `npm install`.
+En esta instrucción, lo que hacemos es instalar de manera local el gestor de tareas, que en mi caso es Grunt. Para instalar el resto de dependencias se ha utilizado `npm ci` que resulta más eficiente que usar `npm install`. Esto se ha configurado anteriormente en el Gruntfile.js.
 
 Grunt necesita encontar una instalación en local para poder ejecutar en la siguiente orden la tarea que le definimos en el Gruntfile.js para instalar las depedencias.  Además al haber definido anteriormente el usuario node, nos aseguramos que estas depedencias se instalan con los permisos correspondientes.
 

@@ -25,7 +25,7 @@ COPY --chown=node:node ["package*.json", "Gruntfile.js",".jshintrc", "./"]
 # Grunt necesita estar localmente instalado
 # Ejecutamos la tarea de Grunt para instalar el resto de 
 # dependencias
-RUN npm intall grunt-cli && grunt install
+RUN npm install grunt-cli && grunt install
 # Ponemos la carpeta de node_modules en el path para que encuentre las dependencias
 ENV PATH=/node_modules/.bin:$PATH
 # Ejecutamos la tarea por defecto definida en Gruntfile que

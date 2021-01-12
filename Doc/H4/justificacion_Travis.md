@@ -29,13 +29,15 @@ Una vez que Travis está correctamente configurado, pasemos a explicar cómo se 
 ```yml
 language: node_js
 node_js:
-  - "10"
-  - "12"
-  - "14"
+- "node"
+- "lts/*"
 before_install:
   - npm install grunt-cli
 install:
   - grunt install
+cache:
+  directories:
+  - "$HOME/.npm"
 script:
   - grunt test
 ```
@@ -51,16 +53,14 @@ Por tanto, partiendo de esa versión mínima, vamos a ir dándole a Travis más 
 
 ```yml
 node_js:
-  - "10"
-  - "12"
-  - "14"
+  - "node"
+  - "lts/*"
 ```
 En mi caso, he escogido las versiones 10, 12 y 14.
-- **10**: Esta versión ha sido seleccionada para comprobar que se pasen los test en una versión antigua, aunque hoy día sigue utilizándose. 
-- **12**: Esta versión se ha seleccionado para comprobar que se pasen los test en otra versión antigua además de que cuenta con más tiempo de soporte que la versión 10.
-- **14**: Esta versión se ha seleccionado porque según la página de node, hoy día es la versión que se recomienda para la mayoría.
+- **node**: Esta versión ha sido seleccionada para comprobar que se pasen los test en la última versión de node.
+- **lts/\***: Esta versión se ha seleccionado para comprobar que se pasen los test en todas las versiones lts.
 
-En un principio se pensó en utilizar también la versión actual que es la versión 15, sin embargo, como hay que agregar otro sistema de integración continua al repositorio y además utilizar la imagen de docker que se creó anteriormente, como en dicha imagen ya utilizo la versión 15, no tendría mucho sentido repetirla en Travis.
+En un principio se pensó en utilizar también la versión actual que es la versión 15, sin embargo, como hay que agregar otro sistema de integración continua al repositorio, no tendría mucho sentido repetirla en Travis.
 
 La siguiente indicación que le damos a Travis es que nos instale antes de nada el gestor de tareas que vamos a utilizar, que en este caso es Grunt. En mi caso, lo he instalado de manera local, ya que es necesario para posteriores pasos.
 
@@ -74,6 +74,14 @@ Una vez instalado el gestor de tareas, vamos a indicarle a Travis que lo utilice
 install:
   - grunt install
 ```
+Una vez instalado, podemos hacer uso de la caché para así ahorrar tiempo a la hora de ejecutar los test.
+
+```yml
+cache:
+  directories:
+  - "$HOME/.npm"
+```
+
 Una vez instaladas las dependencias, ya podemos indicarle a travis que ejecute los test, para ello hacemos uso de nuevo del gestor de tareas con la orden `grunt test`.
 
 ```yml

@@ -29,19 +29,10 @@ class Grupo {
   }
 
   to_string() {
-    return (    
-      this.id+", "+
-      this.nombre+", "+
-      this.anioFormacion+", "+
-      this.anioSeparacion+", "+
-      this.estilo+", "+
-      this.genero+", "+      
-      this.web+", "+
-      this.redesSociales+", "+
-      this.biografia+", "+
-      this.miembros+", "+
-      this.pais+", "+
-      this.imagenes
+    return (
+      `${this.id}, ${this.nombre}, ${this.anioFormacion}, ${this.anioSeparacion}, ${this.estilo}, 
+      ${this.genero}, ${this.web}, ${this.redesSociales}, ${this.biografia}, ${this.miembros}, 
+      ${this.pais}, ${this.imagenes}`      
     );
   }
 
@@ -93,5 +84,7 @@ class Grupo {
     return this.imagenes;
   }
 }
+
+
 module.exports = Grupo;
 

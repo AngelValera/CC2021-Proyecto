@@ -1,16 +1,4 @@
 // Clase que define a un artista o grupo de música
-// `id` = identificador del grupo
-// `nombre` = Nombre del artista o grupo
-// `anioFormacion` =  Año de formación
-// `anioSeparacion` = Año de separación
-// `estilo` = Estilo de música que tocan
-// `genero` = Género del grupo
-// `web` = Enlace a su página web
-// `redesSociales` =  redes sociales del grupo
-// `biografia` = Biografía del Artista o del grupo en español
-// `miembros` = Miembros del gupo
-// `pais` = País del grupo
-// `imagenes` = Imagenes del grupo
 class Grupo {
   constructor(
     id,

@@ -5,7 +5,11 @@ class RedSocial {
     if (this.checkTypes(id, nombre, URL)) {
       this.id = id;
       this.nombre = nombre;
-      this.URL = URL;
+      if (this.validateUrl(URL)) {
+        this.URL = URL;
+      } else {
+        throw "No se ha podido crear la red Social: Url incorrecta";
+      }  
     } else {
       throw "No se ha podido crear la red Social: Parámetros incorrectos";
     }
@@ -14,8 +18,8 @@ class RedSocial {
   checkTypes(id, nombre, URL) {
     return (
       typeof id === "number" &&
-      typeof label === "string" &&
-      typeof url_img === "string"
+      typeof nombre === "string" &&
+      typeof URL === "string"
     );
   }
 
@@ -33,6 +37,19 @@ class RedSocial {
 
   getURL() {
     return this.URL;
+  }
+
+  validateUrl(url) {
+    var pattern = new RegExp(
+      "^(https?:\\/\\/)?" + // protocol
+        "((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|" + // domain name
+        "((\\d{1,3}\\.){3}\\d{1,3}))" + // OR ip (v4) address
+        "(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*" + // port and path
+        "(\\?[;&a-z\\d%_.~+=-]*)?" + // query string
+        "(\\#[-a-z\\d_]*)?$",
+      "i"
+    ); // fragment locator
+    return !!pattern.test(url);
   }
 }
 module.exports = RedSocial;

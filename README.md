@@ -17,7 +17,7 @@ de la Universidad de Granada durante el curso 2020-2021.
 
 * [Instrucciones de uso](#instrucciones-de-uso)
 * :point_right: **[Justificación técnica del framework elegido para el microservicio](Doc/H5/justificacionFrameworkElegido.md)**
-* :point_right: **[Diseño del API](Doc/H5/diseñoAPI.md)**
+* :point_right: **[Diseño del API](Doc/H5/diseñoApi.md)**
 * :point_right: **[Uso de buenas prácticas: configuración distribuida, logs](Doc/H5/buenasPracticas.md)**
 * :point_right: **[Tests correctos y de acuerdo con las historias de usuario](Doc/H5/testCorrectos.md)**
 * :point_right: **[Creación de una imagen Docker para despliegue](Doc/H5/dockerDespliegue.md)**

@@ -24,10 +24,11 @@ class Grupo {
         anioSeparacion,
         estilo,
         genero,
-        web,        
+        web,
         biografia,
         miembros,
-        pais        
+        pais, 
+        imagenes
       )
     ) {
       this.id = id;
@@ -54,10 +55,11 @@ class Grupo {
     anioSeparacion,
     estilo,
     genero,
-    web,    
+    web,
     biografia,
     miembros,
-    pais,    
+    pais,
+    imagenes
   ) {
     return (
       typeof id === "number" &&
@@ -67,16 +69,37 @@ class Grupo {
       typeof estilo === "string" &&
       typeof genero === "string" &&
       typeof web === "string" &&
-      typeof biografia === "string" &&      
+      typeof biografia === "string" &&
       typeof miembros === "number" &&
-      typeof pais === "string"
+      typeof pais === "string" &&
+      this.checkImages(imagenes)
     );
   }
 
+  checkImages(imagenes) {
+    if (Array.isArray(imagenes)) {      
+      let error = false;
+      imagenes.forEach(
+        (img) => (error = img instanceof Imagen == false)
+      );
+      if(!error){
+        return true;  
+      } else {
+        throw "Tipo incorrecto: Imagenes no contiene imagenes validas";  
+      }      
+    } else {
+      throw "Tipo Incorrecto: Imagenes no es un array";
+    }
+  }
+
   to_string() {
-    return `${this.id}, ${this.nombre}, ${this.anioFormacion}, 
+    let cadena = `${this.id}, ${this.nombre}, ${this.anioFormacion}, 
             ${this.anioSeparacion}, ${this.estilo}, ${this.genero}, 
-            ${this.web}, ${this.biografia}, ${this.miembros}, ${this.pais}`;
+            ${this.web}, ${this.biografia}, ${this.miembros}, ${this.pais} `;
+    this.imagenes.forEach(
+      (img) => (cadena += `, [ ${img.getLabel()}: ${img.getUrl_img()} ]`)
+    );
+    return cadena;
   }
 
   getId() {
@@ -126,5 +149,7 @@ class Grupo {
     return this.imagenes;
   }
 }
+
+
 
 module.exports = Grupo;

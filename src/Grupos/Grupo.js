@@ -1,4 +1,5 @@
 const Imagen = require("./Imagen");
+const RedSocial = require("./RedSocial");
 
 // Clase que define a un artista o grupo de música
 class Grupo {
@@ -25,6 +26,7 @@ class Grupo {
         estilo,
         genero,
         web,
+        redesSociales,
         biografia,
         miembros,
         pais,
@@ -36,12 +38,12 @@ class Grupo {
       this.anioFormacion = anioFormacion;
       this.anioSeparacion = anioSeparacion;
       this.estilo = estilo;
-      this.genero = genero;      
+      this.genero = genero;
       if (this.validateUrl(web)) {
         this.web = web;
       } else {
         throw "No se ha podido crear el grupo: Url web incorrecta";
-      } 
+      }
       this.redesSociales = redesSociales;
       this.biografia = biografia;
       this.miembros = miembros;
@@ -60,6 +62,7 @@ class Grupo {
     estilo,
     genero,
     web,
+    redesSociales,
     biografia,
     miembros,
     pais,
@@ -76,7 +79,8 @@ class Grupo {
       typeof biografia === "string" &&
       typeof miembros === "number" &&
       typeof pais === "string" &&
-      this.checkImages(imagenes)
+      this.checkImages(imagenes) &&
+      this.checkRRSS(redesSociales)
     );
   }
 
@@ -94,10 +98,30 @@ class Grupo {
     }
   }
 
+  checkRRSS(rrss) {
+    if (Array.isArray(rrss)) {
+      let error = false;
+      rrss.forEach(
+        (redSocial) => (error = redSocial instanceof RedSocial == false)
+      );
+      if (!error) {
+        return true;
+      } else {
+        throw "Tipo incorrecto: Redes Sociales no contiene redes validas";
+      }
+    } else {
+      throw "Tipo Incorrecto: Redes Sociales no es un array";
+    }
+  }
+
   to_string() {
     let cadena = `${this.id}, ${this.nombre}, ${this.anioFormacion}, 
             ${this.anioSeparacion}, ${this.estilo}, ${this.genero}, 
-            ${this.web}, ${this.biografia}, ${this.miembros}, ${this.pais} `;
+            ${this.web}`;
+    this.redesSociales.forEach(
+      (red) => (cadena += `, [ ${red.getNombre()}: ${red.getURL()} ]`)
+    );
+    cadena += `, ${this.biografia}, ${this.miembros}, ${this.pais} `;
     this.imagenes.forEach(
       (img) => (cadena += `, [ ${img.getLabel()}: ${img.getUrl_img()} ]`)
     );
@@ -164,7 +188,5 @@ class Grupo {
     return !!pattern.test(url);
   }
 }
-
-
 
 module.exports = Grupo;

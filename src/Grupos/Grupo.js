@@ -27,7 +27,7 @@ class Grupo {
         web,
         biografia,
         miembros,
-        pais, 
+        pais,
         imagenes
       )
     ) {
@@ -36,8 +36,12 @@ class Grupo {
       this.anioFormacion = anioFormacion;
       this.anioSeparacion = anioSeparacion;
       this.estilo = estilo;
-      this.genero = genero;
-      this.web = web;
+      this.genero = genero;      
+      if (this.validateUrl(web)) {
+        this.web = web;
+      } else {
+        throw "No se ha podido crear el grupo: Url web incorrecta";
+      } 
       this.redesSociales = redesSociales;
       this.biografia = biografia;
       this.miembros = miembros;
@@ -77,16 +81,14 @@ class Grupo {
   }
 
   checkImages(imagenes) {
-    if (Array.isArray(imagenes)) {      
+    if (Array.isArray(imagenes)) {
       let error = false;
-      imagenes.forEach(
-        (img) => (error = img instanceof Imagen == false)
-      );
-      if(!error){
-        return true;  
+      imagenes.forEach((img) => (error = img instanceof Imagen == false));
+      if (!error) {
+        return true;
       } else {
-        throw "Tipo incorrecto: Imagenes no contiene imagenes validas";  
-      }      
+        throw "Tipo incorrecto: Imagenes no contiene imagenes validas";
+      }
     } else {
       throw "Tipo Incorrecto: Imagenes no es un array";
     }
@@ -147,6 +149,19 @@ class Grupo {
 
   getImagenes() {
     return this.imagenes;
+  }
+
+  validateUrl(url) {
+    var pattern = new RegExp(
+      "^(https?:\\/\\/)?" + // protocol
+        "((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|" + // domain name
+        "((\\d{1,3}\\.){3}\\d{1,3}))" + // OR ip (v4) address
+        "(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*" + // port and path
+        "(\\?[;&a-z\\d%_.~+=-]*)?" + // query string
+        "(\\#[-a-z\\d_]*)?$",
+      "i"
+    ); // fragment locator
+    return !!pattern.test(url);
   }
 }
 

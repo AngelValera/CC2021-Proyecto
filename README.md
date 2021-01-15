@@ -16,10 +16,11 @@ de la Universidad de Granada durante el curso 2020-2021.
 <!-- * :point_right: **[](Doc/)** -->
 
 * [Instrucciones de uso](#instrucciones-de-uso)
-* :point_right: **[Configuración y justificación del uso de Travis.ci](Doc/H4/justificacion_Travis.md)**
-* :point_right: **[Configuración y justificación de un sistema adicional de CI](Doc/H4/CI_Adicional.md)**
-* :point_right: **[Uso correcto del gestor de tareas](Doc/H4/correcto_Uso_GT.md)**
-* :point_right: **[Uso del contenedor de Docker en alguno de los sistemas de CI](Doc/H4/correcto_Uso_Docker.md)**
+* :point_right: **[Justificación técnica del framework elegido para el microservicio](Doc/H5/justificacionFrameworkElegido.md)**
+* :point_right: **[Diseño del API](Doc/H5/diseñoAPI.md)**
+* :point_right: **[Uso de buenas prácticas: configuración distribuida, logs](Doc/H5/buenasPracticas.md)**
+* :point_right: **[Tests correctos y de acuerdo con las historias de usuario](Doc/H5/testCorrectos.md)**
+* :point_right: **[Creación de una imagen Docker para despliegue](Doc/H5/dockerDespliegue.md)**
 * [Avances del proyecto](#avance-del-proyecto)
 
 ---
@@ -29,6 +30,7 @@ Para facilitar la ejecución de este proyecto, se ha creado un fichero [Gruntfil
 
 Para ejecutar correctamente este proyecto habría que usar los siguiente comandos:
 
+- `npm install -g grunt-cli`  Para instalar el gestor Grunt de manera global
 - `npm install grunt-cli`  Para instalar el gestor Grunt
 - `grunt install` Para instalar las depedencias del proyecto
 - `grunt test` Para ejecutar los test y comprobar la sintaxis
@@ -36,22 +38,23 @@ Para ejecutar correctamente este proyecto habría que usar los siguiente comando
 ---
 ### Avance del proyecto:
 
-- Se ha modificado el [Dockerfile](Dockerfile) creado en entregas anteriores:
-  - Se ha minimizado un poco más, al eliminar líneas LABEL y COPY repetidas. Se puede ver en este  [commit](https://github.com/AngelValera/LyricsHunter/commit/4084fb416e4513cf799b0c5d23df90fe1c9bd0bb) y en este [commit](https://github.com/AngelValera/LyricsHunter/commit/577413efc72b7ccb1f648652d7f317595634245c). 
-  - Se ha corregido tanto el `WORKDIR` que pasa de ser `/app/test` a `/app` y se agrega el contenido de la carpeta `node_modules` a la variable de entorno `PATH`, ya que tal y como estaba al ejecutar el siguiente comando :
-  ```shell
-      docker run -t -v `pwd`:/app/test angelvalera/lyricshunter
-  ``` 
-    - Si en el directorio en el que nos encontramos no está la carpeta node_modules, esta era eliminada del contenedor y no pasaban los test. Se puede comprobar en los siguientes commits:
-      - [25369c3](https://github.com/AngelValera/LyricsHunter/commit/31d93b5f1c1d6b93e6ff6f038454d8419560d265)
-      - [ea550dc](https://github.com/AngelValera/LyricsHunter/commit/ea550dc3e2f6a080fd9a8e99e6ad5a2941d765bf)
-      - [31d93b5](https://github.com/AngelValera/LyricsHunter/commit/31d93b5f1c1d6b93e6ff6f038454d8419560d265)
-      
-
-- Se han agregado varias Github Actions al repositorio. 
-  - Una para comprobar que el fichero cc.yaml esté correcto. Se puede encontrar [aquí](.github/workflows/check-yaml.yaml).
-  - Otra para publicar la imagen de docker dentro de Github. Se puede encontrar [aquí](.github/workflows/docker-publish.yml). 
-  - Se ha agregado otra con una funcionalidad similar a la de Travis, pero en este caso para ejecutar solamente la versión 15 de Node, de manera que se compruebe no solo en CircleCI sino aquí también. Se puede encontrar [aquí](.github/workflows/node.js.yml)
+- Se ha modificado el fichero de configuración de Travis. 
+  - Ahora se testea la última versión de Node.js, además de todas las versiones LTS. 
+  - Ahora se hace uso de la caché para acortar el tiempo necesario para ejecutar los test.
+  - Ambos cambios se pueden ver en los siguientes commits:
+    - [0113f43](https://github.com/AngelValera/LyricsHunter/commit/0113f4381a5c3daa1526853a5d9dd451c8f92660)
+    - [a42baf8](https://github.com/AngelValera/LyricsHunter/commit/a42baf8f666232bdbd63ecc671d21525fce51fb0)
+- Se han revisado todas las HUs de manera que quedasen más claras.
+  - [Historias de usuario](https://github.com/AngelValera/LyricsHunter/issues?q=is%3Aissue+is%3Aopen+label%3Auser-stories).
+  - [Issues](https://github.com/AngelValera/LyricsHunter/labels/Task)
+- Se estuvo probando la utilidad de la biblioteca [Flow](https://flow.org/) para comprobar los tipos de manera automática. Finalmente se descartó su uso debido a que no conseguí ejecutar los test correctamente usándolo.
+Se puede ver la documentación consultada en el siguiente enlace:
+  - [Comentario](https://github.com/AngelValera/LyricsHunter/issues/16#issuecomment-761156294)
+- Se ha trabajado sobre todo en la [HU1](https://github.com/AngelValera/LyricsHunter/issues/12) 
+  - Ahora se realizan comprobaciones de tipos.
+  - Ahora se realizan validaciones de url.
+  - Ahora se agregan Imagenes y redes sociales a los grupos
+  - Se han desarrollado de una manera más completa las clases Imagen y Red Social. 
  
 ---
 ### Documentación Adicional
@@ -69,4 +72,9 @@ Para ejecutar correctamente este proyecto habría que usar los siguiente comando
 * [Creación del fichero Dockerfile.](Doc/H3/Creacion_Dockerfile.md)
 * [Configuración de Docker Hub.](Doc/H3/Configuracion_DockerHub.md)
 * [Subida del contenedor del Github Container Registry.](Doc/H3/Configuracion_GCR.md)
+* [Configuración y justificación del uso de Travis.ci](Doc/H4/justificacion_Travis.md)
+* [Configuración y justificación de un sistema adicional de CI](Doc/H4/CI_Adicional.md)
+* [Uso correcto del gestor de tareas](Doc/H4/correcto_Uso_GT.md)
+* [Uso del contenedor de Docker en alguno de los sistemas de CI](Doc/H4/correcto_Uso_Docker.md)
+
 

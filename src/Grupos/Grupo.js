@@ -108,13 +108,11 @@ class Grupo {
   }
 
   to_string() {
-    let cadena = `${this.id}, ${this.nombre}, ${this.anioFormacion}, 
-            ${this.anioSeparacion}, ${this.estilo}, ${this.genero}, 
-            ${this.web}`;
+    let cadena = `${this.id}, ${this.nombre}, ${this.anioFormacion}, ${this.anioSeparacion}, ${this.estilo}, ${this.genero}, ${this.web}`;
     this.redesSociales.forEach(
       (red) => (cadena += `, [ ${red.getNombre()}: ${red.getURL()} ]`)
     );
-    cadena += `, ${this.biografia}, ${this.miembros}, ${this.pais} `;
+    cadena += `, ${this.biografia}, ${this.miembros}, ${this.pais}`;
     this.imagenes.forEach(
       (img) => (cadena += `, [ ${img.getLabel()}: ${img.getUrl_img()} ]`)
     );

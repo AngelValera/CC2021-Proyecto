@@ -1,5 +1,6 @@
 const Imagen = require("./Imagen");
 const RedSocial = require("./RedSocial");
+const codPais = require("./CodPaises");
 
 // Clase que define a un artista o grupo de música
 class Grupo {
@@ -47,13 +48,82 @@ class Grupo {
       this.redesSociales = redesSociales;
       this.biografia = biografia;
       this.miembros = miembros;
-      this.pais = pais;
+      if (this.checkCodPais(pais)) {
+        this.pais = pais;
+      }
       this.imagenes = imagenes;
     } else {
       throw "No se ha podido crear el grupo: Parámetros incorrectos";
     }
   }
+  //-------------------------------------------------------
+  // GETTERS
+  //-------------------------------------------------------
+  getId() {
+    return this.id;
+  }
 
+  getNombre() {
+    return this.nombre;
+  }
+
+  getAnioFormacion() {
+    return this.anioFormacion;
+  }
+
+  getAnioSeparacion() {
+    return this.anioSeparacion;
+  }
+
+  getEstilo() {
+    return this.estilo;
+  }
+
+  getGenero() {
+    return this.genero;
+  }
+
+  getWeb() {
+    return this.web;
+  }
+
+  getRedesSociales() {
+    return this.redesSociales;
+  }
+
+  getBiografia() {
+    return this.biografia;
+  }
+
+  getMiembros() {
+    return this.miembros;
+  }
+
+  getPais() {
+    return this.pais;
+  }
+
+  getImagenes() {
+    return this.imagenes;
+  }
+
+  to_string() {
+    let cadena = `${this.id}, ${this.nombre}, ${this.anioFormacion}, 
+            ${this.anioSeparacion}, ${this.estilo}, ${this.genero}, 
+            ${this.web}`;
+    this.redesSociales.forEach(
+      (red) => (cadena += `, [ ${red.getNombre()}: ${red.getURL()} ]`)
+    );
+    cadena += `, ${this.biografia}, ${this.miembros}, ${this.pais} `;
+    this.imagenes.forEach(
+      (img) => (cadena += `, [ ${img.getLabel()}: ${img.getUrl_img()} ]`)
+    );
+    return cadena;
+  }
+
+  //-------------------------------------------------------
+  // VALIDATORS
+  //-------------------------------------------------------
   checkTypes(
     id,
     nombre,
@@ -114,67 +184,6 @@ class Grupo {
     }
   }
 
-  to_string() {
-    let cadena = `${this.id}, ${this.nombre}, ${this.anioFormacion}, 
-            ${this.anioSeparacion}, ${this.estilo}, ${this.genero}, 
-            ${this.web}`;
-    this.redesSociales.forEach(
-      (red) => (cadena += `, [ ${red.getNombre()}: ${red.getURL()} ]`)
-    );
-    cadena += `, ${this.biografia}, ${this.miembros}, ${this.pais} `;
-    this.imagenes.forEach(
-      (img) => (cadena += `, [ ${img.getLabel()}: ${img.getUrl_img()} ]`)
-    );
-    return cadena;
-  }
-
-  getId() {
-    return this.id;
-  }
-  getNombre() {
-    return this.nombre;
-  }
-
-  getAnioFormacion() {
-    return this.anioFormacion;
-  }
-
-  getAnioSeparacion() {
-    return this.anioSeparacion;
-  }
-
-  getEstilo() {
-    return this.estilo;
-  }
-
-  getGenero() {
-    return this.genero;
-  }
-
-  getWeb() {
-    return this.web;
-  }
-
-  getRedesSociales() {
-    return this.redesSociales;
-  }
-
-  getBiografia() {
-    return this.biografia;
-  }
-
-  getMiembros() {
-    return this.miembros;
-  }
-
-  getPais() {
-    return this.pais;
-  }
-
-  getImagenes() {
-    return this.imagenes;
-  }
-
   validateUrl(url) {
     var pattern = new RegExp(
       "^(https?:\\/\\/)?" + // protocol
@@ -187,6 +196,17 @@ class Grupo {
     ); // fragment locator
     return !!pattern.test(url);
   }
+
+  checkCodPais(codigo) {
+    let PaisName = Object.keys(codPais).find(
+      (name) => codPais[name] === codigo
+    );
+    if (PaisName == undefined) {
+      throw "No se ha podido crear el grupo: Codigo de pais incorrecto";
+    }
+    return true;
+  }
 }
+
 
 module.exports = Grupo;

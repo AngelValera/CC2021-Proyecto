@@ -1,51 +1,38 @@
 const Grupo = require("./Grupo.js");
-const Imagen = require("./Imagen.js");
-const redSocial = require("./RedSocial.js");
 
 class GrupoController {
   constructor() {
     this.grupos = {}; // creamos un diccionario vacío
   }
 
-  addGrupo(
-    id,
-    nombre,
-    anioFormacion,
-    anioSeparacion,
-    estilo,
-    genero,
-    web,
-    redesSociales,
-    biografia,
-    miembros,
-    pais,
-    imagenes
-  ) {
-    let nuevoGrupo = new Grupo(
-      id,
-      nombre,
-      anioFormacion,
-      anioSeparacion,
-      estilo,
-      genero,
-      web,
-      redesSociales,
-      biografia,
-      miembros,
-      pais,
-      imagenes
-    );  
-    this.grupos[nuevoGrupo.getNombre()] = nuevoGrupo.to_string();      
+  // Agregamos un nuevo grupo
+  addNewGroup(nuevoGrupo) {
+    if (nuevoGrupo instanceof Grupo) {
+      if (!(nuevoGrupo.getId() in this.grupos)) {
+        this.grupos[nuevoGrupo.getId()] = nuevoGrupo;
+      } else {
+        throw "No se ha podido agregar el grupo: El grupo ya existe";        
+      }      
+    } else {
+      throw "No se ha podido agregar el grupo: Parámetros incorrectos";
+    }
   }
 
   // buscamos el grupo por su nombre
-  getGrupo(nombre) {
-    if (this.grupos.hasOwnProperty(nombre)) {
-      let grupoBuscado = this.grupos[nombre];
-      return grupoBuscado;
-    } else {
-      throw "El grupo no existe";
+  getGroupByName(nombre) {
+    let grupoBuscado = Object.keys(this.grupos).find(
+      (id) => this.grupos[id].getNombre() === nombre
+    );
+    if (grupoBuscado == undefined) {
+      throw "El grupo seleccionado no se ha encontrado.";
     }
+    return this.grupos[grupoBuscado];    
+  }
+
+  // Obtenemos todos los grupos
+  getGroups(){
+   return this.grupos; 
   }
 }
+
 module.exports = GrupoController;

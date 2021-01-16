@@ -24,7 +24,7 @@ class RedSocial {
   }
 
   to_string() {
-    return ` ${this.id} , ${this.label} , ${this.URL}`;
+    return `${this.id}, ${this.nombre}, ${this.URL}`;
   }
 
   getId() {

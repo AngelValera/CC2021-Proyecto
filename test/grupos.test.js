@@ -5,7 +5,7 @@ var expect = chai.expect();
 var Grupo = require("../src/Grupos/Grupo");
 var GrupoController = require("../src/Grupos/GrupoController");
 const Imagen = require("../src/Grupos/Imagen");
-
+const RedSocial = require("../src/Grupos/RedSocial");
 
 let unaImagen;
 
@@ -25,3 +25,13 @@ describe("Realizar test a las imágenes de los grupos", function () {
   });
 });
 
+describe("Realizar test a las redes sociales de los grupos", function () {
+  it("Las redes sociales deben crearse correctamente", function () {
+    unaRS = new RedSocial(1, "Facebook", "www.facebook.com/linkinPark");
+    assert.equal(
+      unaRS.to_string(),
+      "1, Facebook, www.facebook.com/linkinPark",
+      "Correcto"
+    );
+  });
+});

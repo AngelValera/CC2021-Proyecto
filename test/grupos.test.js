@@ -4,66 +4,24 @@ var should = chai.should();
 var expect = chai.expect();
 var Grupo = require("../src/Grupos/Grupo");
 var GrupoController = require("../src/Grupos/GrupoController");
+const Imagen = require("../src/Grupos/Imagen");
 
-describe("Crear un Grupo", function () {
-  it("Los grupos deben crearse correctamente", function () {
-    var nuevo_grupo = new Grupo(
-      "id",
-      "nombre",
-      "anioFormacion",
-      "anioSeparacion",
-      "estilo",
-      "genero",
-      "web",
-      "redesSociales",
-      "biografia",
-      "miembros",
-      "pais",
-      "imagenes"
+
+let unaImagen;
+
+
+describe("Realizar test a las imágenes de los grupos", function () {
+  it("Las imagenes deben crearse correctamente", function () {
+    unaImagen = new Imagen(
+      1,
+      "Banner",
+      "https://www.theaudiodb.com/images/media/artist/banner/rwytxy1347991177.jpg"
     );
     assert.equal(
-      nuevo_grupo.to_string(),
-      "id, nombre, anioFormacion, anioSeparacion, estilo, genero, web, redesSociales, biografia, miembros, pais, imagenes",
+      unaImagen.to_string(),
+      "1, Banner, https://www.theaudiodb.com/images/media/artist/banner/rwytxy1347991177.jpg",
       "Correcto"
     );
   });
 });
 
-describe("Consultar un grupo", function () {
-  it("Los grupos deben consultarse correctamente", function () {
-    var controlador = new GrupoController();
-    controlador.addGrupo(
-      "1",
-      "nombre",
-      "anioFormacion",
-      "anioSeparacion",
-      "estilo",
-      "genero",
-      "web",
-      "redesSociales",
-      "biografia",
-      "miembros",
-      "pais",
-      "imagenes"
-    );
-    controlador.addGrupo(
-      "2",
-      "nombre2",
-      "anioFormacion2",
-      "anioSeparacion2",
-      "estilo2",
-      "genero2",
-      "web2",
-      "redesSociales2",
-      "biografia2",
-      "miembros2",
-      "pais2",
-      "imagenes2"
-    );
-    assert.equal(
-      controlador.getGrupo("nombre"),
-      "1, nombre, anioFormacion, anioSeparacion, estilo, genero, web, redesSociales, biografia, miembros, pais, imagenes",
-      "Correcto"
-    );
-  });
-});

@@ -51,10 +51,32 @@ Para ejecutar correctamente este proyecto habría que usar los siguiente comando
 Se puede ver la documentación consultada en el siguiente enlace:
   - [Comentario](https://github.com/AngelValera/LyricsHunter/issues/16#issuecomment-761156294)
 - Se ha trabajado sobre todo en la [HU1](https://github.com/AngelValera/LyricsHunter/issues/12) 
-  - Ahora se realizan comprobaciones de tipos.
-  - Ahora se realizan validaciones de url.
-  - Ahora se agregan Imagenes y redes sociales a los grupos
   - Se han desarrollado de una manera más completa las clases Imagen y Red Social. 
+    - [Cambios en la clase Imagen](https://github.com/AngelValera/LyricsHunter/issues/18)
+    - [Cambios en la clase RedSocial](https://github.com/AngelValera/LyricsHunter/issues/21)
+  - Ahora se realizan comprobaciones de tipos en las clases Imagen, Red Social y Grupos.
+    - [9b5285e](https://github.com/AngelValera/LyricsHunter/commit/9b5285e747e90c5ca12e6c6e541343d9a727b205)
+    - [a0b7095](https://github.com/AngelValera/LyricsHunter/commit/a0b7095c3572a5f78bf60911d466d793cc974efe)
+  - Ahora se realizan validaciones de url.
+    - [8d0227e](https://github.com/AngelValera/LyricsHunter/commit/8d0227e2d214a3d1ca2345e2ba107a3f1aa9f355)
+  - Ahora se agregan Imagenes y redes sociales a los grupos.
+    - [9605a30](https://github.com/AngelValera/LyricsHunter/commit/9605a3073e328874734b12984ea02c4bb6ab47b0)  
+    - [cf8ee11](https://github.com/AngelValera/LyricsHunter/commit/cf8ee113a06177382e40bf1a312cc6c69b4fdf9a)
+  - Ahora se comprueba que el codigo de pais introducido en un grupo sea correcto.
+    - [447dd4b](https://github.com/AngelValera/LyricsHunter/commit/447dd4b179c74697a02ca638611b9eeefcbe4bee)
+    - [5b31e1a](https://github.com/AngelValera/LyricsHunter/commit/5b31e1ad8fb7170385dcf8d616a0c90c419535f3)
+  - Se ha corregido gran parte de la clase controladora de grupos de musica:
+    - [8371d87](https://github.com/AngelValera/LyricsHunter/commit/8371d87f5133be7239ec598521a05cf259a2045f)
+  - Se han corregido los test de los grupos y se han creado nuevos para testear las clases imagen y red social
+    - [741046d](https://github.com/AngelValera/LyricsHunter/commit/741046d611307ab4124ebf43e6d12113fd4d2dd8)
+    - [35b1582](https://github.com/AngelValera/LyricsHunter/commit/35b158255f811c31c72bd72f053db7471fd94076)
+    - [f3eccf6](https://github.com/AngelValera/LyricsHunter/commit/f3eccf67bfe159c5895485fea89c9c6eed84ec8f)
+    - [17090f3](https://github.com/AngelValera/LyricsHunter/commit/17090f3701d6e41a6351846b5174e37296d5f7db)
+    - [60a4ba3](https://github.com/AngelValera/LyricsHunter/commit/60a4ba3508092c6dbeb5d064ca059b3fac585172)
+
+
+- Se han creado nuevas HUs, después de comprobar que eran necesarias.
+  - [HU10](https://github.com/AngelValera/LyricsHunter/issues/66)
  
 ---
 ### Documentación Adicional

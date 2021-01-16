@@ -23,7 +23,7 @@ class Imagen {
   }
 
   to_string() {
-    return ` ${this.id} , ${this.label} , ${this.url_img}`;
+    return `${this.id}, ${this.label}, ${this.url_img}`;
   }
 
   getId() {

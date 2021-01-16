@@ -64,5 +64,25 @@ describe("Realizar test a los Grupos de música", function () {
     );
   });
 
+  it("Los grupos deben obtenerse correctamente", function () {
+    let groupTest2 = new Grupo(
+      2,
+      "Manowar",
+      1980,
+      null,
+      "Metal",
+      "Heavy Metal",
+      "www.manowar.com",
+      [],
+      "Manowar es una banda estadounidense de heavy metal procedente de Aurburn, Nueva York.",
+      4,
+      "US",
+      []
+    );
+    controlador.addNewGroup(groupTest2);
+    assert.equal(Object.keys(controlador.getGroups()).length, 2, "Correcto");
+    assert.equal(Object.keys(controlador.getGroups()).length, 2, "Correcto");
+  });
+
   
 });

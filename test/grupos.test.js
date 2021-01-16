@@ -84,5 +84,11 @@ describe("Realizar test a los Grupos de música", function () {
     assert.equal(Object.keys(controlador.getGroups()).length, 2, "Correcto");
   });
 
-  
+  it("Los grupos deben consultarse correctamente por nombre", function () {
+    assert.equal(
+      controlador.getGroupByName("Linkin Park").to_string(),
+      `1, Linkin Park, 1995, null, Rock/Pop, Alternative Rock, www.linkinpark.com, [ Facebook: www.facebook.com/linkinPark ], Linkin Park es una banda estadounidense de rock procedente de Agoura Hills, California., 6, US, [ Banner: https://www.theaudiodb.com/images/media/artist/banner/rwytxy1347991177.jpg ]`,
+      "Correcto"
+    );
+  });
 });

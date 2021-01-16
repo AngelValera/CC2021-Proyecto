@@ -62,10 +62,10 @@ Se puede ver la documentación consultada en el siguiente enlace:
   - Ahora se agregan Imagenes y redes sociales a los grupos.
     - [9605a30](https://github.com/AngelValera/LyricsHunter/commit/9605a3073e328874734b12984ea02c4bb6ab47b0)  
     - [cf8ee11](https://github.com/AngelValera/LyricsHunter/commit/cf8ee113a06177382e40bf1a312cc6c69b4fdf9a)
-  - Ahora se comprueba que el codigo de pais introducido en un grupo sea correcto.
+  - Ahora se comprueba que el código de país introducido en un grupo sea correcto.
     - [447dd4b](https://github.com/AngelValera/LyricsHunter/commit/447dd4b179c74697a02ca638611b9eeefcbe4bee)
     - [5b31e1a](https://github.com/AngelValera/LyricsHunter/commit/5b31e1ad8fb7170385dcf8d616a0c90c419535f3)
-  - Se ha corregido gran parte de la clase controladora de grupos de musica:
+  - Se ha corregido gran parte de la clase controladora de grupos de música:
     - [8371d87](https://github.com/AngelValera/LyricsHunter/commit/8371d87f5133be7239ec598521a05cf259a2045f)
   - Se han corregido los test de los grupos y se han creado nuevos para testear las clases imagen y red social
     - [741046d](https://github.com/AngelValera/LyricsHunter/commit/741046d611307ab4124ebf43e6d12113fd4d2dd8)
@@ -98,5 +98,4 @@ Se puede ver la documentación consultada en el siguiente enlace:
 * [Configuración y justificación de un sistema adicional de CI](Doc/H4/CI_Adicional.md)
 * [Uso correcto del gestor de tareas](Doc/H4/correcto_Uso_GT.md)
 * [Uso del contenedor de Docker en alguno de los sistemas de CI](Doc/H4/correcto_Uso_Docker.md)
-
 

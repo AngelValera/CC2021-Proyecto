@@ -206,6 +206,43 @@ El primer paso es instalarlo usando el comando que indicamos anteriormente.
 
 `npm install express --save`
 
+Una vez instalado, vamos a crearnos el fichero principal desde donde ejecutaremos express.
+
+En el directorio `/src` he creado el siguiente fichero [index.js](../../src/index.js)
+
+```javascript
+const express = require('express');
+const app = express();
+const morgan = require('morgan');
+
+// Settings
+app.set('port', process.env.PORT || 3000);
+app.set('json spaces', 2);
+
+// Middlerwares
+app.use(morgan('dev'));
+app.use(express.urlencoded({extended:false}));
+app.use(express.json());
+
+// Routes
+app.use("/api",require("./routes/grupos"));
+
+// Starting the server
+app.listen(app.get('port'), () => {
+    console.log(`Server on Port ${app.get("port")}`);
+});
+
+module.exports = app;
+```
+Como se puede ver en este fichero, lo primero ha sido cargar las bibliotecas de express y morgan (cuya finalidad se desarrolla en el siguiente [fichero](./buenasPracticas.md)).
+
+Una vez cargadas establecemos un puerto para servir el microservicio. En este [fichero](./buenasPracticas.md) se explica cómo se ha utilizado etc3 para establecer de una mejor forma el puerto.
+
+En el siguiente apartado, hemos realizado algunas configuraciones para que se apliquen antes de procesar la respuesta. Siendo una de estas la indicación de que vamos a trabajar sobre todo con formatos json.
+
+En el siguiente apartado es donde indicamos a express dónde se han guardado las rutas que tiene que servir. Además indicamos un "prefijo" a las rutas ahi contenidas. Cómo se han desarrollado estas rutas y la estructura general del API se puede encontrar en este [fichero](./diseñoApi.md).
+
+Finalmente, ejecutamos el servidor en el puerto seleccionado anteriormente.
 
 
 ---
@@ -226,3 +263,5 @@ El primer paso es instalarlo usando el comando que indicamos anteriormente.
 [koajs/Koa](https://github.com/koajs/koa)
 
 [Koa. js - Guía rápida](https://www.hebergementwebs.com/tutorial-de-koajs/koa-js-guia-rapida)
+
+[morgan](https://www.npmjs.com/package/morgan)

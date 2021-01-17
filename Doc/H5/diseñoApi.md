@@ -110,8 +110,3 @@ Como se puede ver, encontramos 3 rutas. Hay que tener en cuenta que como explica
 
 [Códigos de estado de respuesta HTTP](https://developer.mozilla.org/es/docs/Web/HTTP/Status)
 
-[]()
-
-[]()
-
-[]()

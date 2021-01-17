@@ -1,0 +1,95 @@
+[
+    {    
+    "nombre": "Linkin Park",
+    "anioFormacion":1995,
+    "anioSeparacion": null,
+    "estilo":"Rock/Pop",
+    "genero":"Alternative Rock",
+    "web":"www.linkinpark.com",
+    "redesSociales": [
+        {   
+            "nombre": "Facebook", 
+            "url":"www.facebook.com/linkinPark"
+        },
+        {   
+            "nombre": "Twitter", 
+            "url":"https://twitter.com/linkinpark"
+        }
+    ],
+    "biografia":"Linkin Park es una banda estadounidense de rock procedente de Agoura Hills, California. Formada en 1996, el grupo estuvo inicialmente integrado por Mike Shinoda, Dave Farrell, Joe Hahn, Brad Delson, Rob Bourdon y Mark Wakefield, este último como voz principal. La banda inició en ese mismo año sus primeros trabajos musicales de manera independiente y posterior a esto grabaron su primer material llamado Xero; sin embargo no tuvieron gran éxito en la búsqueda de un sello discográfico ya que ninguno mostró interés en su trabajo, lo que ocasionó la renuncia de Mark Wakefield.2 Poco después, Chester Bennington se incorporó a la banda como vocalista; el grupo realizó su primera presentación en un club de Los Ángeles y siendo respaldados por Jeff Blue, en aquel entonces vicepresidente de Warner Bros. Records, lograron firmar con el sello en 1999. El nombre del grupo es un juego de palabras haciendo referencia al Lincoln Park en Santa Mónica.2 5\nEn el 2000 el grupo lanzó su álbum debut titulado Hybrid Theory;6 de este se extrajeron los sencillos «Crawling», «Papercut», «In the End» y «One Step Closer»; los últimos dos, obtuvieron certificación de disco de oro en Australia.7 Hybrid Theory alcanzó el puesto número dos en el Billboard 200, fue el séptimo álbum más vendido de la década del 2000,8 y lo certificaron con disco de diamante en los Estados Unidos y múltiple disco de platino en Europa.9 10 11 El cuarto sencillo del álbum, «In the End», alcanzó su mejor posición en el segundo puesto de la lista Billboard Hot 100, y se quedó en ella por treinta y ocho semanas.12\nEn 2003, la banda lanzó su primer álbum en directo titulado Live in Texas, grabado en el Reliant Stadium, en Houston, Texas.13 El disco obtuvo múltiples certificaciones de oro en Alemania, Nueva Zelanda, Reino Unido y Austria.14 15 16 17 Posteriormente, en 2008, lanzaron otro álbum en vivo titulado Road to Revolution: Live at Milton Keynes.18\nSu siguiente álbum de estudio, Meteora, fue publicado en 2003. Con unas ventas en la primera semana de 810 000 unidades,19 el álbum entró en el Billboard 200 en el puesto número uno, y se convirtió en el tercer disco más vendido del año.20 Del disco se extrajeron seis sencillos, entre los que se cuentan «Somewhere I Belong» y «Numb»; este último, recibió certificaciones de oro en los Estados Unidos y Australia.7 21 22 23 Ese mismo año, MTV2 nombró a Linkin Park como la sexta «mejor banda en la era del vídeo musical» y la tercera «mejor banda del nuevo milenio», detrás de Oasis y Coldplay.23 24 25 Asimismo, Billboard ubicó al grupo en el puesto diecinueve de los mejores artistas de la década.",
+    "miembros":4,
+    "pais":"US",
+    "imagenes": [
+        {
+            "label": "Logo", 
+            "url_img":"https://www.theaudiodb.com/images/media/artist/logo/qxvvut1521584412.png"
+        },
+        {
+            "label": "Banner", 
+            "url_img":"https://www.theaudiodb.com/images/media/artist/banner/rwytxy1347991177.jpg"
+        }
+    ]
+    },
+    {    
+    "nombre": "Rammstein",
+    "anioFormacion":1994,
+    "anioSeparacion": null,
+    "estilo":"Metal",
+    "genero":"Industrial Metal",
+    "web":"rammstein.de",
+    "redesSociales": [
+        {    
+            "nombre": "Facebook", 
+            "url":"www.facebook.com/Rammstein"
+        },
+        {                
+            "nombre": "Twitter", 
+            "url":"twitter.com/RSprachrohr"
+        }
+    ],
+    "biografia":"Rammstein es una banda de metal industrial de Berlín, Alemania. La banda se formó en 1994 y está formada por Till Lindemann (voz principal), Richard Z. Kruspe (guitarra y coros), Paul H. Landers (guitarra, coros), Oliver \"Ollie \" Riedel (bajo), Christoph \"Doom\" Schneider (batería y percusión electrónica) y Christian \"Flake \" Lorenz (teclados). Son ampliamente aceptados como parte de la escena Neue Deutsche Härte (junto con otros como Oomph !, Eisbrecher y Die Krupps) y son la banda más exitosa del género, alcanzando fama mundial. Sus canciones suelen estar en alemán, pero tienen También interpretó canciones total o parcialmente en otros idiomas como inglés, español, francés y ruso. A partir de 2009, han vendido más de 15 millones de discos en todo el mundo. Los espectáculos en vivo de Rammstein son famosos por su actuación pirotécnica y teatral, lo que les valió premios de muchos países, incluidos los Estados Unidos de América. El catálogo completo de Rammstein es publicado por Universal Music Group. Desde su formación en 1994, Rammstein no ha tenido cambios en la formación de su banda ni ningún miembro ha dejado la banda. La banda ha declarado que fueron nombrados después del desastre del espectáculo aéreo de Ramstein. La m adicional en el nombre de la banda hace que se traduzca literalmente como \"piedra de apisonamiento \".",
+    "miembros":6,
+    "pais":"DE",
+    "imagenes": [
+        {             
+            "label": "Logo", 
+            "url_img":"https://www.theaudiodb.com/images/media/artist/logo/rammstein-4df242383bb34.png"
+        },
+        { 
+            "label": "Banner", 
+            "url_img":"https://www.theaudiodb.com/images/media/artist/banner/sxtqpv1377635475.jpg"
+        }
+    ]
+    },
+    {    
+    "nombre": "Manowar",
+    "anioFormacion":1980,
+    "anioSeparacion": null,
+    "estilo":"Metal",
+    "genero":"Heavy Metal",
+    "web":"www.manowar.com",
+    "redesSociales": [
+        {                
+            "nombre": "Facebook", 
+            "url":"www.facebook.com/Rammstein"
+        },
+        {                
+            "nombre": "Twitter", 
+            "url":"twitter.com/RSprachrohr"
+        }
+    ],
+    "biografia":"Manowar es una banda estadounidense de heavy metal de Auburn, Nueva York. Formado en 1980, el grupo es conocido por sus letras basadas en la fantasía (particularmente la espada y la hechicería), temas mitológicos (particularmente la mitología nórdica) y por tocar muchas canciones sobre música heavy metal, junto con su \"fuerte y grandilocuente \". sonido. En una entrevista para MTV en febrero de 2007, el bajista Joey DeMaio lamentó que \"en estos días, hay una falta real de metal grande y épico que esté empapado de guitarras aplastantes, coros y orquestas ... así que es bueno ser uno de los pocos bandas que realmente están haciendo eso. \"En 1984, la banda fue incluida en el Libro Guinness de los Récords Mundiales por ofrecer la actuación más ruidosa, un récord que desde entonces han batido en 2 ocasiones. También ostentan el récord mundial del concierto de heavy metal más largo después de tocar durante 5 horas y 1 minuto en Bulgaria en 2008. También son conocidos por su eslogan \"Death to false metal \". Aunque la banda nunca ha sido un gran éxito comercial en los Estados Unidos, mantienen un fuerte culto allí. Por el contrario, son extremadamente populares en la escena del heavy metal en Europa, Japón, Australia y América del Sur. Los fans dedicados son conocidos y referidos por la banda como \"Metal Warriors \", \"Manowarriors \", \"Immortals \" o \"Brothers of Metal \", y colectivamente sus fans son conocidos como el \"Ejército de Immortals \". Han vendido más de nueve millones de copias en todo el mundo.",
+    "miembros":4,
+    "pais":"US",
+    "imagenes": [
+        {             
+            "label": "Logo", 
+            "url_img":"https://www.theaudiodb.com/images/media/artist/logo/wttuyu1363652323.png"
+        },
+        {            
+            "label": "Banner", 
+            "url_img":"https://www.theaudiodb.com/images/media/artist/banner/manowar-50c3514fa4c70.jpg"
+        }
+    ]
+    }
+]

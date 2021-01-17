@@ -42,7 +42,7 @@ Dado que en fichero [grupos.js](../../src/routes/grupos.js), definimos 3 rutas, 
 describe("Agregar un nuevo Grupo ", () => {
   it("Debería agregar un nuevo grupo", (done) => {
     chai
-      .request(url)
+      .request(app)
       .post("/api/grupos")
       .send(groupSamples[0])
       .end(function (err, res) {
@@ -54,7 +54,7 @@ describe("Agregar un nuevo Grupo ", () => {
 
   it("Debería obener un error al agregar un grupo que ya existe", (done) => {
     chai
-      .request(url)
+      .request(app)
       .post("/api/grupos")
       .send(groupSamples[0])
       .end(function (err, res) {
@@ -66,7 +66,7 @@ describe("Agregar un nuevo Grupo ", () => {
 
   it("Debería obener un error al agregar un grupo de forma incorrecta", (done) => {
     chai
-      .request(url)
+      .request(app)
       .post("/api/grupos")
       .send({
         nombre: "Rammstein",
@@ -96,7 +96,7 @@ Como se ha podido ver, se comprueba que:
 describe("Obtener informacion de los grupos", () => {  
   it("Debería obtener todos los grupos", (done) => {
     chai
-      .request(url)
+      .request(app)
       .get("/api/grupos")
       .end(function (err, res) {
         expect(res).to.have.status(200);
@@ -106,7 +106,7 @@ describe("Obtener informacion de los grupos", () => {
 
   it("Debería obtener el grupo que solicito.", (done) => {
     chai
-      .request(url)
+      .request(app)
       .get("/api/grupos/Linkin Park")
       .end(function (err, res) {
         expect(res).to.have.status(200);
@@ -116,7 +116,7 @@ describe("Obtener informacion de los grupos", () => {
 
   it("Debería obtener un error al no encontrar el grupo", (done) => {
     chai
-      .request(url)
+      .request(app)
       .get("/api/grupos/Rammstein")
       .end(function (err, res) {
         expect(res).to.have.status(404);

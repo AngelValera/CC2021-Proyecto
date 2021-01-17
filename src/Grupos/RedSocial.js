@@ -1,30 +1,30 @@
 // Clase que define a un artista o grupo de música
 class RedSocial {
-  constructor(id, nombre, URL) {
-    this.URL = URL;
-    if (this.checkTypes(id, nombre, URL)) {
+  constructor(id, nombre, url) {
+    this.url = url;
+    if (this.checkTypes(id, nombre, url)) {
       this.id = id;
       this.nombre = nombre;
-      if (this.validateUrl(URL)) {
-        this.URL = URL;
+      if (this.validateurl(url)) {
+        this.url = url;
       } else {
         throw "No se ha podido crear la red Social: Url incorrecta";
-      }  
+      }
     } else {
       throw "No se ha podido crear la red Social: Parámetros incorrectos";
     }
   }
 
-  checkTypes(id, nombre, URL) {
+  checkTypes(id, nombre, url) {
     return (
       typeof id === "number" &&
       typeof nombre === "string" &&
-      typeof URL === "string"
+      typeof url === "string"
     );
   }
 
   to_string() {
-    return `${this.id}, ${this.nombre}, ${this.URL}`;
+    return `${this.id}, ${this.nombre}, ${this.url}`;
   }
 
   getId() {
@@ -36,10 +36,10 @@ class RedSocial {
   }
 
   getURL() {
-    return this.URL;
+    return this.url;
   }
 
-  validateUrl(url) {
+  validateurl(url) {
     var pattern = new RegExp(
       "^(https?:\\/\\/)?" + // protocol
         "((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|" + // domain name

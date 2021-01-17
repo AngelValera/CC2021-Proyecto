@@ -147,6 +147,3 @@ En la siguiente captura se puede ver el resultado de la ejecución de los test a
 
 [Chai HTTP](https://www.chaijs.com/plugins/chai-http/)
 
-[]()
-
-[]()

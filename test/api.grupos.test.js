@@ -8,6 +8,21 @@ chai.use(chaiHttp);
 const url = `http://localhost:${app.get("port")}`;
 
 
+// [HU10] Agregar nuevos Grupos de musica 
+describe("Agregar un nuevo Grupo ", () => {
+  it("Debería agregar un nuevo grupo", (done) => {
+    chai
+      .request(url)
+      .post("/api/grupos")
+      .send(groupSamples[0])
+      .end(function (err, res) {
+        console.log(res.body);
+        expect(res).to.have.status(201);
+        done();
+      });
+  });
+});
+
 
 
 

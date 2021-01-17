@@ -33,7 +33,23 @@ describe("Agregar un nuevo Grupo ", () => {
         done();
       });
   });
-  
+
+  it("Debería obener un error al agregar un grupo de forma incorrecta", (done) => {
+    chai
+      .request(url)
+      .post("/api/grupos")
+      .send({
+        nombre: "Rammstein",
+        anioFormacion: 1994,
+        anioSeparacion: null,
+        estilo: "Metal",
+      })
+      .end(function (err, res) {
+        console.log(res.body);
+        expect(res).to.have.status(400);
+        done();
+      });
+  });
 });
 
 // [HU1] Consultar información de un grupo de música

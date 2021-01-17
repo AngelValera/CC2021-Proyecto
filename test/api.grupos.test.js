@@ -21,6 +21,19 @@ describe("Agregar un nuevo Grupo ", () => {
         done();
       });
   });
+
+  it("Debería obener un error al agregar un grupo que ya existe", (done) => {
+    chai
+      .request(url)
+      .post("/api/grupos")
+      .send(groupSamples[0])
+      .end(function (err, res) {
+        console.log(res.body);
+        expect(res).to.have.status(409);
+        done();
+      });
+  });
+  
 });
 
 // [HU1] Consultar información de un grupo de música

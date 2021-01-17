@@ -10,8 +10,6 @@ test:
   - test/grupos.test.js
   - test/api.grupos.test.js
   - test/canciones.test.js
-lenguaje:
-  - Node.js
-fichero_tareas:
-  - Gruntfile.js
+lenguaje: Node.js
+fichero_tareas: Gruntfile.js
 make: grunt

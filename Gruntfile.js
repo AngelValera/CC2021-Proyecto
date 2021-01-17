@@ -5,7 +5,7 @@ module.exports = function (grunt) {
     mochaTest: {
       test: {
         options: {
-          reporter: "spec",          
+          reporter: "spec",
           quiet: false,
           ui: "bdd",
         },
@@ -16,7 +16,7 @@ module.exports = function (grunt) {
       install: {
         cmd: "npm",
         args: ["ci"],
-      },
+      },     
     },
     jshint: {
       all: ["Gruntfile.js", "src/**/*.js", "test/**/*.js"],
@@ -24,15 +24,23 @@ module.exports = function (grunt) {
         jshintrc: ".jshintrc",
       },
     },
+    nodemon: {
+      dev: {
+        script: "src/index.js",
+      },
+    },
   });
 
-  // Carga los plugins de grunt 
+  // Carga los plugins de grunt
   grunt.loadNpmTasks("grunt-mocha-test");
   grunt.loadNpmTasks("grunt-run");
   grunt.loadNpmTasks("grunt-contrib-jshint");
+  grunt.loadNpmTasks("grunt-nodemon");
 
   // Tarea para pasar los test
   grunt.registerTask("test", ["mochaTest", "jshint"]);
   // Tarea para instalar las dependencias
   grunt.registerTask("install", ["run:install"]);
+  // Tarea para ejecutar Nodemon
+  grunt.registerTask("dev", ["nodemon"]);
 };

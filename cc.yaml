@@ -14,3 +14,4 @@ lenguaje:
   - Node.js
 fichero_tareas:
   - Gruntfile.js
+make: grunt

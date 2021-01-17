@@ -48,6 +48,8 @@ EXPOSE 3000
 
 Y finalmente, ejecutar el servidor, usando para ello la tarea definida en el gestor de tareas [Gruntfile.js](../../Gruntfile.js).
 
+Por último, subimos el dockerfile a [DockerHub](https://hub.docker.com/repository/docker/angelvalera/despliegue_lyricshunter).
+
 ---
 #### Referencias:
 

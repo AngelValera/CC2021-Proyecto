@@ -4,8 +4,7 @@ LABEL maintainer = "Ángel Valera Motos" \
     com.lyricshunter.version="0.0.1" \
     com.lyricshunter.release-date="2021-01-17" 
 
-RUN mkdir -p /app/src && \   
-    mkdir -p /app/routes && \ 
+RUN mkdir -p /app/src && \       
     mkdir -p /app/node_modules && \
     chown -R node:node /app && \
     npm install -g grunt-cli 

@@ -76,7 +76,7 @@ Se puede ver la documentación consultada en el siguiente enlace:
 
 
 - Se han creado nuevas HUs, después de comprobar que eran necesarias.
-  - [[HU10] Agregar nuevos Grupos de musica](https://github.com/AngelValera/LyricsHunter/issues/66)
+  - [[HU10] Agregar nuevos Grupos de música](https://github.com/AngelValera/LyricsHunter/issues/66)
  
 ---
 ### Documentación Adicional

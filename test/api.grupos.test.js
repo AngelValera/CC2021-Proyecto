@@ -34,6 +34,16 @@ describe("Obtener informacion de los grupos", () => {
         done();
       });
   });
+
+  it("Debería obtener el grupo que solicito.", (done) => {
+    chai
+      .request(url)
+      .get("/api/grupos/Linkin Park")
+      .end(function (err, res) {
+        expect(res).to.have.status(200);
+        done();
+      });
+  });
 });
 
 

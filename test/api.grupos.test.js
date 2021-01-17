@@ -44,6 +44,16 @@ describe("Obtener informacion de los grupos", () => {
         done();
       });
   });
+
+  it("Debería obtener un error al no encontrar el grupo", (done) => {
+    chai
+      .request(url)
+      .get("/api/grupos/Rammstein")
+      .end(function (err, res) {
+        expect(res).to.have.status(404);
+        done();
+      });
+  });
 });
 
 

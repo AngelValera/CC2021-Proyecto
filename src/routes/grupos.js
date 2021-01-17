@@ -27,5 +27,63 @@ router.get("/grupos/:nombre", (req, res) => {
   }
 });
 
+router.post("/grupos", (req, res) => {
+  // Recogemos los campos del body de la peticion
+  const {
+    nombre,
+    anioFormacion,
+    anioSeparacion,
+    estilo,
+    genero,
+    web,
+    redesSociales,
+    biografia,
+    miembros,
+    pais,
+    imagenes,
+  } = req.body;
+  // Comprobamos que la petición sea correcta
+  if (
+    nombre &&
+    anioFormacion &&
+    (anioSeparacion || anioSeparacion == null) &&
+    estilo &&
+    genero &&
+    web &&
+    redesSociales &&
+    biografia &&
+    miembros &&
+    pais &&
+    imagenes
+  ) {
+    try {
+      grupoController.addNewGroup(
+        nombre,
+        anioFormacion,
+        anioSeparacion,
+        estilo,
+        genero,
+        web,
+        redesSociales,
+        biografia,
+        miembros,
+        pais,
+        imagenes
+      );
+      res.status(201);
+      res.send({
+        message: "POST ok",
+      });
+    } catch (error) {
+      res.status(409);
+      res.header("Content-Type", "application/json");
+      res.json({ Error: error });
+    }
+  } else {
+    res.status(400);
+    res.header("Content-Type", "application/json");
+    res.json({ Error: "Bad Request" });
+  }
+});
 
 module.exports = router;

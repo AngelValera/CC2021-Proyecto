@@ -1,18 +1,15 @@
-var chai = require("chai");
-var assert = chai.assert;
-var should = chai.should();
-var expect = chai.expect();
-var Grupo = require("../src/Grupos/Grupo");
-var GrupoController = require("../src/Grupos/GrupoController");
+let chai = require("chai");
+let assert = chai.assert;
+let should = chai.should;
+let expect = chai.expect;
+const GrupoController = require("../src/Grupos/GrupoController");
 const Imagen = require("../src/Grupos/Imagen");
 const RedSocial = require("../src/Grupos/RedSocial");
-
-let unaImagen;
 
 
 describe("Realizar test a las imágenes de los grupos", function () {
   it("Las imagenes deben crearse correctamente", function () {
-    unaImagen = new Imagen(
+    let unaImagen = new Imagen(
       1,
       "Banner",
       "https://www.theaudiodb.com/images/media/artist/banner/rwytxy1347991177.jpg"
@@ -27,7 +24,7 @@ describe("Realizar test a las imágenes de los grupos", function () {
 
 describe("Realizar test a las redes sociales de los grupos", function () {
   it("Las redes sociales deben crearse correctamente", function () {
-    unaRS = new RedSocial(1, "Facebook", "www.facebook.com/linkinPark");
+    let unaRS = new RedSocial(1, "Facebook", "www.facebook.com/linkinPark");
     assert.equal(
       unaRS.to_string(),
       "1, Facebook, www.facebook.com/linkinPark",
@@ -40,54 +37,78 @@ describe("Realizar test a los Grupos de música", function () {
   let controlador = new GrupoController();
 
   it("Los grupos deben crearse correctamente", function () {
-    let imagenes = [unaImagen];
-    let rrss = [unaRS];
-    let groupTest = new Grupo(
-      1,
+    controlador.addNewGroup(
       "Linkin Park",
       1995,
       null,
       "Rock/Pop",
       "Alternative Rock",
       "www.linkinpark.com",
-      rrss,
+      [
+        {
+          nombre: "Facebook",
+          url: "www.facebook.com/linkinPark",
+        },
+      ],
       "Linkin Park es una banda estadounidense de rock procedente de Agoura Hills, California.",
-      6,
+      4,
       "US",
-      imagenes
+      [
+        {
+          label: "Banner",
+          url_img:
+            "https://www.theaudiodb.com/images/media/artist/banner/rwytxy1347991177.jpg",
+        },
+      ]
     );
-    controlador.addNewGroup(groupTest);
     assert.equal(
-      groupTest.to_string(),
-      `1, Linkin Park, 1995, null, Rock/Pop, Alternative Rock, www.linkinpark.com, [ Facebook: www.facebook.com/linkinPark ], Linkin Park es una banda estadounidense de rock procedente de Agoura Hills, California., 6, US, [ Banner: https://www.theaudiodb.com/images/media/artist/banner/rwytxy1347991177.jpg ]`,
+      controlador.getGroupByName("Linkin Park").to_string(),
+      `0, Linkin Park, 1995, null, Rock/Pop, Alternative Rock, www.linkinpark.com, [ Facebook: www.facebook.com/linkinPark ], Linkin Park es una banda estadounidense de rock procedente de Agoura Hills, California., 4, US, [ Banner: https://www.theaudiodb.com/images/media/artist/banner/rwytxy1347991177.jpg ]`,
       "Correcto"
     );
   });
 
   it("Los grupos deben obtenerse correctamente", function () {
-    let groupTest2 = new Grupo(
-      2,
-      "Manowar",
-      1980,
+    controlador.addNewGroup(
+      "Rammstein",
+      1994,
       null,
       "Metal",
-      "Heavy Metal",
-      "www.manowar.com",
-      [],
-      "Manowar es una banda estadounidense de heavy metal procedente de Aurburn, Nueva York.",
-      4,
-      "US",
-      []
+      "Industrial Metal",
+      "rammstein.de",
+      [
+        {
+          nombre: "Facebook",
+          url: "www.facebook.com/Rammstein",
+        },
+        {
+          nombre: "Twitter",
+          url: "twitter.com/RSprachrohr",
+        },
+      ],
+      "Rammstein es una banda de metal industrial de Berlín, Alemania.",
+      6,
+      "DE",
+      [
+        {
+          label: "Logo",
+          url_img:
+            "https://www.theaudiodb.com/images/media/artist/logo/rammstein-4df242383bb34.png",
+        },
+        {
+          label: "Banner",
+          url_img:
+            "https://www.theaudiodb.com/images/media/artist/banner/rwytxy1347991177.jpg",
+        },
+      ]
     );
-    controlador.addNewGroup(groupTest2);
-    assert.equal(Object.keys(controlador.getGroups()).length, 2, "Correcto");
     assert.equal(Object.keys(controlador.getGroups()).length, 2, "Correcto");
   });
 
   it("Los grupos deben consultarse correctamente por nombre", function () {
     assert.equal(
-      controlador.getGroupByName("Linkin Park").to_string(),
-      `1, Linkin Park, 1995, null, Rock/Pop, Alternative Rock, www.linkinpark.com, [ Facebook: www.facebook.com/linkinPark ], Linkin Park es una banda estadounidense de rock procedente de Agoura Hills, California., 6, US, [ Banner: https://www.theaudiodb.com/images/media/artist/banner/rwytxy1347991177.jpg ]`,
+      controlador.getGroupByName("Rammstein").to_string(),
+      `1, Rammstein, 1994, null, Metal, Industrial Metal, rammstein.de, [ Facebook: www.facebook.com/Rammstein ], [ Twitter: twitter.com/RSprachrohr ], Rammstein es una banda de metal industrial de Berlín, Alemania., 6, DE, [ Logo: https://www.theaudiodb.com/images/media/artist/logo/rammstein-4df242383bb34.png ], [ Banner: https://www.theaudiodb.com/images/media/artist/banner/rwytxy1347991177.jpg ]`,
       "Correcto"
     );
   });

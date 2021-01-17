@@ -16,7 +16,15 @@ module.exports = function (grunt) {
       install: {
         cmd: "npm",
         args: ["ci"],
-      },     
+      },
+      build: {
+        cmd: "echo",
+        args: ["true"],
+      },
+      start: {
+        cmd: "node",
+        args: ["src/index.js"],
+      },
     },
     jshint: {
       all: ["Gruntfile.js", "src/**/*.js", "test/**/*.js"],
@@ -41,6 +49,9 @@ module.exports = function (grunt) {
   grunt.registerTask("test", ["mochaTest", "jshint"]);
   // Tarea para instalar las dependencias
   grunt.registerTask("install", ["run:install"]);
+  grunt.registerTask("build", ["run:build"]);
   // Tarea para ejecutar Nodemon
   grunt.registerTask("dev", ["nodemon"]);
+  // Tarea para ejecutar el servidor
+  grunt.registerTask("start", ["run:start"]);
 };

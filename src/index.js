@@ -22,13 +22,20 @@ app.use(express.json());
 app.use("/api",require("./routes/grupos"));
 
 //Starting the server
-(async () => {    
-  let PORT = await getPort();  
-  app.set("port", PORT || process.env.PORT || 3000);   
-})().then(() => {
-  app.listen(app.get("port"), () => {
-    console.log(`Server on port ${app.get("port")}`);
+let PORT;
+(async () => {
+  PORT = await getPort();  
+})()
+  .then(() => {
+    app.set("port", PORT || process.env.PORT || 3000);    
+    app.listen(app.get("port"), () => {
+      console.log(`Server on port ${app.get("port")}`);
+    });
+  }).catch(() => {
+    app.set("port", PORT || process.env.PORT || 3000);
+    app.listen(app.get("port"), () => {
+      console.log(`Server on port ${app.get("port")}`);
+    });
   });
-});
 
 module.exports = app;

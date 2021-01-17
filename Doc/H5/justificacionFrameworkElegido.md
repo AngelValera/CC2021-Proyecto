@@ -244,7 +244,6 @@ En el siguiente apartado es donde indicamos a express dónde se han guardado las
 
 Finalmente, ejecutamos el servidor en el puerto seleccionado anteriormente.
 
-
 ---
 #### Referencias:
 

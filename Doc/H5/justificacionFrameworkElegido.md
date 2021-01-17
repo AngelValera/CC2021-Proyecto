@@ -236,7 +236,7 @@ module.exports = app;
 ```
 Como se puede ver en este fichero, lo primero ha sido cargar las bibliotecas de express y morgan (cuya finalidad se desarrolla en el siguiente [fichero](./buenasPracticas.md)).
 
-Una vez cargadas establecemos un puerto para servir el microservicio. En este [fichero](./buenasPracticas.md) se explica cómo se ha utilizado etc3 para establecer de una mejor forma el puerto.
+Una vez cargadas establecemos un puerto para servir el microservicio. En este [fichero](./buenasPracticas.md) se explica cómo se ha utilizado etc3 para establecer de una mejor forma el puerto en el que se ejecuta el servidor.
 
 En el siguiente apartado, hemos realizado algunas configuraciones para que se apliquen antes de procesar la respuesta. Siendo una de estas la indicación de que vamos a trabajar sobre todo con formatos json.
 

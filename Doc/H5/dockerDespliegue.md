@@ -55,4 +55,3 @@ Por último, subimos el dockerfile a [DockerHub](https://hub.docker.com/reposito
 
 [How to name Dockerfiles](https://stackoverflow.com/questions/26077543/how-to-name-dockerfiles)
 
-[]()

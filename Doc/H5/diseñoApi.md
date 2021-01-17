@@ -2,6 +2,12 @@
 
 <!-- ![](../Img/ "") -->
 
+- [Diseño del API](#diseño-del-api)
+  - [Estructura](#estructura)
+  - [Rutas](#rutas)
+    - [Grupos](#grupos)
+  - [Referencias:](#referencias)
+
 ### Estructura
 
 A la hora de diseñar el API, lo que ha hecho ha sido tener en cuenta las distintas historias de usuario del proyecto para determinar qué rutas había que establecer.
@@ -98,7 +104,7 @@ Como se puede ver, encontramos 3 rutas. Hay que tener en cuenta que como explica
   - En caso de que se intente crear un grupo cuyo nombre ya se encuentre creado previamente, se devolverá un código **409**.
 
 ---
-#### Referencias:
+### Referencias:
 
 [Tu primer REST API usando Node.js, ¿Que es una REST API?](https://www.youtube.com/watch?v=bK3AJfs7qNY&t=1867s)
 

@@ -19,7 +19,7 @@ app.use(express.urlencoded({extended:false}));
 app.use(express.json());
 
 // Routes
-app.use("/api",require("./routes/grupos"));
+app.use(require("./routes/grupos"));
 
 //Starting the server
 let PORT;

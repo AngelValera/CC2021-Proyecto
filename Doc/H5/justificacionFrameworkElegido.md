@@ -225,7 +225,7 @@ app.use(express.urlencoded({extended:false}));
 app.use(express.json());
 
 // Routes
-app.use("/api",require("./routes/grupos"));
+app.use(require("./routes/grupos"));
 
 // Starting the server
 app.listen(app.get('port'), () => {
@@ -240,7 +240,7 @@ Una vez cargadas establecemos un puerto para servir el microservicio. En este [f
 
 En el siguiente apartado, hemos realizado algunas configuraciones para que se apliquen antes de procesar la respuesta. Siendo una de estas la indicación de que vamos a trabajar sobre todo con formatos json.
 
-En el siguiente apartado es donde indicamos a express dónde se han guardado las rutas que tiene que servir. Además indicamos un "prefijo" a las rutas ahi contenidas. Cómo se han desarrollado estas rutas y la estructura general del API se puede encontrar en este [fichero](./diseñoApi.md).
+En el siguiente apartado es donde indicamos a express dónde se han guardado las rutas que tiene que servir. Cómo se han desarrollado estas rutas y la estructura general del API se puede encontrar en este [fichero](./diseñoApi.md).
 
 Finalmente, ejecutamos el servidor en el puerto seleccionado anteriormente.
 

@@ -11,7 +11,7 @@ describe("Agregar un nuevo Grupo ", () => {
   it("Debería agregar un nuevo grupo", (done) => {
     chai
       .request(app)
-      .post("/api/grupos")
+      .post("/grupos")
       .send(groupSamples[0])
       .end(function (err, res) {
         console.log(res.body);
@@ -23,7 +23,7 @@ describe("Agregar un nuevo Grupo ", () => {
   it("Debería obener un error al agregar un grupo que ya existe", (done) => {
     chai
       .request(app)
-      .post("/api/grupos")
+      .post("/grupos")
       .send(groupSamples[0])
       .end(function (err, res) {
         console.log(res.body);
@@ -35,7 +35,7 @@ describe("Agregar un nuevo Grupo ", () => {
   it("Debería obener un error al agregar un grupo de forma incorrecta", (done) => {
     chai
       .request(app)
-      .post("/api/grupos")
+      .post("/grupos")
       .send({
         nombre: "Rammstein",
         anioFormacion: 1994,
@@ -55,7 +55,7 @@ describe("Obtener informacion de los grupos", () => {
   it("Debería obtener todos los grupos", (done) => {
     chai
       .request(app)
-      .get("/api/grupos")
+      .get("/grupos")
       .end(function (err, res) {
         expect(res).to.have.status(200);
         done();
@@ -65,7 +65,7 @@ describe("Obtener informacion de los grupos", () => {
   it("Debería obtener el grupo que solicito.", (done) => {
     chai
       .request(app)
-      .get("/api/grupos/Linkin Park")
+      .get("/grupos/Linkin Park")
       .end(function (err, res) {
         expect(res).to.have.status(200);
         done();
@@ -75,7 +75,7 @@ describe("Obtener informacion de los grupos", () => {
   it("Debería obtener un error al no encontrar el grupo", (done) => {
     chai
       .request(app)
-      .get("/api/grupos/Rammstein")
+      .get("/grupos/Rammstein")
       .end(function (err, res) {
         expect(res).to.have.status(404);
         done();

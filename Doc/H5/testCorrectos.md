@@ -30,11 +30,11 @@ Una vez instalada la extensión, vamos a ejecutar varios test a las distintas ru
 
 ##### Grupos
 
-Para testear las rutas relativas a la entidad Grupos de musica, se ha creado un nuevo fichero de test, llamado [api.grupos.test.js](../../test/api.grupos.test.js)
+Para testear las rutas relativas a la entidad Grupos de musica, se ha creado un nuevo fichero de test, llamado [api.grupos.test.js](../../test.grupos.test.js)
 
 Dado que en fichero [grupos.js](../../src/routes/grupos.js), definimos 3 rutas, vamos a probar que efectivamente dichas rutas funcionan correctamente. Con el fin de facilitar la labor de testeo de las rutas he creado un fichero [sample.json](../../test/sample.json) con varios grupos de música definidos.
 
-- `POST: /api/grupos` 
+- `POST: /grupos` 
   - Esta ruta se ha creado en respuesta a la [[HU10] Agregar nuevos Grupos de musica](https://github.com/AngelValera/LyricsHunter/issues/66).
 
 ```javascript
@@ -43,7 +43,7 @@ describe("Agregar un nuevo Grupo ", () => {
   it("Debería agregar un nuevo grupo", (done) => {
     chai
       .request(app)
-      .post("/api/grupos")
+      .post("/grupos")
       .send(groupSamples[0])
       .end(function (err, res) {
         console.log(res.body);
@@ -55,7 +55,7 @@ describe("Agregar un nuevo Grupo ", () => {
   it("Debería obener un error al agregar un grupo que ya existe", (done) => {
     chai
       .request(app)
-      .post("/api/grupos")
+      .post("/grupos")
       .send(groupSamples[0])
       .end(function (err, res) {
         console.log(res.body);
@@ -67,7 +67,7 @@ describe("Agregar un nuevo Grupo ", () => {
   it("Debería obener un error al agregar un grupo de forma incorrecta", (done) => {
     chai
       .request(app)
-      .post("/api/grupos")
+      .post("/grupos")
       .send({
         nombre: "Rammstein",
         anioFormacion: 1994,
@@ -88,7 +88,7 @@ Como se ha podido ver, se comprueba que:
     - Si se realiza una petición con un formato erróneo devuelve un código **400**.
 
 
-- `GET /api/grupos` y `GET /api/grupos/:nombre`
+- `GET /grupos` y `GET /grupos/:nombre`
   - Estas rutas se ha creado en respuesta a la [[HU1] Consultar información de un grupo de música](https://github.com/AngelValera/LyricsHunter/issues/12).
 
 ```javascript
@@ -97,7 +97,7 @@ describe("Obtener informacion de los grupos", () => {
   it("Debería obtener todos los grupos", (done) => {
     chai
       .request(app)
-      .get("/api/grupos")
+      .get("/grupos")
       .end(function (err, res) {
         expect(res).to.have.status(200);
         done();
@@ -107,7 +107,7 @@ describe("Obtener informacion de los grupos", () => {
   it("Debería obtener el grupo que solicito.", (done) => {
     chai
       .request(app)
-      .get("/api/grupos/Linkin Park")
+      .get("/grupos/Linkin Park")
       .end(function (err, res) {
         expect(res).to.have.status(200);
         done();
@@ -117,7 +117,7 @@ describe("Obtener informacion de los grupos", () => {
   it("Debería obtener un error al no encontrar el grupo", (done) => {
     chai
       .request(app)
-      .get("/api/grupos/Rammstein")
+      .get("/grupos/Rammstein")
       .end(function (err, res) {
         expect(res).to.have.status(404);
         done();

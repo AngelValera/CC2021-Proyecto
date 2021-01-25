@@ -87,17 +87,17 @@ router.post("/grupos", (req, res) => {
 
 module.exports = router;
 ```
-Como se puede ver, encontramos 3 rutas. Hay que tener en cuenta que como explicamos en este [documento](./justificacionFrameworkElegido.md), todas las rutas descritas en este fichero van precedidas de `/api`
+Como se puede ver, encontramos 3 rutas. 
 
-- `/api/grupos` 
+- `/grupos` 
   - Esta ruta se ha creado en respuesta a la [[HU1] Consultar información de un grupo de música](https://github.com/AngelValera/LyricsHunter/issues/12).
   - Atiende a una petición `GET` y como se puede ver siempre devuelve un código **200**. 
   
-- `/api/grupos/:nombre`
+- `/grupos/:nombre`
   - Esta ruta se ha creado en respuesta a la [[HU1] Consultar información de un grupo de música](https://github.com/AngelValera/LyricsHunter/issues/12).
   - Atiende a una petición `GET` y como se puede ver devuelve un código **200** en caso de que se encuentre el grupo solicitado y un código **404** en caso de que no se encuentre.
   
-- `/api/grupos` 
+- `/grupos` 
   - Esta ruta se ha creado en respuesta a la [[HU10] Agregar nuevos Grupos de musica](https://github.com/AngelValera/LyricsHunter/issues/66).
   - Atiende a una petición `POST` y como se puede ver devuelve un código **201** en caso de que no haya ningún error y el grupo se cree correctamente. 
   - En caso de que haya algún error en el body de la petición, como por ejemplo que falte algún campo de los necesarios para crear un grupo, se dará como una petición inválida y se devolverá el código **400**.

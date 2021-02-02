@@ -1,0 +1,30 @@
+version: '3'
+
+networks:
+  lyricshunter:
+      driver: bridge
+   
+services:
+   
+   grupos_service:
+      container_name: grupos
+      build:
+         context: .
+         dockerfile: despliegue.Dockerfile    
+      ports:
+         - "3000:3000"
+      networks: 
+         - lyricshunter
+      depends_on: 
+         - etcd_service
+   
+   etcd_service:
+      image: 'bitnami/etcd:latest'
+      environment:
+         - ALLOW_NONE_AUTHENTICATION=yes
+         - ETCD_ADVERTISE_CLIENT_URLS=http://etcd_service:2379
+      ports:
+         - 2379:2379
+         - 2380:2380
+      networks:
+         - lyricshunter

@@ -73,7 +73,7 @@ router.post("/grupos", (req, res) => {
         message: "POST ok",
       });
     } catch (error) {
-      res.status(409);
+      res.status(400);
       res.header("Content-Type", "application/json");
       res.json({ Error: error });
     }

@@ -3,10 +3,15 @@ const app = express();
 const morgan = require('morgan');
 
 const { Etcd3 } = require("etcd3");
-const client = new Etcd3();
 
-async function getPort() {
-  const port = await client.get("LyricsHunterPort");
+let opts = {
+  hosts: "http://etcd_service:2379",
+};
+
+const client = new Etcd3(opts);
+
+async function getPort() {  
+  const port = await client.get("LyricsHunterPort");   
   return port;
 }
 

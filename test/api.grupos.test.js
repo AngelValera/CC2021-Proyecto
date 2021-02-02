@@ -27,7 +27,7 @@ describe("Agregar un nuevo Grupo ", () => {
       .send(groupSamples[0])
       .end(function (err, res) {
         console.log(res.body);
-        expect(res).to.have.status(409);
+        expect(res).to.have.status(400);
         done();
       });
   });

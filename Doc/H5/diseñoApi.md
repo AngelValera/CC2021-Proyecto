@@ -74,7 +74,7 @@ router.post("/grupos", (req, res) => {
             message: "POST ok",
         });
     } catch (error) {
-        res.status(409);
+        res.status(400);
         res.header("Content-Type", "application/json");
         res.json({ Error: error });
     }
@@ -101,7 +101,7 @@ Como se puede ver, encontramos 3 rutas.
   - Esta ruta se ha creado en respuesta a la [[HU10] Agregar nuevos Grupos de musica](https://github.com/AngelValera/LyricsHunter/issues/66).
   - Atiende a una petición `POST` y como se puede ver devuelve un código **201** en caso de que no haya ningún error y el grupo se cree correctamente. 
   - En caso de que haya algún error en el body de la petición, como por ejemplo que falte algún campo de los necesarios para crear un grupo, se dará como una petición inválida y se devolverá el código **400**.
-  - En caso de que se intente crear un grupo cuyo nombre ya se encuentre creado previamente, se devolverá un código **409**.
+  - En caso de que se intente crear un grupo cuyo nombre ya se encuentre creado previamente, se devolverá un código **400**.
 
 ---
 ### Referencias:

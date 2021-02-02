@@ -59,7 +59,7 @@ describe("Agregar un nuevo Grupo ", () => {
       .send(groupSamples[0])
       .end(function (err, res) {
         console.log(res.body);
-        expect(res).to.have.status(409);
+        expect(res).to.have.status(400);
         done();
       });
   });
@@ -84,7 +84,7 @@ describe("Agregar un nuevo Grupo ", () => {
 ```
 Como se ha podido ver, se comprueba que:
     - Si un grupo se crea correctamente la petición devuelve un código **201**.
-    - Si se intenta crear un grupo que ya existe, devuelve un código **409**
+    - Si se intenta crear un grupo que ya existe, devuelve un código **400**
     - Si se realiza una petición con un formato erróneo devuelve un código **400**.
 
 

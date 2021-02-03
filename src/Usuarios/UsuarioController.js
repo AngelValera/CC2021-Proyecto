@@ -17,7 +17,7 @@ class UsuarioController {
 
   // Obtenemos todos los usuarios
   getUsers() {
-    return true;
+    return this.usuarios;
   }
 }
 

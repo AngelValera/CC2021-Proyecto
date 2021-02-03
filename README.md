@@ -48,6 +48,14 @@ Para ejecutar correctamente este proyecto habría que usar los siguiente comando
     - Se han corregido los test.
   - [[HU11] Agregar nuevas Canciones de música](https://github.com/AngelValera/LyricsHunter/issues/73)    
     - Se ha creado esta historia de usuario ya que no se había hecho hasta el momento y era necesaria.
+  - [[HU12] Agregar nuevos Usuarios](https://github.com/AngelValera/LyricsHunter/issues/74)
+    - Se ha creado esta historia de usuario ya que no se había hecho hasta el momento y era necesaria.
+    - Se han creado tanto las clases entidad y controladora, así como sus test.
+    - Se han creado las rutas para el servicio, así como sus test.
+  - [[HU13] Consultar datos de usuarios](https://github.com/AngelValera/LyricsHunter/issues/75)
+    - Se ha creado esta historia de usuario ya que no se había hecho hasta el momento y era necesaria.
+    - Se han creado tanto las clases entidad y controladora, así como sus test.
+    - Se han creado las rutas para el servicio, así como sus test.
   - En cuanto a las correcciones elaboradas:
     - Se ha eliminado el código 409 de todas las respuesta del microservicio de Grupos.
       - [ae932c0](https://github.com/AngelValera/LyricsHunter/commit/ae932c03c5f99a12bd95f7071fd12cb8a8ac8c5a)

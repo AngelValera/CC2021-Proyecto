@@ -21,5 +21,13 @@ describe("Realizar test a los Usuarios", function () {
     assert.equal(Object.keys(controlador.getUsers()).length, 2, "Correcto");
   });
 
+  it("Los usuarios deben consultarse correctamente por nombre", function () {
+    assert.equal(
+      controlador.getUserByName("Angel").to_string(),
+      `0, Angel, angel@prueba.com, 123456, 1`,
+      "Correcto"
+    );
+  });
+
 
 });

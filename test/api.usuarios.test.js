@@ -48,3 +48,18 @@ describe("Agregar un nuevo Usuario", () => {
       });
   });
 });
+
+// [HU13] Consultar información de usuarios
+describe("Obtener informacion de los usuarios", () => {
+  it("Debería obtener todos los usuarios", (done) => {
+    chai
+      .request(app)
+      .get("/usuarios")
+      .end(function (err, res) {
+        expect(res).to.have.status(200);
+        done();
+      });
+  });
+
+  
+});

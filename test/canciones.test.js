@@ -58,6 +58,20 @@ describe("Realizar test a las Canciones de música", function () {
     );
   });
 
+  it("Las canciones deben consultarse correctamente por nombre y grupo", function () {
+    assert.equal(
+      controlador.getSongByNameAndGroup("Du hast", "Rammstein")[0].to_string(),
+      `1, Du hast, Rammstein, Du \
+        Du hast \
+        Du hast mich \
+        Du \
+        Du hast \
+        Du hast mich`,
+      "Correcto"
+    );
+  });
+
+  
 
 
 });

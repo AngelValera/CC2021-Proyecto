@@ -61,5 +61,16 @@ describe("Obtener informacion de los usuarios", () => {
       });
   });
 
+  it("Debería obtener el usuario que solicito.", (done) => {
+    chai
+      .request(app)
+      .get("/usuarios/Angel")
+      .end(function (err, res) {
+        expect(res).to.have.status(200);
+        done();
+      });
+  });
+
+  
   
 });

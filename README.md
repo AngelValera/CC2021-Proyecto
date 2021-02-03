@@ -38,7 +38,21 @@ Para ejecutar correctamente este proyecto habría que usar los siguiente comando
 ---
 ### Avance del proyecto:
 
-- 
+- En cuanto a los avances en el proyecto, durante esta entrega, se ha trabajado en los siguientes aspectos del proyecto:
+  - [[HU2] Consultar datos de una canción](https://github.com/AngelValera/LyricsHunter/issues/13)
+    - Se han corregido tanto la clase entidad como la clase controladora.
+      - Ahora se controlan los tipos de los parámetros.
+      - Ahora se controla que el id sea único.
+      - Ahora se pueden consultar las canciones por nombre y grupo.
+      - Ahora se pueden consultar todas las canciones.
+    - Se han corregido los test.
+  - [[HU11] Agregar nuevas Canciones de musica](https://github.com/AngelValera/LyricsHunter/issues/73)    
+    - Se ha creado esta HU ya que no se había hecho hasta el momento y era necesaria.
+  - En cuanto a las correcciones elaboradas, se ha eliminado el código 409 de todas las respuesta del microservicio de Grupos.
+    - [ae932c0](https://github.com/AngelValera/LyricsHunter/commit/ae932c03c5f99a12bd95f7071fd12cb8a8ac8c5a)
+    - [9ec29e4](https://github.com/AngelValera/LyricsHunter/commit/9ec29e4cc5c37b6ffac9a2c073fa9972e75c3d7c)
+    - [664e9dd](https://github.com/AngelValera/LyricsHunter/commit/664e9ddc2de5a895d561d7554942395cebac05ce)
+    - [27d5f54](https://github.com/AngelValera/LyricsHunter/commit/27d5f548e84a17b75558f24f135fcb6b777d4f74)
 
 
  

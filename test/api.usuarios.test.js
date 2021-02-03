@@ -21,6 +21,18 @@ describe("Agregar un nuevo Usuario", () => {
       });
   });
 
+  it("Debería obener un error al agregar un usuario que ya existe", (done) => {
+    chai
+      .request(app)
+      .post("/usuarios")
+      .send(usersSamples[0])
+      .end(function (err, res) {
+        console.log(res.body);
+        expect(res).to.have.status(400);
+        done();
+      });
+  });
+
   it("Debería obener un error al agregar un usuario de forma incorrecta", (done) => {
     chai
       .request(app)

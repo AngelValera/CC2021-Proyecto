@@ -4,7 +4,11 @@ class Usuario {
     if (this.checkTypes(id, nombre, email, password, tipo)) {
       this.id = id;
       this.nombre = nombre;
-      this.email = email;
+      if (this.validateEmail(email)) {
+        this.email = email;
+      } else {
+        throw "No se ha podido crear el usuario: Email incorrecto";
+      }      
       this.password = password;
       this.tipo = tipo;
     } else {
@@ -33,6 +37,10 @@ class Usuario {
   getTipo() {
     return this.tipo;
   }
+
+  to_string() {
+    return`${this.id}, ${this.nombre}, ${this.email}, ${this.tipo}`;    
+  }
   
   //-------------------------------------------------------
   // VALIDATORS
@@ -46,6 +54,13 @@ class Usuario {
       typeof tipo === "number"
     );
   }
+
+  validateEmail(email){
+    let pattern = new RegExp("/^w+([.-]?w+)*@w+([.-]?w+)*(.w{2,3,4})+$/", "i");
+    return !!pattern.test(email);
+  }
+
 }
+
 
 module.exports = Usuario;

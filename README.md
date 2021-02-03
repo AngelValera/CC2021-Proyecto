@@ -46,8 +46,8 @@ Para ejecutar correctamente este proyecto habría que usar los siguiente comando
       - Ahora se pueden consultar las canciones por nombre y grupo.
       - Ahora se pueden consultar todas las canciones.
     - Se han corregido los test.
-  - [[HU11] Agregar nuevas Canciones de musica](https://github.com/AngelValera/LyricsHunter/issues/73)    
-    - Se ha creado esta HU ya que no se había hecho hasta el momento y era necesaria.
+  - [[HU11] Agregar nuevas Canciones de música](https://github.com/AngelValera/LyricsHunter/issues/73)    
+    - Se ha creado esta historia de usuario ya que no se había hecho hasta el momento y era necesaria.
   - En cuanto a las correcciones elaboradas:
     - Se ha eliminado el código 409 de todas las respuesta del microservicio de Grupos.
       - [ae932c0](https://github.com/AngelValera/LyricsHunter/commit/ae932c03c5f99a12bd95f7071fd12cb8a8ac8c5a)

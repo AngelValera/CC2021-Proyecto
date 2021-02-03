@@ -1,10 +1,15 @@
 class Usuario {
   constructor(id, nombre, email, password, tipo) {
-    this.id = id;
-    this.nombre = nombre;
-    this.email = email;
-    this.password = password;
-    this.tipo = tipo;
+    
+    if (this.checkTypes(id, nombre, email, password, tipo)) {
+      this.id = id;
+      this.nombre = nombre;
+      this.email = email;
+      this.password = password;
+      this.tipo = tipo;
+    } else {
+      throw "No se ha podido crear el usuario: Parámetros incorrectos";
+    }
   }
   //-------------------------------------------------------
   // GETTERS
@@ -33,7 +38,13 @@ class Usuario {
   // VALIDATORS
   //-------------------------------------------------------
   checkTypes(id, nombre, grupo, letra) {
-    return true;
+    return (
+      typeof id === "number" &&
+      typeof nombre === "string" &&
+      typeof email === "string" &&
+      typeof password === "string" &&
+      typeof tipo === "number"
+    );
   }
 }
 

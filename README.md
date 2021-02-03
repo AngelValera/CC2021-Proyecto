@@ -48,13 +48,14 @@ Para ejecutar correctamente este proyecto habría que usar los siguiente comando
     - Se han corregido los test.
   - [[HU11] Agregar nuevas Canciones de musica](https://github.com/AngelValera/LyricsHunter/issues/73)    
     - Se ha creado esta HU ya que no se había hecho hasta el momento y era necesaria.
-  - En cuanto a las correcciones elaboradas, se ha eliminado el código 409 de todas las respuesta del microservicio de Grupos.
-    - [ae932c0](https://github.com/AngelValera/LyricsHunter/commit/ae932c03c5f99a12bd95f7071fd12cb8a8ac8c5a)
-    - [9ec29e4](https://github.com/AngelValera/LyricsHunter/commit/9ec29e4cc5c37b6ffac9a2c073fa9972e75c3d7c)
-    - [664e9dd](https://github.com/AngelValera/LyricsHunter/commit/664e9ddc2de5a895d561d7554942395cebac05ce)
-    - [27d5f54](https://github.com/AngelValera/LyricsHunter/commit/27d5f548e84a17b75558f24f135fcb6b777d4f74)
-
-
+  - En cuanto a las correcciones elaboradas:
+    - Se ha eliminado el código 409 de todas las respuesta del microservicio de Grupos.
+      - [ae932c0](https://github.com/AngelValera/LyricsHunter/commit/ae932c03c5f99a12bd95f7071fd12cb8a8ac8c5a)
+      - [9ec29e4](https://github.com/AngelValera/LyricsHunter/commit/9ec29e4cc5c37b6ffac9a2c073fa9972e75c3d7c)
+      - [664e9dd](https://github.com/AngelValera/LyricsHunter/commit/664e9ddc2de5a895d561d7554942395cebac05ce)
+      - [27d5f54](https://github.com/AngelValera/LyricsHunter/commit/27d5f548e84a17b75558f24f135fcb6b777d4f74)
+    - Se ha eliminado el prefijo `/api` del microservicio.
+      - [5bb0ae9](https://github.com/AngelValera/LyricsHunter/commit/5bb0ae9f4015e189932c4f9c4184ddea9fa5822c)
  
 ---
 ### Documentación Adicional

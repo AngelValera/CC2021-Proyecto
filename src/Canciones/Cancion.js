@@ -39,7 +39,7 @@ class Cancion {
     return (
       typeof id === "number" &&
       typeof nombre === "string" &&
-      typeof grupo === "number" &&      
+      typeof grupo === "string" &&      
       typeof letra === "string"      
     );
   }

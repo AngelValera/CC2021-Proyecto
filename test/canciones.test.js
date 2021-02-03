@@ -45,6 +45,20 @@ describe("Realizar test a las Canciones de música", function () {
     assert.equal(Object.keys(controlador.getSongs()).length, 2, "Correcto");
   });
 
+  it("Las canciones deben consultarse correctamente por nombre", function () {
+    assert.equal(
+      controlador.getSongByName("Du hast")[0].to_string(),
+      `1, Du hast, Rammstein, Du \
+        Du hast \
+        Du hast mich \
+        Du \
+        Du hast \
+        Du hast mich`,
+      "Correcto"
+    );
+  });
+
+
 
 });
 

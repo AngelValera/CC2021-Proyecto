@@ -9,13 +9,8 @@ class CancionController {
   addNewSong(nombre, grupo, letra) {
     // El id ahora es único
     let id = Object.keys(this.canciones).length;
-    let nuevaCancion = new Cancion(
-      id,
-      nombre,
-      grupo,
-      letra
-      );
-    this.canciones[id] = nuevaCancion; 
+    let nuevaCancion = new Cancion(id, nombre, grupo, letra);
+    this.canciones[id] = nuevaCancion;
   }
 
   // buscamos la cancion por su nombre
@@ -23,11 +18,28 @@ class CancionController {
     const result = {};
     Object.keys(this.canciones).forEach((key) => {
       Object.keys(this.canciones[key]).forEach((value, index) => {
-        if (value == "nombre" && 
-            this.canciones[key].getNombre() === nombre) {
-          let id = Object.keys(result).length;  
+        if (value == "nombre" && this.canciones[key].getNombre() === nombre) {
+          let id = Object.keys(result).length;
           result[id] = this.canciones[key];
-        }        
+        }
+      });
+    });
+    return result;
+  }
+
+  // buscamos la cancion por su nombre y grupo
+  getSongByNameAndGroup(nombre, grupo) {
+    const result = {};
+    Object.keys(this.canciones).forEach((key) => {
+      Object.keys(this.canciones[key]).forEach((value, index) => {
+        if (
+          value == "nombre" &&
+          this.canciones[key].getNombre() === nombre &&
+          this.canciones[key].getGrupo() === grupo
+        ) {
+          let id = Object.keys(result).length;
+          result[id] = this.canciones[key];
+        }
       });
     });
     return result;

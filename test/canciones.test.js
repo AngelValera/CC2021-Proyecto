@@ -71,7 +71,23 @@ describe("Realizar test a las Canciones de música", function () {
     );
   });
 
-  
+  it("Las canciones con el mismo nombre deben consultarse correctamente", function () {
+    controlador.addNewSong(
+      "Faint",
+      "Linkin Park",
+      `I am a little bit of loneliness a little bit of disregard \
+        Handful of complaints but I can't help the fact that everyone can see \
+        these scars \
+        I am what I want you to want what I want you to feel \
+        But it's like no matter what I do, I can't convince you, to just believe \
+        this is real`
+    );    
+    assert.equal(
+      Object.keys(controlador.getSongByName("Faint")).length,
+      2,
+      "Correcto"
+    );
+  });
 
 
 });

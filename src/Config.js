@@ -6,7 +6,7 @@ class Config {
     
     self.assign_default_ip = () => {
       self.ip =
-        process.env.LISTENING_IP_ADDRESS || "127.0.0.1";
+        process.env.LISTENING_IP_ADDRESS || "0.0.0.0";
     };
 
     self.assign_default_port = () => {

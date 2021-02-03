@@ -26,6 +26,7 @@ app.use(express.json());
 // Routes
 app.use(require("./routes/grupos"));
 app.use(require("./routes/canciones"));
+app.use(require("./routes/usuarios"));
 
 // Starting the server
 (async () => {

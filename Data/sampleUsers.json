@@ -1,0 +1,14 @@
+[
+    {    
+        "nombre": "Angel",
+        "email": "angel@prueba.com",
+        "password": "123456",
+        "tipo": 1
+    },
+    {    
+        "nombre": "Jose",
+        "email": "jose@prueba.com",
+        "password": "741852",
+        "tipo": 0
+    }
+]

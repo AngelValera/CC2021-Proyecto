@@ -31,6 +31,19 @@ describe("Realizar test a las Canciones de música", function () {
     );
   });
 
+  it("Las canciones deben obtenerse correctamente", function () {
+    controlador.addNewSong(
+      "Du hast",
+      "Rammstein",
+      `Du \
+        Du hast \
+        Du hast mich \
+        Du \
+        Du hast \
+        Du hast mich`
+    );
+    assert.equal(Object.keys(controlador.getSongs()).length, 2, "Correcto");
+  });
 
 
 });

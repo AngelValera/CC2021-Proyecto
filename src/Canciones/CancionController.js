@@ -17,15 +17,19 @@ class CancionController {
     this.canciones[id] = nuevaCancion; 
   }
 
-  // buscamos la cancion por su nombre y grupo
-  getCancion(nombre, grupo) {
-    let ident = nombre + grupo;
-    if (this.canciones.hasOwnProperty(ident)) {
-      let cancionBuscada = this.canciones[ident];
-      return cancionBuscada.to_string();
-    } else {
-      throw "La cancion no existe";
-    }
+  // buscamos la cancion por su nombre
+  getSongByName(nombre) {
+    const result = {};
+    Object.keys(this.canciones).forEach((key) => {
+      Object.keys(this.canciones[key]).forEach((value, index) => {
+        if (value == "nombre" && 
+            this.canciones[key].getNombre() === nombre) {
+          let id = Object.keys(result).length;  
+          result[id] = this.canciones[key];
+        }        
+      });
+    });
+    return result;
   }
 
   // Obtenemos todas las canciones
@@ -33,4 +37,6 @@ class CancionController {
     return this.canciones;
   }
 }
+
+
 module.exports = CancionController;

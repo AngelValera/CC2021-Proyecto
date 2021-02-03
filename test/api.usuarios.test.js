@@ -71,6 +71,14 @@ describe("Obtener informacion de los usuarios", () => {
       });
   });
 
-  
+  it("Debería obtener un error al no encontrar el usuario", (done) => {
+    chai
+      .request(app)
+      .get("/usuarios/Jose")
+      .end(function (err, res) {
+        expect(res).to.have.status(404);
+        done();
+      });
+  });
   
 });

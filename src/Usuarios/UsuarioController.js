@@ -26,7 +26,13 @@ class UsuarioController {
 
   // Buscamos el usuario por su nombre
   getUserByName(nombre) {
-    return true;
+    let usuarioBuscado = Object.keys(this.usuarios).find(
+      (id) => this.usuarios[id].getNombre() === nombre
+    );
+    if (usuarioBuscado == undefined) {
+      throw "El usuario seleccionado no se ha encontrado.";
+    }
+    return this.usuarios[usuarioBuscado];
   }
 
   // Obtenemos todos los usuarios

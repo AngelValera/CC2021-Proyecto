@@ -57,5 +57,17 @@ describe("Obtener informacion de las canciones", () => {
         done();
       });
   });
+
+  it("Debería obtener la cancion que solicito por nombre y grupo.", (done) => {
+    chai
+      .request(app)
+      .get("/canciones/Faint/Linkin Park")
+      .end(function (err, res) {
+        expect(res).to.have.status(200);
+        done();
+      });
+  });
+
+
   
 });

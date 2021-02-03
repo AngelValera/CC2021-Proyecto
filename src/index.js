@@ -4,15 +4,13 @@ const morgan = require('morgan');
 const { Config } = require("./Config.js");
 const { Etcd3 } = require("etcd3");
 
-const config_prefix = "lyricshunter";
-
+// Settings
 let endpoints = "http://localhost:2379, http://etcd_service:2379";
 let opts = {
   hosts: endpoints.split(","),
 };
 const client = new Etcd3(opts);
-
-// Settings
+const config_prefix = "lyricshunter";
 const config = new Config();
 let LISTENING_PORT = config.port;
 let LISTENING_IP = config.ip;
@@ -27,6 +25,7 @@ app.use(express.json());
 
 // Routes
 app.use(require("./routes/grupos"));
+app.use(require("./routes/canciones"));
 
 // Starting the server
 (async () => {

@@ -40,6 +40,27 @@ router.get("/canciones/:nombre/:grupo", (req, res) => {
   }
 });
 
-
+router.post("/canciones", (req, res) => {
+  // Recogemos los campos del body de la peticion
+  const { nombre, grupo, letra } = req.body;
+  // Comprobamos que la petición sea correcta
+  if ( nombre && grupo && letra ) {
+    try {
+      cancionController.addNewSong( nombre, grupo, letra );
+      res.status(201);
+      res.send({
+        message: "POST ok",
+      });
+    } catch (error) {
+      res.status(400);
+      res.header("Content-Type", "application/json");
+      res.json({ Error: error });
+    }
+  } else {
+    res.status(400);
+    res.header("Content-Type", "application/json");
+    res.json({ Error: "Bad Request" });
+  }
+});
 
 module.exports = router;

@@ -35,3 +35,17 @@ describe("Agregar una nueva Cancion ", () => {
       });
   });
 });
+
+// [HU2] Consultar información de las canciones de música
+describe("Obtener informacion de las canciones", () => {
+  it("Debería obtener todas las canciones", (done) => {
+    chai
+      .request(app)
+      .get("/canciones")
+      .end(function (err, res) {
+        expect(res).to.have.status(200);
+        done();
+      });
+  });
+  
+});

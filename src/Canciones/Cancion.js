@@ -1,20 +1,18 @@
-// Clase que define una canción
-// `id` = identificador de una canción
-// `nombre` = nombre de la canción
-// `Grupo` = Grupo o grupo que compuso la canción
-// `letra` = letra de la canción
 class Cancion {
   constructor(id, nombre, grupo, letra) {
-    this.id = id;
-    this.nombre = nombre;
-    this.grupo = grupo;
-    this.letra = letra;
+    
+    if (this.checkTypes(id, nombre, grupo, letra)) {
+      this.id = id;
+      this.nombre = nombre;
+      this.grupo = grupo;
+      this.letra = letra;
+    } else {
+      throw "No se ha podido crear la canción: Parámetros incorrectos";
+    }    
   }
-
-  to_string() {
-    return this.id + ", " + this.nombre + ", " + this.grupo + ", " + this.letra;
-  } 
-
+  //-------------------------------------------------------
+  // GETTERS
+  //-------------------------------------------------------
   getId() {
     return this.id;
   }
@@ -30,5 +28,21 @@ class Cancion {
   getLetra() {
     return this.letra;
   }
+
+  to_string() {
+    return `${this.id}, ${this.nombre}, ${this.grupo}, ${this.letra}`;
+  }
+  //-------------------------------------------------------
+  // VALIDATORS
+  //-------------------------------------------------------
+  checkTypes(id, nombre, grupo, letra) {
+    return (
+      typeof id === "number" &&
+      typeof nombre === "string" &&
+      typeof grupo === "number" &&      
+      typeof letra === "string"      
+    );
+  }
 }
+
 module.exports = Cancion;

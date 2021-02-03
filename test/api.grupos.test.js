@@ -1,7 +1,7 @@
 let chai = require("chai");
 let expect = chai.expect;
 const chaiHttp = require("chai-http");
-const groupSamples = require("./sample.json");
+const groupSamples = require("../Data/sampleGroups.json");
 const app = require("../src/index");
 
 chai.use(chaiHttp);

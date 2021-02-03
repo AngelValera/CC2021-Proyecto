@@ -28,6 +28,9 @@ class CancionController {
     }
   }
 
-  
+  // Obtenemos todas las canciones
+  getSongs() {
+    return this.canciones;
+  }
 }
 module.exports = CancionController;

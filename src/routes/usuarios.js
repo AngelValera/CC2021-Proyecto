@@ -24,5 +24,28 @@ router.get("/usuarios/:nombre", (req, res) => {
   }
 });
 
+router.post("/usuarios", (req, res) => {
+  // Recogemos los campos del body de la peticion
+  const { nombre, email, password, tipo } = req.body;
+  // Comprobamos que la petición sea correcta
+  if (nombre && email && password && tipo) {
+    try {
+      usuarioController.addNewUser(nombre, email, password, tipo);
+      res.status(201);
+      res.send({
+        message: "POST ok",
+      });
+    } catch (error) {
+      res.status(400);
+      res.header("Content-Type", "application/json");
+      res.json({ Error: error });
+    }
+  } else {
+    res.status(400);
+    res.header("Content-Type", "application/json");
+    res.json({ Error: "Bad Request" });
+  }
+});
+
 
 module.exports = router;

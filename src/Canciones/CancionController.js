@@ -7,6 +7,7 @@ class CancionController {
   }
   // Agregamos una nueva cancion
   addNewSong(nombre, grupo, letra) {
+    // El id ahora es único
     let id = Object.keys(this.canciones).length;
     let nuevaCancion = new Cancion(
       id,

@@ -1,4 +1,5 @@
 const Usuario = require("./Usuario.js");
+const _ = require("underscore");
 
 class UsuarioController {
   constructor() {
@@ -7,7 +8,20 @@ class UsuarioController {
 
   // Agregamos un nuevo usuario
   addNewUser(nombre, email, password, tipo) {
-    return true;
+    _.each(this.usuarios, (usuario, i) => {
+      if (usuario.getEmail() == email) {
+        throw "No se ha podido agregar el usuario: El usuario ya existe";
+      }
+    });
+    let id = Object.keys(this.usuarios).length;
+    let nuevoUsuario = new Usuario(
+      id,
+      nombre,
+      email,
+      password,
+      tipo
+    );
+    this.usuarios[id] = nuevoUsuario;
   }
 
   // Buscamos el usuario por su nombre

@@ -24,6 +24,22 @@ router.get("/canciones/:nombre", (req, res) => {
   }
 });
 
+router.get("/canciones/:nombre/:grupo", (req, res) => {
+  try {
+    let data = cancionController.getSongByNameAndGroup(
+      req.params.nombre,
+      req.params.grupo
+    );
+    res.status(200);
+    res.header("Content-Type", "application/json");
+    res.json(data);
+  } catch (exception) {
+    res.status(404);
+    res.header("Content-Type", "application/json");
+    res.json({ Error: exception });
+  }
+});
+
 
 
 module.exports = router;

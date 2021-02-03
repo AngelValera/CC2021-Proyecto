@@ -1,20 +1,24 @@
 const Cancion = require("./Cancion.js");
-
+const _ = require("underscore");
 
 class CancionController {
   constructor() {
     this.canciones = {}; // creamos un diccionario vacío
   }
-
-  addCancion(id, nombre, grupo, letra) {
-    let nuevaCancion = new Cancion(id, nombre, grupo, letra);
-    let ident = nuevaCancion.getNombre()+nuevaCancion.getGrupo();
-    this.canciones[ident] = nuevaCancion;
-    console.log(ident);
+  // Agregamos una nueva cancion
+  addNewSong(nombre, grupo, letra) {
+    let id = Object.keys(this.canciones).length;
+    let nuevaCancion = new Cancion(
+      id,
+      nombre,
+      grupo,
+      letra
+      );
+    this.canciones[id] = nuevaCancion; 
   }
 
   // buscamos la cancion por su nombre y grupo
-  getCancion(nombre, grupo) { 
+  getCancion(nombre, grupo) {
     let ident = nombre + grupo;
     if (this.canciones.hasOwnProperty(ident)) {
       let cancionBuscada = this.canciones[ident];
@@ -23,5 +27,7 @@ class CancionController {
       throw "La cancion no existe";
     }
   }
+
+  
 }
 module.exports = CancionController;

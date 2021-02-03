@@ -45,7 +45,7 @@ class Usuario {
   //-------------------------------------------------------
   // VALIDATORS
   //-------------------------------------------------------
-  checkTypes(id, nombre, grupo, letra) {
+  checkTypes(id, nombre, email, password, tipo) {
     return (
       typeof id === "number" &&
       typeof nombre === "string" &&
@@ -56,11 +56,10 @@ class Usuario {
   }
 
   validateEmail(email){
-    let pattern = new RegExp("/^w+([.-]?w+)*@w+([.-]?w+)*(.w{2,3,4})+$/", "i");
-    return !!pattern.test(email);
+    const regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return regex.test(email);
   }
 
 }
-
 
 module.exports = Usuario;

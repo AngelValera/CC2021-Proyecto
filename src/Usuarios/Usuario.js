@@ -39,7 +39,7 @@ class Usuario {
   }
 
   to_string() {
-    return`${this.id}, ${this.nombre}, ${this.email}, ${this.tipo}`;    
+    return `${this.id}, ${this.nombre}, ${this.email}, ${this.password},${this.tipo}`;    
   }
   
   //-------------------------------------------------------

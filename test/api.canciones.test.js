@@ -47,5 +47,15 @@ describe("Obtener informacion de las canciones", () => {
         done();
       });
   });
+
+  it("Debería obtener la cancion que solicito.", (done) => {
+    chai
+      .request(app)
+      .get("/canciones/Faint")
+      .end(function (err, res) {
+        expect(res).to.have.status(200);
+        done();
+      });
+  });
   
 });

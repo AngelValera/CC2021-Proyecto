@@ -134,7 +134,6 @@ El fichero de configuración es similar, salvo por el puerto por defecto.
 
 En cuanto al fichero con el servidor, la única diferencia está en qué fichero de rutas debe utilizar y en qué variable debe leer de etcd si éste está ejecutándose.
 
-
 ---
 ### Referencias:
 

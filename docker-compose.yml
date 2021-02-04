@@ -17,6 +17,8 @@ services:
          dockerfile: despliegue.Dockerfile    
       ports:
          - "3001:3000"
+      networks:
+         - lyricshunter
    
    grupos_service01:
       container_name: grupos01
@@ -25,6 +27,8 @@ services:
          dockerfile: despliegue.Dockerfile    
       ports:
          - "3002:3000"
+      networks:
+         - lyricshunter
       
       
    nginx:
@@ -36,6 +40,8 @@ services:
       volumes:
          - ./Config/nginx/conf.d/nginx.conf:/etc/nginx/conf.d/default.conf    # dir para archivo configuración de nginx 
          - ./Config/nginx/logs:/var/log/nginx      
+      networks:
+         - lyricshunter
       depends_on:
          - grupos_service00
          - grupos_service01

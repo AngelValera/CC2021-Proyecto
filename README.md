@@ -34,6 +34,8 @@ Para ejecutar correctamente este proyecto habría que usar los siguiente comando
 - `npm install grunt-cli`  Para instalar el gestor Grunt
 - `grunt install` Para instalar las depedencias del proyecto
 - `grunt test` Para ejecutar los test y comprobar la sintaxis
+- `grunt start` Para ejecutar el servicio
+- `docker compose up ` Para ejecutar el clúster
 
 ---
 ### Avance del proyecto:

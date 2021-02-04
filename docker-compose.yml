@@ -1,36 +1,7 @@
 version: '3'
 
-networks:
-  lyricshunter:
-      driver: bridge
-
-volumes:
-  .:    
-   driver: local  
-
 services:
-   
-   grupos_service00:
-      container_name: grupos00
-      build:
-         context: .
-         dockerfile: despliegue.Dockerfile    
-      ports:
-         - "3001:3000"
-      networks:
-         - lyricshunter
-   
-   grupos_service01:
-      container_name: grupos01
-      build:
-         context: .
-         dockerfile: despliegue.Dockerfile    
-      ports:
-         - "3002:3000"
-      networks:
-         - lyricshunter
-      
-      
+   # Servicio de nginx
    nginx:
       image: nginx:alpine
       container_name: nginx 
@@ -43,7 +14,84 @@ services:
       networks:
          - lyricshunter
       depends_on:
+         - canciones_service00
+         - canciones_service01
          - grupos_service00
          - grupos_service01
-        
+         - usuarios_service00
+         - usuarios_service01
+   #-----------------------
+   # Servicios de canciones
+   #-----------------------
+   canciones_service00:
+      container_name: canciones00
+      build:
+         context: .
+         dockerfile: canciones.Dockerfile    
+      ports:
+         - "3000:3000"
+      networks:
+         - lyricshunter
+
+   canciones_service01:
+      container_name: canciones01
+      build:
+         context: .
+         dockerfile: canciones.Dockerfile    
+      ports:
+         - "3001:3000"
+      networks:
+         - lyricshunter
    
+   #-----------------------
+   # Servicios de grupos
+   #-----------------------
+   grupos_service00:
+      container_name: grupos00
+      build:
+         context: .
+         dockerfile: grupos.Dockerfile    
+      ports:
+         - "3002:3002"
+      networks:
+         - lyricshunter
+   
+   grupos_service01:
+      container_name: grupos01
+      build:
+         context: .
+         dockerfile: grupos.Dockerfile    
+      ports:
+         - "3003:3002"
+      networks:
+         - lyricshunter
+   #-----------------------
+   # Servicios de usuarios
+   #-----------------------   
+   usuarios_service00:
+      container_name: usuarios00
+      build:
+         context: .
+         dockerfile: usuarios.Dockerfile    
+      ports:
+         - "3004:3004"
+      networks:
+         - lyricshunter
+   
+   usuarios_service01:
+      container_name: usuarios01
+      build:
+         context: .
+         dockerfile: usuarios.Dockerfile    
+      ports:
+         - "3005:3004"
+      networks:
+         - lyricshunter           
+
+networks:
+  lyricshunter:
+      driver: bridge
+
+volumes:
+  .:    
+   driver: local     

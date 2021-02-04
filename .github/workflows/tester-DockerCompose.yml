@@ -9,12 +9,15 @@ jobs:
         run: docker-compose up -d      
       - name: Testea el cluster separado
         run: |
-          wget http://localhost:3001/grupos || exit 1
-          wget http://localhost:3001/canciones || exit 1
-          wget http://localhost:3001/usuarios || exit 1
+          # Testeamos los dos servicios de canciones
+          wget http://localhost:3000/canciones || exit 1
+          wget http://localhost:3001/canciones || exit 1          
+          # Testeamos los dos servicios de grupos
           wget http://localhost:3002/grupos || exit 1
-          wget http://localhost:3002/canciones || exit 1
-          wget http://localhost:3002/usuarios || exit 1
+          wget http://localhost:3003/grupos || exit 1
+          # Testeamos los dos servicios de usuarios
+          wget http://localhost:3004/usuarios || exit 1
+          wget http://localhost:3005/usuarios || exit 1
       - name: Testea el cluster en conjunto
         run: |
           wget http://localhost:8080/grupos || exit 1

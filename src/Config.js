@@ -10,7 +10,7 @@ class Config {
     };
 
     self.assign_default_port = () => {
-      self.port = process.env.PORT || 3000;
+      self.port = process.env.PORT || 31415;
     }; 
 
     self.assign_defaults = () => {

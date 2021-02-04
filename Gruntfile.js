@@ -24,6 +24,18 @@ module.exports = function (grunt) {
       start: {
         cmd: "node",
         args: ["src/index.js"],
+      },      
+      start_Grupos: {
+        cmd: "node",
+        args: ["src/Grupos/server.js"],
+      },
+      start_Canciones: {
+        cmd: "node",
+        args: ["src/Canciones/server.js"],
+      },
+      start_Usuarios: {
+        cmd: "node",
+        args: ["src/Usuarios/server.js"],
       },
     },
     jshint: {
@@ -52,6 +64,12 @@ module.exports = function (grunt) {
   grunt.registerTask("build", ["run:build"]);
   // Tarea para ejecutar Nodemon
   grunt.registerTask("dev", ["nodemon"]);
-  // Tarea para ejecutar el servidor
+  // Tarea para ejecutar el servidor con todos los servicios juntos
   grunt.registerTask("start", ["run:start"]);
+  // Tarea para desplegar solamente el microservicio de Grupos
+  grunt.registerTask("start_grupos", ["run:start_Grupos"]);
+  // Tarea para desplegar solamente el microservicio de Canciones
+  grunt.registerTask("start_canciones", ["run:start_Canciones"]);
+  // Tarea para desplegar solamente el microservicio de Usuarios
+  grunt.registerTask("start_usuarios", ["run:start_Usuarios"]);
 };

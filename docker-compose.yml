@@ -10,13 +10,22 @@ volumes:
 
 services:
    
-   grupos_service:
-      container_name: grupos
+   grupos_service00:
+      container_name: grupos00
       build:
          context: .
          dockerfile: despliegue.Dockerfile    
       ports:
          - "3001:3000"
+   
+   grupos_service01:
+      container_name: grupos01
+      build:
+         context: .
+         dockerfile: despliegue.Dockerfile    
+      ports:
+         - "3002:3000"
+      
       
    nginx:
       image: nginx:alpine
@@ -28,6 +37,7 @@ services:
          - ./Config/nginx/conf.d/nginx.conf:/etc/nginx/conf.d/default.conf    # dir para archivo configuración de nginx 
          - ./Config/nginx/logs:/var/log/nginx      
       depends_on:
-         - grupos_service
+         - grupos_service00
+         - grupos_service01
         
    

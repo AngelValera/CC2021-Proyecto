@@ -1,5 +1,5 @@
 const { Router } = require("express");
-const GrupoController = require("../Grupos/GrupoController.js");
+const GrupoController = require("../GrupoController.js");
 
 
 const router = Router();

@@ -1,8 +1,10 @@
+// Servicio completo
 const express = require('express');
 const app = express();
 const morgan = require('morgan');
 const { Config } = require("./Config.js");
 const { Etcd3 } = require("etcd3");
+
 
 // Settings
 let endpoints = "http://localhost:2379, http://etcd_service:2379";
@@ -24,9 +26,9 @@ app.use(express.urlencoded({extended:false}));
 app.use(express.json());
 
 // Routes
-app.use(require("./routes/grupos"));
-app.use(require("./routes/canciones"));
-app.use(require("./routes/usuarios"));
+app.use(require("./Grupos/routes/grupos"));
+app.use(require("./Canciones/routes/canciones"));
+app.use(require("./Usuarios/routes/usuarios"));
 
 // Starting the server
 (async () => {

@@ -6,13 +6,15 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Construye el cluster
-        run: docker-compose up -d
-      - name: Sleep for 5 seconds
-        uses: jakejarvis/wait-action@master
-        with:
-          time: '5s'
-      - name: Testea el cluster
+        run: docker-compose up -d      
+      - name: Testea el cluster separado
         run: |
-          wget http://localhost:8080/grupos/ || exit 1
-          wget http://localhost:8080/canciones/ || exit 1
-          wget http://localhost:8080/usuarios/ || exit 1
+          wget http://localhost:3001/grupos/ || exit 1
+          wget http://localhost:3001/canciones/ || exit 1
+          wget http://localhost:3001/usuarios/ || exit 1
+          wget http://localhost:3002/grupos/ || exit 1
+          wget http://localhost:3002/canciones/ || exit 1
+          wget http://localhost:3002/usuarios/ || exit 1
+      - name: Testea el cluster en conjunto
+        run: curl --location --request GET 'http://localhost:8080/grupos/
+

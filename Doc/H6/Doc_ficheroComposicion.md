@@ -267,7 +267,6 @@ Tanto los servicios de grupos como los de usuarios, se han realizado de manera s
          - lyricshunter
 ```
 
-
 ---
 ### Referencias:
 

@@ -11,7 +11,7 @@ let opts = {
   hosts: endpoints.split(","),
 };
 const client = new Etcd3(opts);
-const config_prefix = "lyricshunter";
+const config_prefix = "lh_usuarios";
 const config = new Config();
 let LISTENING_PORT = config.port;
 let LISTENING_IP = config.ip;

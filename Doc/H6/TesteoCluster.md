@@ -1,7 +1,11 @@
 ## Testeo de la composición
 
 <!-- ![](../Img/ "") -->
-
+- [Testeo de la composición](#testeo-de-la-composición)
+  - [Testeo usando una Github Actions](#testeo-usando-una-github-actions)
+  - [Realizando pruebas de rendimiento](#realizando-pruebas-de-rendimiento)
+  - [Referencias:](#referencias)
+  
 ### Testeo usando una Github Actions
 
 Para testear la composición, lo primero que se hizo fue desarrollar una Github Action de manera que construya el cluster y realice una serie de peticiones. 

@@ -9,6 +9,6 @@ jobs:
         run: docker-compose up -d
       - name: Testea el cluster
         run: |
-          wget http://localhost/grupos || exit 1
-          wget http://localhost/canciones || exit 1
-          wget http://localhost/usuarios || exit 1
+          wget http://localhost/grupos/ || exit 1
+          wget http://localhost/canciones/ || exit 1
+          wget http://localhost/usuarios/ || exit 1

@@ -4,18 +4,12 @@ node_js:
 - "lts/*"
 before_install:
   - npm install grunt-cli
-  - docker-compose build
+
 install:
   - grunt install
 cache:
   directories:
   - "$HOME/.npm"
 
-before_script:
-  - docker-compose up -d
-
 script:
-  - grunt test
-  - wget http://localhost:8080/grupos/ || exit 1
-  - wget http://localhost:8080/canciones/ || exit 1
-  - wget http://localhost:8080/usuarios/ || exit 1
+  - grunt test  

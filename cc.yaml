@@ -13,3 +13,4 @@ test:
 lenguaje: Node.js
 fichero_tareas: Gruntfile.js
 make: grunt
+test-docker-compose: .github/workflows/tester-DockerCompose.yml

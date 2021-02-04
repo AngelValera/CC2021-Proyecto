@@ -16,5 +16,4 @@ jobs:
           wget http://localhost:3002/canciones/ || exit 1
           wget http://localhost:3002/usuarios/ || exit 1
       - name: Testea el cluster en conjunto
-        run: curl --location --request GET 'http://localhost:8080/grupos/
-
+        run: wget http://localhost:8080/grupos || exit 1

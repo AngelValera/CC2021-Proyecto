@@ -12,9 +12,9 @@
 
 A la hora de diseñar el API, lo que ha hecho ha sido tener en cuenta las distintas historias de usuario del proyecto para determinar qué rutas había que establecer.
 
-En cuanto a la estructura general del API se ha establecido un directorio `/routes` donde se crearán ficheros con las rutas pertinentes de cada una de las entidades del proyecto.
+En cuanto a la estructura general del API. Se ha creado un directorio `/routes` donde se crearán ficheros con las rutas pertinentes de cada una de las entidades del proyecto.
 
-Por tanto, como podemos comprobar en [\routes](../../src/routes), tenemos un fichero llamado [grupos.js](../../src/routes/grupos.js) el cual recoge todas y cada una de las rutas relacionadas con la entidad Grupos de música.
+Por ejemplo, podemos ver el fichero con las rutas del microservicio de grupos, en [\routes](../../src/Grupos/routes), tenemos un fichero llamado [grupos.js](../../src/Grupos/routes/grupos.js) el cual recoge todas y cada una de las rutas relacionadas con la entidad Grupos de música.
 
 
 ### Rutas
@@ -23,11 +23,11 @@ En cuanto a las rutas, vamos a ir comprobado cada uno de los ficheros que se han
 
 #### Grupos
 
-Dentro del fichero [grupos.js](../../src/routes/grupos.js):
+Dentro del fichero [grupos.js](../../src/Grupos/routes/grupos.js):
 
 ```javascript
 const { Router } = require("express");
-const GrupoController = require("../Grupos/GrupoController.js");
+const GrupoController = require("../GrupoController.js");
 
 
 const router = Router();
@@ -55,37 +55,65 @@ router.get("/grupos/:nombre", (req, res) => {
 
 router.post("/grupos", (req, res) => {
   // Recogemos los campos del body de la peticion
-  const { nombre, anioFormacion, anioSeparacion, estilo,
-    genero, web, redesSociales, biografia, miembros, pais, imagenes
+  const {
+    nombre,
+    anioFormacion,
+    anioSeparacion,
+    estilo,
+    genero,
+    web,
+    redesSociales,
+    biografia,
+    miembros,
+    pais,
+    imagenes,
   } = req.body;
   // Comprobamos que la petición sea correcta
-  if ( nombre && anioFormacion && 
+  if (
+    nombre &&
+    anioFormacion &&
     (anioSeparacion || anioSeparacion == null) &&
-    estilo && genero && web && redesSociales &&
-    biografia && miembros && pais && imagenes ) {
+    estilo &&
+    genero &&
+    web &&
+    redesSociales &&
+    biografia &&
+    miembros &&
+    pais &&
+    imagenes
+  ) {
     try {
-        grupoController.addNewGroup(
-            nombre, anioFormacion, anioSeparacion, estilo,
-            genero, web, redesSociales, biografia, miembros,
-            pais, imagenes
-        );
-        res.status(201);
-        res.send({
-            message: "POST ok",
-        });
+      grupoController.addNewGroup(
+        nombre,
+        anioFormacion,
+        anioSeparacion,
+        estilo,
+        genero,
+        web,
+        redesSociales,
+        biografia,
+        miembros,
+        pais,
+        imagenes
+      );
+      res.status(201);
+      res.send({
+        message: "POST ok",
+      });
     } catch (error) {
-        res.status(400);
-        res.header("Content-Type", "application/json");
-        res.json({ Error: error });
+      res.status(400);
+      res.header("Content-Type", "application/json");
+      res.json({ Error: error });
     }
   } else {
-        res.status(400);
-        res.header("Content-Type", "application/json");
-        res.json({ Error: "Bad Request" });
+    res.status(400);
+    res.header("Content-Type", "application/json");
+    res.json({ Error: "Bad Request" });
   }
 });
 
 module.exports = router;
+
 ```
 Como se puede ver, encontramos 3 rutas. 
 

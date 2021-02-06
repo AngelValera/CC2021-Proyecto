@@ -28,7 +28,7 @@ RUN npm install grunt-cli && grunt install
 
 ENV PATH=/node_modules/.bin:$PATH
 
-EXPOSE 3000
+EXPOSE 31415
 
 CMD [ "grunt", "start" ]
 ```
@@ -40,10 +40,10 @@ En este caso debemos agregar al Dockerfile el directorio `/src`
 COPY --chown=node:node ["src", "./src"]
 ```
 
-También debemos exponer un puerto que en mi caso sera el 3000
+También debemos exponer un puerto que en mi caso sera el 31415
 
 ```Dockerfile
-EXPOSE 3000
+EXPOSE 31415
 ```
 
 Y finalmente, ejecutar el servidor, usando para ello la tarea definida en el gestor de tareas [Gruntfile.js](../../Gruntfile.js).

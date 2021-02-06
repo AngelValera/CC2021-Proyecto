@@ -21,19 +21,26 @@ Para utilizarlo, lo primero es instalar la biblioteca de node que es capaz de ut
 Una vez instalado, en nuestro fichero [index.js](../../src/index.js), debemos cargarlo y utilizarlo:
 
 ```javascript
+// Servicio completo
 const express = require('express');
 const app = express();
 const morgan = require('morgan');
-
+const { Config } = require("./Config.js");
 const { Etcd3 } = require("etcd3");
-const client = new Etcd3();
 
-async function getPort() {
-  const port = await client.get("LyricsHunterPort");
-  return port;
-}
 
 // Settings
+let endpoints = "http://localhost:2379, http://etcd_service:2379";
+let opts = {
+  hosts: endpoints.split(","),
+};
+const client = new Etcd3(opts);
+const config_prefix = "lyricshunter";
+const config = new Config();
+let LISTENING_PORT = config.port;
+let LISTENING_IP = config.ip;
+app.set("port", config.port);
+app.set("ip", config.ip);
 app.set('json spaces', 2);
 
 // Middlerwares
@@ -42,24 +49,29 @@ app.use(express.urlencoded({extended:false}));
 app.use(express.json());
 
 // Routes
-app.use(require("./routes/grupos"));
+app.use(require("./Grupos/routes/grupos"));
+app.use(require("./Canciones/routes/canciones"));
+app.use(require("./Usuarios/routes/usuarios"));
 
-//Starting the server
-let PORT;
+// Starting the server
 (async () => {
-  PORT = await getPort();  
+  LISTENING_PORT = await client.get(config_prefix + "Port");
+  LISTENING_IP = await client.get(config_prefix + "IP");
 })()
   .then(() => {
-    app.set("port", PORT || process.env.PORT || 3000);    
-    app.listen(app.get("port"), () => {
-      console.log(`Server on port ${app.get("port")}`);
-    });
-  }).catch(() => {
-    app.set("port", PORT || process.env.PORT || 3000);
-    app.listen(app.get("port"), () => {
-      console.log(`Server on port ${app.get("port")}`);
-    });
+    app.set("port", LISTENING_PORT || config.port);
+    app.set("ip", LISTENING_IP || config.ip);
+
+    app.listen(app.get("port"), app.get("ip"), () => {
+      console.log(`Server running at ${app.get("ip")}:${app.get("port")}`);
+    });  
+  })
+  .catch(() => {    
+    app.listen(app.get("port"), app.get("ip"), () => {
+      console.log(`Server running at ${app.get("ip")}:${app.get("port")}`);
+    });  
   });
+
 
 module.exports = app;
 ```

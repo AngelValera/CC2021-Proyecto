@@ -1,6 +1,7 @@
 # LyricsHunter
 
-[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) [![Language](https://img.shields.io/badge/node.js%20-%2343853D.svg?&logo=node.js&logoColor=white)](https://nodejs.org/es/) [![Build Status](https://travis-ci.com/AngelValera/LyricsHunter.svg?branch=main)](https://travis-ci.com/AngelValera/LyricsHunter) [![CircleCI](https://circleci.com/gh/AngelValera/LyricsHunter.svg?style=svg)](https://circleci.com/gh/AngelValera/LyricsHunter) ![Node.js_CI](https://github.com/AngelValera/LyricsHunter/workflows/Node.js_CI/badge.svg)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) [![Language](https://img.shields.io/badge/node.js%20-%2343853D.svg?&logo=node.js&logoColor=white)](https://nodejs.org/es/) [![Build Status](https://travis-ci.com/AngelValera/LyricsHunter.svg?branch=main)](https://travis-ci.com/AngelValera/LyricsHunter) [![CircleCI](https://circleci.com/gh/AngelValera/LyricsHunter.svg?style=svg)](https://circleci.com/gh/AngelValera/LyricsHunter) ![Node.js_CI](https://github.com/AngelValera/LyricsHunter/workflows/Node.js_CI/badge.svg) 
+<img alt="Google Cloud" src="https://img.shields.io/badge/Google%20Cloud%20-%234285F4.svg?&style=for-the-badge&logo=google-cloud&logoColor=white"/> 
 
 En este repositorio está desarrollando un proyecto para la asignatura
 de Cloud Computing I impartida en el Máster de Ingeniería Informática
@@ -8,7 +9,8 @@ de la Universidad de Granada durante el curso 2020-2021.
 
 :warning: **Este proyecto se encuentra actualmente en desarrollo**
 
-![Comprueba README](https://github.com/AngelValera/LyricsHunter/workflows/Comprueba%20README/badge.svg) ![Sintaxis YAML](https://github.com/AngelValera/LyricsHunter/workflows/Sintaxis%20YAML/badge.svg) ![Docker](https://github.com/AngelValera/LyricsHunter/workflows/Docker/badge.svg) ![Auto-Publish-GCR](https://github.com/AngelValera/LyricsHunter/workflows/Auto-Publish-GCR/badge.svg) ![Comprobar que docker compose funciona](https://github.com/AngelValera/LyricsHunter/workflows/Comprobar%20que%20docker%20compose%20funciona/badge.svg)
+![Comprueba README](https://github.com/AngelValera/LyricsHunter/workflows/Comprueba%20README/badge.svg) ![Sintaxis YAML](https://github.com/AngelValera/LyricsHunter/workflows/Sintaxis%20YAML/badge.svg) ![Docker](https://github.com/AngelValera/LyricsHunter/workflows/Docker/badge.svg) ![Auto-Publish-GCR](https://github.com/AngelValera/LyricsHunter/workflows/Auto-Publish-GCR/badge.svg) 
+![Comprobar que docker compose funciona](https://github.com/AngelValera/LyricsHunter/workflows/Comprobar%20que%20docker%20compose%20funciona/badge.svg)
 
 ---
 ## Tabla de contenidos
@@ -20,7 +22,7 @@ de la Universidad de Granada durante el curso 2020-2021.
 * :point_right: **[Documentación y justificación de la configuración de cada uno de los contenedores del cluster](Doc/H6/ConfContenedoresCluster.md)**
 * :point_right: **[Documentación del fichero de composición](Doc/H6/Doc_ficheroComposicion.md)**
 * :point_right: **[Testeo de la composición](Doc/H6/TesteoCluster.md)**
-
+* :point_right: **[Despliegue en un servicio cloud](Doc/H6/Despliegue.md)**
 * [Avances del proyecto](#avance-del-proyecto)
 
 ---

@@ -1,0 +1,42 @@
+execution:
+- concurrency: 750
+  ramp-up: 30s
+  hold-for: 50s
+  scenario: canciones
+
+- concurrency: 750
+  ramp-up: 30s
+  hold-for: 50s
+  scenario: grupos
+
+- concurrency: 750
+  ramp-up: 30s
+  hold-for: 50s
+  scenario: usuarios
+
+
+scenarios:
+  grupos:    
+    default-address: http://34.74.248.114:8080
+    timeout: 15s
+    requests:
+      - url: /grupos
+        method: GET
+        headers:
+          Content-Type: application/json
+  canciones:    
+    default-address: http://34.74.248.114:8080
+    timeout: 15s
+    requests:
+      - url: /canciones
+        method: GET
+        headers:
+          Content-Type: application/json
+  usuarios:    
+    default-address: http://34.74.248.114:8080
+    timeout: 15s
+    requests:
+      - url: /usuarios
+        method: GET
+        headers:
+          Content-Type: application/json
